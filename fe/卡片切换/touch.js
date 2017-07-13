@@ -2,7 +2,7 @@
  * 横向滑屏插件
  *
  * @file touch.js
- * @author zoupengfei01
+ * @author zuopengfei01
  *
  */
 
@@ -67,7 +67,7 @@ Touch.prototype = {
             var moveScreenX = oThis.offsetX + diffScreenX;
 
             // 滑动方向
-            var moveDirection = oThis.swipeDirection(oThis.startX, oThis.movingX, oThis.startY, oThis.movingY);
+            var moveDirection = oThis.swipeDirection(oThis.startX, oThis.movingX, oThis.startY, oThis.movingY, true);
 
             // 不能阻止页面的纵向滚动
             if (moveDirection === 'Left' || moveDirection === 'Right') {
@@ -83,7 +83,7 @@ Touch.prototype = {
 
             oThis.scrollCon.css({
                 '-webkit-transform': 'translate3d(' + moveScreenX + 'px, 0, 0)',
-                '-webkit-transition-duration': 'none'
+                '-webkit-transition': 'none'
             });
         });
 
@@ -97,21 +97,27 @@ Touch.prototype = {
 
             // 本次滚动偏移量
             var diffScreenX = oThis.endX - oThis.startX;
-
+            var diffScreenY = oThis.endY - oThis.startY;
             // 滑动方向
             var moveDirection = oThis.swipeDirection(oThis.startX, oThis.endX, oThis.startY, oThis.endY);
 
+            // 横向偏移量小于20时原位置不动
+            if (Math.abs(diffScreenX) < 20 && Math.abs(diffScreenY) > 10) {
+                oThis.scrollTo(oThis.offsetX, '0ms');
+            }
             // 滑动偏移量大于10小于30切到下一张卡或前一张卡
             // 小于300ms认为是左滑右滑动
-            if (duration < 300 || (Math.abs(diffScreenX) > 10 && Math.abs(diffScreenX) < 30)) {
+            else if (duration < 300 && (Math.abs(diffScreenX) > 20 && Math.abs(diffScreenX) < 30)) {
                 scrollToFun(moveDirection);
             }
             else {
-                if (Math.abs(diffScreenX) >= (oThis.swipeW / 3)) {
+                if (Math.abs(diffScreenX) >= 30) {
                     scrollToFun(moveDirection);
                 }
                 else {// 归位
-                    oThis.scrollTo(oThis.offsetX, '300ms');
+                    if (moveDirection === 'Left' || moveDirection === 'Right') {
+                        oThis.scrollTo(oThis.offsetX, '300ms');
+                    }
                 }
             }
             oThis.isMoving = false;
@@ -155,8 +161,6 @@ Touch.prototype = {
                 }
             }
 
-
-
         });
     },
     scrollTo: function (x, time) {
@@ -167,18 +171,24 @@ Touch.prototype = {
         }, time);
         this.scrollCon.css({
             '-webkit-transform': 'translate3d(' + x + 'px, 0, 0)',
+            '-webkit-transition-property': 'all',
             '-webkit-transition-timing-function': 'cubic-bezier(0.1, 0.3, 0.5, 1)',
             '-webkit-transition-duration': time
-        }).attr('x', x);
+        });
         this.offsetX = x;
         $.isFunction(oThis.swipeCb) && oThis.swipeCb();
 
     },
     // 滑动方向
-    swipeDirection: function (x1, x2, y1, y2) {
-        return Math.abs(x1 - x2) >= Math.abs(y1 - y2)
+    swipeDirection: function (x1, x2, y1, y2, allDirection) {
+        if (allDirection) {
+            return Math.abs(x1 - x2) >= Math.abs(y1 - y2)
             ? (x1 - x2 > 0 ? 'Left' : 'Right')
             : (y1 - y2 > 0 ? 'Up' : 'Down');
+        }
+        else {
+            return x1 - x2 > 0 ? 'Left' : 'Right';
+        }
     },
     // 获取当前时间
     getTime: function () {
