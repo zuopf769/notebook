@@ -1,0 +1,157 @@
+.button_div {
+	background-color:#e6e7e8;
+	border-color:#999;
+	color:#000000;
+	cursor:pointer;
+	border-radius: 2px;
+	border-width:1px;
+	border-style:solid;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	/*padding:4px;*/
+}
+
+.button_div:hover {
+	background-color:#C0C2C2;
+}
+
+.button_div_disabled {
+	background-color:#F0F0F0;
+	border-color:#999;
+	border-width:1px;
+	color:#999;
+	cursor:not-allowed;
+}
+
+.button_div_disabled:hover { 
+	background-color:#F0F0F0;
+	border-color:#999;
+	color:#999;
+	cursor:not-allowed;
+}
+
+
+.button_img_div{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	width:18px;
+	height:18px;
+	cursor:pointer;
+	padding-left:5px;
+}
+
+.button_text_div{
+	display:table-cell;
+	vertical-align:middle;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	text-align:center;
+	width:100%;
+	height:100%;
+	font-size:12px;
+}
+/********************预置颜色  begin***********************/
+.blue_button_div{
+	background-color:#4F8EDC;
+	border-color:#4F8EDC;
+	color:#FFFFFF;
+	cursor:pointer;
+	border-radius: 2px;
+	border-width:1px;
+	border-style:solid;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	/*padding:4px;*/
+}
+
+.blue_button_div:hover{
+	background-color:#1971CA;
+	border-color:#1971CA;
+}
+
+.button_div_success {
+	background-color:#85C744;
+	border-color:#85C744;
+	color:#FFFFFF;
+	padding:4px;
+	border-radius:2px;
+	cursor:pointer;
+}
+
+.button_div_success:hover {
+	background-color:#4F9C03;
+	border-color:#4F9C03;
+}
+
+.button_div_info {
+	background-color:#2BBCE0;
+	border-color:#2BBCE0;
+	color:#FFFFFF;
+	padding:4px;
+	border-radius:2px;
+	cursor:pointer;
+}
+
+.button_div_info:hover {
+	background-color:#04A6CE;
+	border-color:#04A6CE;
+}
+
+.button_div_warning {
+	background-color:#F1C40F;
+	border-color:#F1C40F;
+	color:#FFFFFF;
+	padding:4px;
+	border-radius:2px;
+	cursor:pointer;
+}
+
+.button_div_warning:hover {
+	background-color:#CBA302;
+	border-color:#CBA302;
+}
+
+.button_div_danger {
+	background-color:#E73C3C;
+	border-color:#E73C3C;
+	color:#FFFFFF;
+	padding:4px;
+	border-radius:2px;
+	cursor:pointer;
+}
+
+.button_div_danger:hover {
+	background-color:#BA0303;
+	border-color:#BA0303;
+}
+
+.button_div_close {
+	background-color:#666666;
+	border-color:#FFFFFF;
+	color:#FFFFFF;
+	padding:4px;
+	border-radius:2px;
+}
+
+.button_div_close:hover {
+	background-color:#333;
+	border-color:#FFFFFF;
+}
+
+
+.button_div_spliter {
+	background-color:#2BBCE0;
+	border-color:#2BBCE0;
+	color:#FFFFFF;
+	padding:9px;
+}
+
+.button_div_spliter:hover {
+	background-color:#04A6CE;
+	border-color:#04A6CE;
+}
+/********************预置颜色 end***********************/

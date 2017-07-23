@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>按钮</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/Core.js"></script>
+		<script type="text/javascript" src="js/ButtonComp.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/button.css">
+		<script>
+					window.onload = function(){
+						new ButtonComp({"parent":document.getElementById('button_parent'),"name":"button_add","text":"新增","width":65,"height":30,"refImg":"menu_icons/add.png"});
+						new ButtonComp({"parent":document.getElementById('button_parent2'),"name":"button_add","text":"按钮","width":65,"height":30,});
+						new ButtonComp({"parent":document.getElementById('button_parent3'),"name":"button_add","text":"确定","width":65,"height":30,"className":"blue_button_div"});
+					}	
+		</script>
+	</head>
+	<body>
+			<div style="height: 100px;"></div>
+				<div id="button_parent" style="width:74px;height: 40px;"></div>
+				<div style="height: 20px;"></div>
+				<div id="button_parent2" style="width:74px;height: 40px;"></div>
+				<div style="height: 20px;"></div>
+				<div id="button_parent3" style="width:74px;height: 40px;"></div>
+
+
+
+	</body>
+</html>
