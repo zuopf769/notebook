@@ -2,8 +2,8 @@
  * @fileoverview 按钮控件
  * 
  * @auther zuopf
- * @version NC6.0
- * @since NC5.5
+ * @version 1.0
+ * @since 1.0
  * 
  */
 
