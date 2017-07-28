@@ -5,7 +5,7 @@
 
 ### 案例效果
 
-https://wk.baidu.com/kgview/b012851614791711cc791705
+ ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
 
 
 ### 开发思路
@@ -15,7 +15,7 @@ https://wk.baidu.com/kgview/b012851614791711cc791705
 首先计算好各个需要置顶区块距离顶部的偏移量。
 
 ```javascript
-	var me = this;
+    var me = this;
     me.options.topArray = [];
     // 要用容器来计算offset
     $.each(me.$elements.$pathTitlesWrap, function (index, item) {
