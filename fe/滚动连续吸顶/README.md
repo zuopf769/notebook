@@ -1,6 +1,6 @@
 ### 背景
 
-项目中经常会碰到滚动特定距离后吸顶的场景；本文章记录了开发过程中遇到的各种坑。
+项目中经常会页面碰到滚动特定距离后区块（如页签，分类标题等）吸顶的场景；本文章记录了开发过程中遇到的各种坑。
 
 
 ### 案例效果
@@ -12,7 +12,8 @@
 
 
 #### step one
-首先计算好各个需要置顶区块距离顶部的偏移量。
+
+首先计算好各个需要置顶区块距离页面顶部的偏移量。
 
 ```javascript
     var me = this;
@@ -30,11 +31,11 @@
         me.options.topRegion.push(region);
     });
 ```
-计算好后形成了两个数据：一个是偏移量数据如[100, 200, 300, 400];另外一个是偏移量区间如：[{start: 100, end: 200}, {start: 200, end: 300}, {start: 300, end: 400}, {start: 400, end: 400}]
+计算好后形成了两个数组：一个是偏移量数组如[100, 200, 300, 400];另外一个是偏移量区间如：[{start: 100, end: 200}, {start: 200, end: 300}, {start: 300, end: 400}, {start: 400, end: 400}]
 
 #### step two
 
-通常的思路就是监听window.onscroll事件，判断滚动条的滚动距离，在哪个区间内然后置顶相应的区块
+通常的思路就是监听window.onscroll事件，判断滚动条的滚动距离，在哪个区间内然后修改相应区块的position属性由relative改为fixed
 
 ```javacript
     function handler () {
@@ -42,7 +43,7 @@
        var scrollTop = $(window).scrollTop();
        var topArray = me.options.topArray;
 		
-		 // 滚动条偏移量小于第一个区块的offset就隐藏一个区块
+       // 滚动条偏移量小于第一个区块的offset就隐藏一个区块
        if (scrollTop <= me.options.topRegion[0] - 1) {
             me.$elements.$pathTitleWrapFixed[0].style.display = 'none';
        }
@@ -66,16 +67,16 @@
 ```
 #### step three
 
-大功告成。开心的提测。
+大功告成；开心的提测；但是。。。。。都是泪。。。。。
 
 
 ### 填坑
 
 + 坑one
 
-	+ 现象：区块置顶时会跳动
+	+ 现象：区块置顶时页面会跳动
 
-	+ 原因：区块元素由relative改为fixed时，脱离文档流，会导致页面高度变化，所以出现跳动
+	+ 原因：区块元素由relative改为fixed时，脱离文档流，会导致页面高度变化，所以出现页面跳动
 
 	+ 解决思路：置顶区块套个容器，容器高度为区块高度，这样区块脱离文档流的时候，页面高度不会发生变化，就没跳动的现象了。
 
