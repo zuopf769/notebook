@@ -1,0 +1,409 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>知识图谱</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            .relative-kg {
+                width: 100%;
+                height: 300px;
+                position: relative;
+            }
+
+            .kgtree-container {
+                width: 380px;
+                height: 230px;
+                background-color: #F5F5F5;
+                border: 1px solid #e6e6e6; 
+                border-radius: 3px;
+                position: relative;
+            }
+
+            .text-node-temp {
+                width: 400px;
+                height: 100px;
+                position: absolute;
+                left: 400;
+                top: 10;
+            }
+
+            .text-wrap {
+                position: absolute;
+                color: #333;
+                font-size: 13px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                padding: 5px 10px;
+                background: #fff;
+                cursor: pointer;
+            }
+
+            .text-wrap .text-node {
+                display: inline-block;
+                max-width: 275px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+
+            }
+
+            .path {
+                position: absolute;
+            }
+
+            .border-left-bottom {
+                border-left: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .border-bottom {
+                border-bottom: 1px solid #ccc;
+            }
+
+        </style>
+        <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+        <script>
+            $(function() {
+                var data = {"ent_uuid":"b012851614791711cc791705","ent_name":"椭圆","parent":{"ent_uuid":"991cdb4ffe4733687e21aa06","ent_name":"圆锥曲线与方程"},"children":[{"ent_uuid":"a9de14d4b14e852458fb5709","ent_name":"椭圆的标准方程及图象"},{"ent_uuid":"0a54f7f34693daef5ef73dfb","ent_name":"椭圆的定义"},{"ent_uuid":"9b3337661ed9ad51f01df203","ent_name":"椭圆的性质（顶点、范围、对称性、离心率）"}]};
+
+                function KGTree (data, container, opt) {
+                    this.data = data || {};
+                    this.container = $(container || 'body');
+                    this.opt = opt || {};
+
+                    // 是否有父节点 1：含有父节点 0：不含父节点
+                    this.hasParent = this.data.parent ? 1 : 0;
+                    // 是否有子节点 1：含有子节点 0：不含子节点
+                    this.hasChildren = this.data.children && this.data.children.length ? 1 : 0;
+                    // 子节点的个数
+                    this.childerenLength = this.hasChildren && this.data.children.length > 3 ? 3 : this.data.children.length;
+
+                    // 树的层级 1：层  2：两层  3： 三层
+                    this.level = 1 + this.hasParent + this.hasChildren;
+                    // 卡片类型
+                    this.cardType = this.initCardType();
+
+                    this.tempTextNode = $('.text-node-temp .text-node');
+                    // 第二层级与第一层级之间的偏移量为40
+                    this.offsetLeftLevel2 = this.opt.offsetLeftLevel2 || 40;
+                    // 第三层级与第二层级之间的偏移量为25
+                    this.offsetLeftLevel3 = this.opt.offsetLeftLevel2 || 25;
+                    // 第一层文本节点底部线条出口处的偏移量
+                    this.level1NodePathoutOffset = this.opt.textNodePathoutOffset || 20;
+                    // 第二层文本节点底部线条出口处的偏移量
+                    this.level2NodePathoutOffset = this.opt.level2NodePathoutOffset || 10;
+                    // 每个节点的高度
+                    this.textNodeHeight = this.opt.textNodeHeight || 25;
+                    // 层级间隔距离
+                    this.levelOffsetHeight = this.opt.levelOffsetHeight || 20;
+                    // children节点间的间隔距离
+                    this.level3OffsetHeight = this.opt.level3OffsetHeight || 8;
+
+
+                    // 存放需要绘制的文本节点
+                    this.textNodes = '';
+                    // 存放需要绘制的线条
+                    this.paths = '';
+
+
+                    this.init();
+
+                }
+
+                $.extend(KGTree.prototype, {
+                    constructor: KGTree,
+                    init: function() {
+                        // 重构数据结构
+                        this.initNodes();
+                        // 容器宽高
+                        this.containerWidth = this.container.innerWidth();
+                        this.containerHeight = this.container.innerHeight();
+                        // 计算树内容区的宽度
+                        this.contentWidth = this.calTreeWidth();
+                        // 计算树内容区的高度
+                        this.contentHeight = this.calTreeHeight();
+                        debugger;
+                        this.contentOffsetLeft = (this.containerWidth - this.contentWidth) / 2;
+                        this.contentOffsetTop = (this.containerHeight - this.contentHeight) / 2;
+
+                        // 画文本节点
+                        this.drawTextNodes();
+                        // 画路径
+                        this.drawPaths();
+
+                    },
+                    initNodes: function () {
+                        var me = this;
+                        this.nodes = {
+                            cur: {
+                                ent_uuid: me.data.ent_uuid,
+                                ent_name: me.data.ent_name
+                            }
+                        };
+                        if (this.hasParent) {
+                            this.nodes.parent = this.data.parent;
+                        }
+                        if (this.hasChildren) {
+                            this.nodes.children = this.data.children;
+                        }
+
+                    },
+                    /*
+                     * 初始化卡片类型
+                     * return {number}
+                     *     + 3: 当前卡片含有父节点、子节点、当前节点
+                     *     + 2：当前卡片含有父节点、当前节点
+                     *     + 1：当前卡片含有子节点、当前节点
+                     *     + 0：当前卡片只含有当前节点（此次业务应该不包含这种情况）
+                     */
+                    initCardType: function () {
+                        var cardType = -1;
+                        switch (this.level) {
+                            case 3:
+                                cardType = 3;
+                                break;
+                            case 2:
+                                cardType = (me.hasParent === 1) ? 2 : 1;
+                                break;
+                            case 1:
+                                cardType = 0;
+                                break;
+                            default:
+                                break;
+                        }
+                        return cardType;
+                    },
+                    /**
+                     * 计算树整体的宽度
+                     * + 每个节点最多20个字
+                     * + 第二层级距离第一层级节点的偏移量为this.offsetLeftLevel2
+                     * + 第三层级距离第二层级节点的偏移量为this.offsetLeftLevel3
+                     * + 第三层级距离第一层级节点的偏移量为this.offsetLeftLevel2 + this.offsetLeftLevel3
+                     */
+                    calTreeWidth: function () {
+                        var me = this;
+                       
+                        var curNodeWidth = this.tempTextNode.text(this.nodes.cur.ent_name).parent('.text-wrap').outerWidth();
+                        me.nodes.cur.width = curNodeWidth;
+
+                        // 含有父亲节点
+                        var parentNodeWidth = 0;
+                        if (this.hasParent) {
+                            parentNodeWidth = this.tempTextNode.text(this.nodes.parent.ent_name).parent('.text-wrap').outerWidth();
+                            me.nodes.parent.width = curNodeWidth;
+                        }
+
+                        // 含有子节点
+                        var childrenNodeMaxWidth = 0;
+                        if (this.hasChildren) {
+                            $.each(this.nodes.children, function(index, item) {
+                                var tempWidth = me.tempTextNode.text(item.ent_name).parent('.text-wrap').outerWidth();
+                                item.width = tempWidth;
+                                if (tempWidth > childrenNodeMaxWidth) {
+                                    childrenNodeMaxWidth = tempWidth;
+                                }
+                            });
+                        }
+                        
+                        var kgTreeWidth = 0;
+                        switch (this.cardType) {
+                            case 1:
+                                kgTreeWidth = Math.max(curNodeWidth, childrenNodeMaxWidth + this.offsetLeftLevel2);
+                            case 2:
+                                kgTreeWidth = Math.max(parentNodeWidth, curNodeWidth + this.offsetLeftLevel2);
+                            case 3:
+                                kgTreeWidth = Math.max(parentNodeWidth, curNodeWidth + this.offsetLeftLevel2, childrenNodeMaxWidth + this.offsetLeftLevel2 + this.offsetLeftLevel3);
+                            default:
+                                break;
+                        }
+
+                        return kgTreeWidth;
+
+                    },
+                    // 计算整体高度
+                    calTreeHeight: function() {
+                        var kgTreeHeight = 0;
+                        switch (this.level) {
+                            case 2:
+                                kgTreeHeight =  this.textNodeHeight * 2 + this.levelOffsetHeight;
+                                break;
+                            case 3:
+                                kgTreeHeight =  this.textNodeHeight * 2 + this.levelOffsetHeight * 2 +  this.textNodeHeight * this.childerenLength + this.level3OffsetHeight * (this.childerenLength - 1);
+                                break;
+                            default:
+                                break;
+                        }
+                        return kgTreeHeight;
+                    },
+                    // 画文本节点
+                    drawTextNodes: function () {
+                        var me = this;
+                        $.each(me.nodes, function (index, item) {
+                            switch (index) {
+                                case 'parent':
+                                    me.drawParentTextNode(item); 
+                                    break;
+                                case 'cur':
+                                    me.drawCurTextNode(item); 
+                                    break;
+                                case 'children':
+                                    me.drawChildrenTextNode(item); 
+                                    break;
+                                default:
+                                    break;
+                            }
+                        });
+                        this.container.append(this.textNodes);
+                    },
+                    // 画父节点(父亲节点肯定是在第一层)
+                    drawParentTextNode: function (data) {
+                        var parentNode = data;
+                        parentNode.height = this.textNodeHeight;
+                        parentNode.X = this.contentOffsetLeft;
+                        parentNode.Y = this.contentOffsetTop;
+                        parentNode.coords = this.setFiveCoords(parentNode);
+                        
+                        this.textNodes += this.createTextNodeStr(parentNode);
+
+                    },
+                    // 画当前节点
+                    drawCurTextNode: function (data) {
+                        var curNode = data;
+                        curNode.height = this.textNodeHeight;
+                        if (this.cardType === 1) {
+                            curNode.X = this.contentOffsetLeft;
+                            curNode.Y = this.contentOffsetTop;
+                        }
+                        else if (this.cardType === 2 || this.cardType === 3) {
+                            curNode.X = this.contentOffsetLeft + this.offsetLeftLevel2;
+                            curNode.Y = this.contentOffsetTop + this.textNodeHeight + this.levelOffsetHeight;
+                        }
+                        curNode.coords = this.setFiveCoords(curNode);
+                        this.textNodes += this.createTextNodeStr(curNode);
+
+                    },
+                    // 画子节点
+                    drawChildrenTextNode: function(data) {
+                        var me = this;
+                        var childrenNode = data;
+                        var childLength = childrenNode.length;
+                        var X = this.contentOffsetLeft;
+                        var Y = this.contentOffsetTop;
+                        if (this.cardType === 1) {
+                            X += this.offsetLeftLevel2;
+                            Y += this.textNodeHeight;
+                        }
+                        else if (this.cardType === 3) {
+                            X += (this.offsetLeftLevel2 + this.offsetLeftLevel3);
+                            Y += (this.textNodeHeight *2 + this.levelOffsetHeight * 2);
+                        }
+
+                        $.each(childrenNode, function(index, item) {
+                            item.X = X;
+                            item.Y = Y + ((me.textNodeHeight + me.level3OffsetHeight) * index);
+                            item.height = me.textNodeHeight;
+                            item.coords = me.setFiveCoords(item);
+                            me.textNodes += me.createTextNodeStr(item);
+                        });
+                        debugger;
+                    },
+                   /*
+                    * setFourCoords: 给每一个文本节点打上五个坐标点（画线条的时候会需要这些坐标点）
+                    * + 从上顺时针转分别为：c0,c1,c2,c3,c4
+                    */
+                    setFiveCoords: function (obj) {
+                        var c0 = [Math.floor(obj.X) + obj.width / 2, obj.Y];
+                        var c1 = [Math.floor(obj.X) + obj.width - 1, Math.floor(obj.Y) + obj.height / 2];
+                        var c2 = [Math.floor(obj.X) + obj.width / 2, obj.Y + obj.height];
+                        var c3 = [Math.floor(obj.X) + this.level1NodePathoutOffset, obj.Y + obj.height];
+                        var c4 = [obj.X, Math.floor(obj.Y) + obj.height / 2];
+                        return {
+                            c0: c0,
+                            c1: c1,
+                            c2: c2,
+                            c3: c3,
+                            c4: c4
+                        };
+                    },
+                    createTextNodeStr: function(node) {
+                        var textNodeStr = '<a class="text-wrap" style="left:' + node.X +'; top:' + node.Y +'">'
+                                            + '<span class="text-node">'+ node.ent_name +'</span>'
+                                        + '</a>'
+                        return textNodeStr;
+                    },
+                    // 画路径
+                    drawPaths: function () {
+                        debugger;
+                        if (this.hasParent) {// 从父亲节点出来的路径
+                            this.drawParentPath();
+                        }
+                        if (this.hasChildren) {// 从当前节点出来的路径
+                            this.drawCurPath();
+                        }
+                        this.container.append(this.paths);
+                    },
+                    // 画父节点到当前节点的线条路径
+                    drawParentPath: function () {
+                        var parentNode = this.nodes.parent;
+                        var curNode = this.nodes.cur;
+
+                        this.paths += this.createPathStr(parentNode, curNode, 'border-left-bottom');
+                    },
+                    // 画当前节点到各子节点的线条路径
+                    drawCurPath: function () {
+                        var curNode = this.nodes.cur;
+                        var me = this;
+                        var childrenLength = me.nodes.children.length;
+                        var borderType = 'border-bottom';
+                        $.each(me.nodes.children, function(index, item) {
+                            if (index === childrenLength - 1) {
+                                borderType = 'border-left-bottom';
+                            }
+                            me.paths += me.createPathStr(curNode, item, borderType);
+                        });
+                    },
+                    createPathStr: function(nodeOut, nodeIn, type) {
+                        var X = nodeOut.coords.c3[0];
+                        var Y = nodeOut.coords.c3[1];
+
+                        var W = nodeIn.coords.c4[0] - X;
+                        var H = nodeIn.coords.c4[1] - Y;
+
+                        var textNodeStr = '<div class="path ' + type + '" style="left:' + X +'; top:' + Y +'; width:'+ W+'; height:'+ H +'">'
+                                        + '</div>';
+                        return textNodeStr;
+                    },
+
+
+
+
+                });
+
+                new KGTree(data, '.kgtree-container')
+
+
+            });
+        </script>
+    </head>
+    <body>  
+        <div style="width: 890px; margin: 0 auto;">
+            <div style="height: 100px;">
+                
+            </div>
+            <div class="relative-kg">
+                 <div class="kgtree-container">
+                
+                </div>
+                <div class="text-node-temp">
+                    <a class="text-wrap">
+                        <span class="text-node">含有子节点含有子节点含有子节点含有子节点含有子节点</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
