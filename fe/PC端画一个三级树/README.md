@@ -12,7 +12,8 @@
  
 
 效果图示意图如下：
-![image](https://github.com/zuopf769/notebook/blob/master/fe/%E6%BB%9A%E5%8A%A8%E8%BF%9E%E7%BB%AD%E5%90%B8%E9%A1%B6/example.png)
+
+![image](https://github.com/zuopf769/notebook/blob/master/fe/PC%E7%AB%AF%E7%94%BB%E4%B8%80%E4%B8%AA%E4%B8%89%E7%BA%A7%E6%A0%91/kgtree.png)
 
 ### 技术选型
 
