@@ -40,8 +40,7 @@ res.header('Pragma', 'no-cache');
 相比较而言，在header中设置比设置meta标签更为靠谱一些，但是也存在两者都没效果的情况。
 
 这样看上去，浏览器历史纪录和HTTP缓存是有关系的。
-事实上不是这样的，参考 You Do Not Understand Browser History，里面的结论是：
-The browser does not respect HTTP caching rules when you click the back button.(当你点击返回按钮的时候浏览器不会遵循http缓存机制)。
+事实上不是这样的，当你点击返回按钮的时候浏览器不会遵循http缓存机制。
 
 看来浏览器也是很任性的…
 
@@ -56,7 +55,10 @@ window.onpageshow = function(event) {
 };
 ```
 
-4) JS读取读取页面的版本号，同时也记录在浏览器/webview本地（cookie/localStorage/sessionStorage）进行存储，作为本地版本号；如果版本号不一致强制刷新页面
+4) JS读取读取页面的版本号，同时也记录在浏览器/webview本地（cookie/localStorage/sessionStorage）进行存储，作为本地版本号；如果版本号不一致强制刷新页面。
+
+   逻辑其实很简单就是页面加载时，dom上绑定个版本号，跳出去时，读取版本号加1，并存到localStorage里，返回时候两个版本号对比，如果不一样就刷新，并且重新绑定页面版本号。
+   
 
 #### 小结
 
