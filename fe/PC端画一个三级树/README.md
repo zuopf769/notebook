@@ -12,7 +12,7 @@
  
 
 效果图示意图如下：
-![Alt text](/path/to/img.jpg)
+![image](https://github.com/zuopf769/notebook/blob/master/fe/%E6%BB%9A%E5%8A%A8%E8%BF%9E%E7%BB%AD%E5%90%B8%E9%A1%B6/example.png)
 
 ### 技术选型
 
