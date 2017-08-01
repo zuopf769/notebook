@@ -300,6 +300,8 @@ drawChildrenTextNode: function(data) {
 
 影响坐标的因素包括：绝对偏移量X,Y；文本节点高度； 文本节点宽度
 
+![image](https://github.com/zuopf769/notebook/blob/master/fe/PC%E7%AB%AF%E7%94%BB%E4%B8%80%E4%B8%AA%E4%B8%89%E7%BA%A7%E6%A0%91/dot.png)
+
 ```
 
 
