@@ -391,6 +391,9 @@ drawCurPath: function () {
 + 给一个飘到屏幕外面的容器来计算每个文本节点的实际宽高
 + 想要居中就需要计算树整体的宽高
 
+### 代码地址
+[demo](https://github.com/zuopf769/notebook/blob/master/fe/PC%E7%AB%AF%E7%94%BB%E4%B8%80%E4%B8%AA%E4%B8%89%E7%BA%A7%E6%A0%91/demo.html)
+
 
 
  
