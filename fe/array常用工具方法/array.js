@@ -12,7 +12,7 @@
 var indexOf = function (source, match, fromIndex) {
     var len = source.length,
         iterator = match;
-        
+    // 单竖杠可以进行取整运算，就是只保留正数部分，小数部分通过拿掉    
     fromIndex = fromIndex | 0;
     if (fromIndex < 0) {//小于0
         fromIndex = Math.max(0, len + fromIndex);
