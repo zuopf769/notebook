@@ -1,6 +1,6 @@
 /**
  * 查询数组中指定元素的索引位置
- * @name array.indexOf
+ * @name indexOf
  * @function
  * @grammar indexOf(source, match[, fromIndex])
  * @param {Array} source 需要查询的数组
@@ -30,7 +30,7 @@ module.exports.indexOf = indexOf;
 
 /**
  * 判断一个数组中是否包含给定元素
- * @name array.contains
+ * @name contains
  * @function
  * @grammar contains(source, obj)
  * @param {Array} source 需要判断的数组.
@@ -47,7 +47,7 @@ module.exports.contains = contains;
 
 /**
  * 遍历数组中所有元素
- * @name baidu.array.each
+ * @name each 
  * @function
  * @grammar each(source, iterator[, thisObject])
  * @param {Array} source 需要遍历的数组
