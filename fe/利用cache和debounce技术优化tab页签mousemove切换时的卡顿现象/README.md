@@ -1,4 +1,4 @@
-# 利用cache和debounce技术优化tab页签mousemove切换时的卡顿现象
+# 利用cache和debounce优化tab页签mouseenter切换时的卡顿现象
 
 ## 背景
 
@@ -269,5 +269,9 @@ debounced.cancel = function() {
     timer = null;
 };
 ```
+## 总结
 
++ 延迟执行不会清空上次未执行的定时器，每个定时器都还是执行，所以会有连续切换的现象，就是闪屏的现象
++ 不想要闪屏的现象，就用要防抖
++ debounce会清空上次未执行的定时器，只执行最后一个定时器，前面的都给清空掉了
 
