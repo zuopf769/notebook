@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <title>debounce</title>
+    <style>
+        #container{
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: #fff;
+            background-color: #444;
+            font-size: 30px;
+        }
+    </style>
+    <script src="debounce.js"></script>
+    <script>
+        window.onload= function () {
+            var count = 1;
+            var container = document.getElementById('container');
+
+            function getUserAction(e) {
+                container.innerHTML = count++;
+            };
+
+            var setUseAction = debounce(getUserAction, 200, false);
+
+            container.onmousemove = setUseAction;
+
+            document.getElementById("button").addEventListener('click', function(){
+                setUseAction.cancel();
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <button id="button">点击取消debounce</button>
+</body>
+
+</html>
