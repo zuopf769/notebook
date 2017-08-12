@@ -1,4 +1,4 @@
-# 利用cache和debounce技术优化tab页签mousemove切换时的卡顿现象
+# 利用cache和debounce技术优化tab页签mouseenter切换时的卡顿现象
 
 ## 背景
 
