@@ -6,7 +6,7 @@
 
 如下图：
 
-![image](https://github.com/zuopf769/notebook/blob/master/fe/%E6%BB%9A%E5%8A%A8%E8%BF%9E%E7%BB%AD%E5%90%B8%E9%A1%B6/example.png)
+![image](https://github.com/zuopf769/notebook/blob/master/fe/%E5%88%A9%E7%94%A8cache%E5%92%8Cdebounce%E4%BC%98%E5%8C%96tab%E9%A1%B5%E7%AD%BEmousemove%E5%88%87%E6%8D%A2%E7%9A%84%E5%8D%A1%E9%A1%BF/c956d3dba74c22e37371a21f311d9a6c.png)
 
 因为每个页签都是调用了后端接口，发现有卡顿的现象。
 
