@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4.0</title>
+	<style>
+	*{margin:0;padding:0;}
+	#main{position: relative;padding:20px;overflow: hidden;}
+	#main div{width: 200px;height: 200px;background: #ccc;position: absolute;border-radius: 50%;opacity: 0.6;z-index: 1;}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<p style="display: none;">11</p>
+	</div>
+
+	<script>
+		window.onload = function(){
+			var main = document.getElementById('main');
+			var num = 1+Math.floor(Math.random()*10);
+			var posX = [];
+			var posY = [];
+			var moveX = [];
+			var moveY = [];
+			var speed = [];
+			var flag = [];
+			var timer;
+			
+			
+			//根据浏览器改变窗口大小
+			window.onresize = function(){
+				var nwidth = document.documentElement.clientWidth;
+				var nheight = document.documentElement.clientHeight;
+				main.style.width = (nwidth - 40) + 'px';
+				main.style.height = (nheight - 40) + 'px';
+			}
+			onresize();
+			for(var i = 0;i < num;i++){
+				moveX[i] = true;
+				moveY[i] = true;
+				speed[i] = 2+Math.floor(Math.random()*4);
+				flag[i] = 1;
+			}
+			//随机颜色
+			var getRandomColor = function(){
+			 	return  '#' +
+			    (function(color){
+			    return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)])
+			      && (color.length == 6) ?  color : arguments.callee(color);
+			  })('');
+			}
+			//创建dom节点
+			function creat(){
+				for(var i = 0;i < num;i++){
+					var dom1 = document.createElement('div');
+					//获取随机位置
+					posX[i] = 1+Math.floor(Math.random()*1600);
+					posY[i] = 1+Math.floor(Math.random()*800);
+					dom1.style.left = posX + 'px';
+					dom1.style.top = posY + 'px';
+					dom1.style.background=getRandomColor();
+					main.appendChild(dom1);
+					dom1.id = i+'box';
+				}
+			}
+			//球与球之间的碰撞
+			function crash(ball,cnt){
+				var aballX = posX[cnt] + 100;
+				var aballY = posY[cnt] + 100;
+				var areaWL = ball.offsetLeft - 200;
+				var areaWR = ball.offsetLeft + 400;
+				var areaHT = ball.offsetTop - 200;
+				var areaHB = ball.offsetTop + 400;
+				for(var i = 0;i < num;i++){
+					if(i != cnt){
+						var div = document.getElementById(i+'box');
+						var bballX = posX[i] + 100;
+						var bballY = posY[i] + 100;
+						if((bballX >= areaWL && bballX <= areaWR) && (bballY >= areaHT && bballY <= areaHB)){
+							var lX = aballX - bballX;
+							var lY = aballY - bballY;
+							var len = lX*lX + lY*lY;
+							if(len <= 40000){
+								if(bballX > aballX){
+									if(bballY > aballY){
+										moveX[cnt] = true;
+										moveY[cnt] = true;
+									}else if(bballY < aballY){
+										moveX[cnt] = true;
+										moveY[cnt] = false;
+									}else{
+										moveX[cnt] = true;
+									}
+								}else if(bballX < aballX){
+									if(bballY > aballY){
+										moveX[cnt] = false;
+										moveY[cnt] = true;
+									}else if(bballY < aballY){
+										moveX[cnt] = false;
+										moveY[cnt] = false;
+									}else{
+										moveX[cnt] = false;
+									}
+								}else if(bballX = aballX){
+									if(bballY > aballY){
+										moveY[cnt] = true;
+									}else if(bballY < aballY){
+										moveY[cnt] = false;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			//移动
+			function move(box,cnt,sp){
+				if(moveX[cnt]){
+					if(posX[cnt] > 0){
+						posX[cnt]-=sp;
+						box.style.left = posX[cnt] + 'px';
+						crash(box,cnt);
+					}else{
+						moveX[cnt] = false;
+					}
+				}else{
+					if(posX[cnt] < main.clientWidth - box.offsetWidth){
+						posX[cnt]+=sp;
+						box.style.left = posX[cnt] + 'px';
+						crash(box,cnt);
+					}else{
+						moveX[cnt] = true;
+					}
+				}
+				if(moveY[cnt]){
+					if(posY[cnt] > 0){
+						posY[cnt]-=sp;
+						box.style.top = posY[cnt] + 'px';
+						crash(box,cnt);
+					}else{
+						moveY[cnt] = false;
+					}
+				}else{
+					if(posY[cnt] < main.clientHeight - box.offsetHeight){
+						posY[cnt]+=sp;
+						box.style.top = posY[cnt] + 'px';
+						crash(box,cnt);
+					}else{
+						moveY[cnt] = true;
+					}
+				}
+			}
+			function start(){
+				timer = setInterval(function(){
+					for(var i = 0;i < num;i++){
+						if(flag[i]==1){
+							var div = document.getElementById(i+'box');
+							move(div,i,speed[i]);
+						}
+					}
+				},15);
+			}
+			creat();
+			//拖拽效果
+			for(var i = 0;i < num;i++){
+				var drag = document.getElementById(i+'box');
+				drag.onmousedown = function(event){
+					var alias = this;
+					var index = parseInt(this.id);
+					flag[index] = 0;
+					var event = event || window.event;
+					var tmpX = event.clientX - this.offsetLeft;
+					var tmpY = event.clientY - this.offsetTop;
+					if(event.preventDefault){
+						event.preventDefault();
+					}else{
+						event.returnValue = false;
+					}
+					document.onmousemove = function(event){
+						var event = event || window.event;
+						var endX = event.clientX - tmpX;
+						var endY = event.clientY - tmpY;
+						var mouseX = main.clientWidth - alias.offsetWidth;
+						var mouseY = main.clientHeight - alias.offsetHeight;
+						
+						if(endX >= mouseX){
+							endX = mouseX;
+						}
+						if(endX <= 0){
+							endX = 0;
+						}
+						if(endY >= mouseY){
+							endY = mouseY;
+						}
+						if(endY <= 0){
+							endY = 0;
+						}
+
+						posX[index] = endX;
+						posY[index] = endY
+						alias.style.left = posX[index] + 'px';
+						alias.style.top = posY[index] + 'px';
+					}
+					document.onmouseup = function(){
+						document.onmousemove = null;
+						flag[index] = 1;
+					}
+				}
+			}
+			start();
+		}
+	</script>
+</body>
+</html>
