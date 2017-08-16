@@ -1,0 +1,56 @@
+/************************************************
+ * AMStars 2.0
+ * Amysql.com 
+ * @param Javascript
+ * Update:2013-11-15
+ * 
+ */
+#amstars_body {
+	font-size: 12px;
+	font-family:Arial,宋体;
+	margin:0px;
+	padding:0px;
+	color: #446C95;
+}
+#amstars_list {
+	width:500px;
+	height:110px;
+	margin:30px;
+}
+.amstars_show {
+	margin: 5px 10px 0px;
+	width: 120px;
+	float: left;
+	display: inline-block;
+}
+.amstars {
+	position: relative;
+	height: 17px;
+	width: 105px;
+	background: url(../images/amstars.gif) repeat-x -42px -19px;
+	margin:5px 0px;
+	overflow: hidden;
+	display: block;
+	height: 38px;
+}
+
+.amstars_val {
+	background: url(../images/amstars.gif) repeat-x top left;
+	height: 17px;
+	float: left;
+	margin:0px;
+	display:block;
+}
+.amstars span {
+	bottom: 0;
+    cursor: pointer;
+    font-size: 12px;
+    left: 0;
+    position: absolute;
+}
+
+#amstars_footer{
+	margin:30px;
+	font-size:12px;
+	color:#969696;
+}
