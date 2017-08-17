@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <style type="text/css">
+            span {
+                font: 40px / 1 Courier;
+                font-weight: bold;
+            }
+            .control {
+                font: 12px /1 Arial;
+            }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script src="numberAnimate.js"></script>
+         <script>
+            $(function(){
+                var $span = $('span');
+                $span.numberAnimate();
+                
+                $('input[type=text]').keypress(function(e){
+                    if(e.which === 13){
+                        e.preventDefault();
+                        $span.numberAnimate('set', $(this).val());
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <span>123.00</span> 
+        <div class="control">
+            Set value to: <input type="text" />
+        </div>
+    </body>
+</html>

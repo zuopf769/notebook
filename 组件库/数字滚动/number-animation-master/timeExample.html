@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <style type="text/css">
+            #time {
+                padding: 5px;
+                margin: 5px;
+                background-color: black;
+                color: white;
+                font-size: 20px;
+                line-height: 1.5;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+            .control {
+                font: 12px /1 Arial;
+            }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script src="numberAnimate.js"></script>
+         <script>
+            $(function(){
+                var $span = $('#time span');
+                $span.numberAnimate({
+                    animationTimes: [100, 500, 100]
+                });
+                
+                var interval;
+                var intervalSet = false;
+                var start = function(){
+                    if(intervalSet) return;
+                    interval = setInterval(function(){
+                        var value = $span.numberAnimate('val') * 1 + 1;
+                         $span.numberAnimate('set', value);
+                    }, 1000);
+                    intervalSet = true;
+                };
+
+                var stop = function(){
+                    clearInterval(interval);
+                    intervalSet = false;
+                };
+                
+                $('#start').click(function (e) {
+                    e.preventDefault();
+                    start();
+                });
+                            
+                $('#stop').click(function (e) {
+                    e.preventDefault();
+                    stop();
+                });
+                
+                 $('#reset').click(function (e) {
+                    e.preventDefault();
+                    var going = intervalSet;
+                    stop();
+                    $span.numberAnimate('set', 0, [0,0,100]);
+                    if(going) start();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="time">
+            Time Run: <span>0</span>s
+        </div>
+        <div class="control">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </body>
+</html>
