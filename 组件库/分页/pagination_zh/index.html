@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery Pagination分页插件</title>
+<style type="text/css">
+body{font-size:84%; color:#333333; line-height:1.4;}
+a{color:#34538b; text-decoration:none;}a:hover{color:#333333; text-decoration:underline;}
+h3{margin:1.5em 0 0.4em;}
+#link{background:#f5f5f5; border-left:0.4em solid #cccccc; padding:0.3em 0 0.3em 0.6em;}
+code{font:12px 'Courier New', Courier, Fixed; color:#003399;}
+.zxx_code{padding:0.9em; margin:0.4em 0; font-size:12px; background:#eeeeee; border:1px dashed #cccccc; clear:both; zoom:1;}
+.zxx_code pre{margin:0; color:#00F; white-space:pre-wrap; word-wrap:break-word;}
+.params_table{background:#a0b3d6; font-size:12px;}
+.params_table th{background:#f0f3f9; font-weight:bold; text-align:center;}
+.params_table td{background:#f9f9f9; padding:2px 4px;}
+</style>
+</head>
+
+<body>
+<h1>jQuery Pagination分页插件</h1>
+<div id="link">
+	原项目地址：<a href="http://plugins.jquery.com/project/pagination">http://plugins.jquery.com/project/pagination</a><br />
+    版本：v1.2<br />
+    源文件下载：<a href="http://plugins.jquery.com/files/jquery_pagination.zip">英文原版</a>
+    翻译：<a href="http://www.zhangxinxu.com">张鑫旭</a>
+</div>
+<h3>demo实例页面</h3>
+<ul>
+	<li><a href="demo.html">基本demo页面</a></li>
+    <li><a href="demo_ajax.html">Ajax demo页面</a></li>
+    <li><a href="demo_options.html">参数可编辑demo页面</a></li>
+</ul>
+<h3>插件简介</h3>
+<ul>
+	<li>此jQuery插件为Ajax分页插件，一次性加载，故分页切换时无刷新与延迟，如果数据量较大不建议用此方法，因为加载会比较慢。</li>
+    <li>原插件CSS不太合理，使用浮动，故无法方便实现左右方向的定位，且未清除浮动，在中文修改版中我对其进行了优化，使其支持text-align的定位。</li>
+</ul>
+<h3>使用方法</h3>
+跟一般的jQuery插件一样，此插件使用也很简单便捷。方法是<code>pagination</code>，例如<code>$("#page").pagination(100);</code>
+<h3>参数</h3>
+<table class="params_table" width="80%" border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <th scope="col">参数名</th>
+    <th scope="col">描述</th>
+    <th scope="col">参数值</th>
+  </tr>
+  <tr>
+    <td>maxentries</td>
+    <td>总条目数</td>
+    <td>必选参数，整数</td>
+  </tr>
+  <tr>
+    <td>items_per_page</td>
+    <td>每页显示的条目数</td>
+    <td>可选参数，默认是10</td>
+  </tr>
+  <tr>
+    <td>num_display_entries</td>
+    <td>连续分页主体部分显示的分页条目数</td>
+    <td>可选参数，默认是10</td>
+  </tr>
+  <tr>
+    <td>current_page</td>
+    <td>当前选中的页面</td>
+    <td>可选参数，默认是0，表示第1页</td>
+  </tr>
+  <tr>
+    <td>num_edge_entries</td>
+    <td>两侧显示的首尾分页的条目数</td>
+    <td>可选参数，默认是0</td>
+  </tr>
+  <tr>
+    <td>link_to</td>
+    <td>分页的链接</td>
+    <td>字符串，可选参数，默认是&quot;#&quot;</td>
+  </tr>
+  <tr>
+    <td>prev_text</td>
+    <td>“前一页”分页按钮上显示的文字</td>
+    <td>字符串参数，可选，默认是&quot;Prev&quot;</td>
+  </tr>
+  <tr>
+    <td>next_text</td>
+    <td>“下一页”分页按钮上显示的文字</td>
+    <td>字符串参数，可选，默认是&quot;Next&quot;</td>
+  </tr>
+  <tr>
+    <td>ellipse_text</td>
+    <td>省略的页数用什么文字表示</td>
+    <td>可选字符串参数，默认是&quot;...&quot;</td>
+  </tr>
+  <tr>
+    <td>prev_show_always</td>
+    <td>是否显示“前一页”分页按钮</td>
+    <td>布尔型，可选参数，默认为true，即显示“前一页”按钮</td>
+  </tr>
+  <tr>
+    <td>next_show_always</td>
+    <td>是否显示“下一页”分页按钮</td>
+    <td>布尔型，可选参数，默认为true，即显示“下一页”按钮</td>
+  </tr>
+  <tr>
+    <td>callback</td>
+    <td>回调函数</td>
+    <td>默认无执行效果</td>
+  </tr>
+</table>
+<h3>举例</h3>
+例如下面的使用代码：
+<div class="zxx_code">
+<pre>
+$("#Pagination").pagination(56, {
+    num_edge_entries: 2,
+    num_display_entries: 4,
+    callback: pageselectCallback,
+    items_per_page:1
+});
+</pre>
+</div>
+这段代码表示的含义是：总共有56(maxentries)个列表项，首尾两侧分页显示2(num_edge_entries)个，连续分页主体数目显示4(num_display_entries)个，回调函数为pageselectCallback(callback)，每页显示的列表项为1(items_per_page)个。
+<p>&nbsp;</p>
+<p>Copyright &copy; <a href="http://www.zhangxinxu.com/wordpress/">张鑫旭-鑫空间-鑫生活</a></p>
+</body>
+</html>

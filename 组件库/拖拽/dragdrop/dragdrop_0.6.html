@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>dragdrop_0.5.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 	<style type="text/css">
+ 		body {margin:0;padding:0;}	
+ 	</style>
+	<script type="text/javascript" src="dragdrop_0.6.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var container = document.getElementById('container');
+			var ele = document.getElementById('d1');
+			var bodyWidth = container.offsetWidth,
+				bodyHeight = container.offsetHeight;
+			var maxX = bodyWidth - ele.offsetWidth - 10;
+			var maxY = bodyHeight - ele.offsetHeight - 10;
+			var dd = new Dragdrop({
+				target : ele,
+				area : [0,maxX,0,maxY],
+				callback : function(obj){
+					if(typeof obj.moveX == 'number' && this.dragX){
+						document.getElementById('x').innerHTML = 'x:'+obj.moveX;
+					}
+					if(typeof obj.moveY == 'number' && this.dragY){
+						document.getElementById('y').innerHTML = 'y:'+obj.moveY;	
+					}
+				}
+			});	
+			document.getElementById('setting').onclick = function(e){
+				e = e || event;
+				var target = e.target || e.srcElement;
+				if(target.value == '1' && target.checked){
+					dd.dragAll();
+				}				
+				if(target.value == '2' && target.checked){
+					dd.dragX();
+				}
+				if(target.value == '3' && target.checked){
+					dd.dragY();
+				}
+				if(target.value == '4' && target.checked){
+					dd.setDragable(false);
+				}
+				if(target.value == '5' && target.checked){
+					dd.setDragable(true);
+				}
+				if(target.value == '6' && target.checked){
+					dd.reStore();
+					document.getElementById('x').innerHTML = 'x:0';
+					document.getElementById('y').innerHTML = 'y:0';
+				}
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+  	<div style="width:600px;height:20px;margin:10px auto;">
+  		拖拽状态：<span id="x">x:0</span>, <span id="y">y:0</span>
+	</div>
+	
+  	<div id="container" style="position:relative;border:5px solid gray;width:600px;height:300px;margin:0 auto;">
+		<div id="d1" style="width:100px;height:50px;background:gold;text-align:center;position:absolute;left:0px;top:0px;">
+			Drag me.
+		</div>  		
+	</div>
+	<div id="setting" style="width:600px;margin:20px auto;">
+		<input id="f1" type="radio" value="1" name="flag"/><label for="f1">任意方向</label>
+		<input id="f2" type="radio" value="2" name="flag"/><label for="f2">水平方向</label>
+		<input id="f3" type="radio" value="3" name="flag"/><label for="f3">垂直方向</label>
+		<input id="f4" type="radio" value="4" name="flag"/><label for="f4">停止拖拽</label>
+		<input id="f5" type="radio" value="5" name="flag"/><label for="f5">开启拖拽</label>
+		<input id="f6" type="radio" value="6" name="flag"/><label for="f6">恢复初始状态</label>
+	</div>
+  </body>
+</html>

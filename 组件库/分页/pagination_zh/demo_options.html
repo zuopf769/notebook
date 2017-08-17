@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery Pagination分页插件参数可编辑demo</title>
+<link rel="stylesheet" href="lib/pagination.css" />
+<style type="text/css">
+body{font-size:84%; color:#333333; line-height:1.4;}
+a{color:#34538b;}
+#Searchresult{width:300px; padding:20px; background:#f0f3f9;}
+</style>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery.pagination.js"></script>
+<script type="text/javascript">
+$(function(){
+	//总数目
+	var length = $("#hiddenresult .show").length;
+	//从表单获取分页元素参数
+	var optInit = getOptionsFromForm();
+	$("#Pagination").pagination(length, optInit);
+	
+	// 按钮事件
+	$("#setoptions").click(function(){
+		var opt = getOptionsFromForm();
+		// 重新创建分页参数
+		$("#Pagination").pagination(length, opt);
+	}); 	
+	//-----------------------------------
+	function getOptionsFromForm(){
+		var opt = {callback: pageselectCallback};
+		// 从文本域中收集参数 - 这些空间名与参数名相对应
+		$("input:text").each(function(){
+			opt[this.name] = this.className.match(/numeric/) ? parseInt(this.value) : this.value;
+		});
+		//避免demo重引入HTML
+		var htmlspecialchars ={ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;"}
+		$.each(htmlspecialchars, function(k,v){
+			opt.prev_text = opt.prev_text.replace(k,v);
+			opt.next_text = opt.next_text.replace(k,v);
+		})
+		return opt;
+	}
+	//-------------------------------
+	function pageselectCallback(page_index, jq){
+		// 从表单获取每页的显示的列表项数目
+		var items_per_page = $("#items_per_page").val();
+		var max_elem = Math.min((page_index+1) * items_per_page, length);
+		
+		$("#Searchresult").html("");
+		// 获取加载元素
+		for(var i=page_index*items_per_page;i<max_elem;i++){
+			$("#Searchresult").append($("#hiddenresult .show:eq("+i+")").clone());
+		}
+		//阻止单击事件
+		return false;
+	}
+});
+</script>
+</head>
+
+<body>
+<h1>jQuery Pagination分页插件ajax demo</h1>
+<div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
+<h3>列表内容显示</h3>
+<div id="Searchresult">分页初始化完成后这里的内容会被替换。</div>
+<div id="hiddenresult" style="display:none;">
+	<!-- 列表元素 -->
+    <script type="text/javascript">
+		var html = "";
+		for(var i=1; i<101; i+=1){
+			html += '<dl class="show"><dt><strong>这是标题'+i+'</strong></dt><dd>这是标题'+i+'下的内容1</dd><dd>这是标题'+i+'下的内容2</dd></dl>';	
+		}
+		document.getElementById("hiddenresult").innerHTML = html;
+	</script>
+</div>
+<h3>每页参数配置表单</h3>
+<!-- 此表单用来证明一些参数的作用 -->
+<form name="paginationoptions">
+    <p><label for="items_per_page">每页显示的列表数：</label><input type="text" value="5" name="items_per_page" id="items_per_page" class="numeric"/></p>
+    <p><label for="num_display_entries">分页链接显示数：</label><input type="text" value="10" name="num_display_entries" id="num_display_entries" class="numeric"/></p>
+    <p><label for="num">起始与结束点的数目：</label><input type="text" value="2" name="num_edge_entries" id="num_edge_entries" class="numeric"/></p>
+    <p><label for="prev_text">“上一页”标签：</label><input type="text" value="Prev" name="prev_text" id="prev_text"/></p>
+    <p><label for="next_text">“下一页”标签：</label><input type="text" value="Next" name="next_text" id="next_text"/></p>
+    <input type="button" id="setoptions" value="设置选项" />
+</form>
+<p>Copyright &copy; <a href="http://www.zhangxinxu.com/wordpress/">张鑫旭-鑫空间-鑫生活</a></p>
+</body>
+</html>
