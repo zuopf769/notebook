@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #con{
+      cursor:pointer;
+      border: solid #89b5e9 6px;
+      border-radius: 10px;
+      width: 1172px;
+      margin: 0 auto;    
+    }
+      *{
+      margin: 0;
+      padding: 0;
+    }
+    thead{
+      color: #bcc2cd;
+    }
+    thead div{
+      font-size: 20px;
+      font-family: Lucida Grande,Verdana,Microsoft Yahei;
+      color: #2a4564;
+    }
+    table{
+      border-collapse: collapse;
+      margin:72px auto;
+    }
+    td{
+      width: 160px;
+      height: 114px;
+      border: 1px solid #bcc2cd;
+      font-family: Georgia,"Times New Roman",Times,serif;
+      font-size: 22px/1.5;
+      vertical-align: top;
+      }
+    #dxx_date{
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head> 
+<body>
+<input type="text" id="dxx_date">
+<div id="con" >
+ 
+</div>
+<script type="text/javascript" src="datepicker.js"></script>
+<script>
+   var datepaciker1 = new Datepaciker({
+        container: '#slider1',
+      });
+
+      datepaciker1.init();
+
+</script>
+</body>
+
+
+</html>
+
