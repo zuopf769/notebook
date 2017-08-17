@@ -85,7 +85,7 @@ module.exports.get = get;
  * 设置cookie的值，不对值进行编码
  * @name setRaw
  * @function
- * @grammar baidu.cookie.setRaw(key, value[, options])
+ * @grammar cookie.setRaw(key, value[, options])
  * @param {string} key 需要设置Cookie的键名
  * @param {string} value 需要设置Cookie的值
  * @param {Object} [options] 设置Cookie的其他可选参数
