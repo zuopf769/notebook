@@ -1,7 +1,3 @@
-/**
- * @file: smallFlow.js
- * @author: yanglei07@baidu.com
- */
 
 var _ = require('lodash');
 
