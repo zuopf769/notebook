@@ -56,8 +56,8 @@ var smallArray = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
 
 ```
 if (xxxUid && (xxxUid === '812347'
-    || baiduId === '37FFDF'
-    || baiduId === 'C113D3')) {
+    || xxxUid === '37FFDF'
+    || xxxUid === 'C113D3')) {
     smallflow = 1;
 }
 ```
