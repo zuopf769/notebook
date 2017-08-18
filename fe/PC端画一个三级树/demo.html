@@ -213,10 +213,13 @@
                         switch (this.cardType) {
                             case 1:
                                 kgTreeWidth = Math.max(curNodeWidth, childrenNodeMaxWidth + this.offsetLeftLevel2);
+                                 break;
                             case 2:
                                 kgTreeWidth = Math.max(parentNodeWidth, curNodeWidth + this.offsetLeftLevel2);
+                                 break;
                             case 3:
                                 kgTreeWidth = Math.max(parentNodeWidth, curNodeWidth + this.offsetLeftLevel2, childrenNodeMaxWidth + this.offsetLeftLevel2 + this.offsetLeftLevel3);
+                                break;
                             default:
                                 break;
                         }
