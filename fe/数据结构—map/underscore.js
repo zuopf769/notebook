@@ -1,5 +1,4 @@
 /**
- * @author harttle(yangjvn@126.com)
  * @file underscore.js
  */
 
