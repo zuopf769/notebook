@@ -71,7 +71,7 @@ function parsing(req, res, total) {
 
     var cookies = req.cookies || {};
 
-    var baiduId = cookies.XXXUID || '';
+    var xxxuId = cookies.XXXUID || '';
 
     if (!xxxuId) {
         return;
