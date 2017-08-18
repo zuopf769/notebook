@@ -124,6 +124,8 @@ if (smallflow === 0) {
 
 [demo](https://github.com/zuopf769/notebook/tree/master/fe/%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E5%81%9A%E5%B0%8F%E6%B5%81%E9%87%8F%E5%AE%9E%E9%AA%8C/code)
 
+> node端的一个代码示例：在根路由层拦截到请求，根据cookie来判断是否命中小流量，命中则301到新的url
+
 
 
 
