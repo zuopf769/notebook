@@ -1,6 +1,5 @@
 /**
  * @file Map Data Structure for JavaScript
- * @author harttle<yangjun14@baidu.com>
  *
  * Types of keys supported: String, RegExp
  */
