@@ -1,7 +1,3 @@
-/**
- * @file: smallFlow.js
- * @author: yanglei07@baidu.com
- */
 
 var _ = require('lodash');
 
@@ -75,7 +71,7 @@ function parsing(req, res, total) {
 
     var cookies = req.cookies || {};
 
-    var baiduId = cookies.XXXUID || '';
+    var xxxuId = cookies.XXXUID || '';
 
     if (!xxxuId) {
         return;
