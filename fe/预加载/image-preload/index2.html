@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>图片预加载-无序加载</title>
+  <style>
+    html, body{
+      height: 100%;
+    }
+    body, p, ul, li {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      background-color: #eee;
+    }
+    .box {
+      margin: 150px 0 0 200px;
+    }
+    #face-btn {
+      display: block;
+      color: #333;
+    }
+    a{
+      text-decoration: none;
+    }
+    li {
+      list-style-type: none;
+    }
+    .panel {
+      display: none;
+      width: 600px;
+      padding: 2px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+    .loading {
+      text-align: center;
+    }
+    .list li {
+      display: inline-block;
+      width: 100px;
+      height: 130px;
+      border: 1px solid #fff;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    .list li img {
+      width: 100%;
+    }
+    .list li:hover {
+      border-color: #06c;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <a href="javascript:;" id="face-btn">打开表情</a>
+    <div class="panel">
+      <p class="loading">
+        表情加载中，请稍后。。。
+      </p>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/preload.js"></script>
+  <script>
+    var $btn = $('#face-btn'),
+        $panel = $('.panel');
+    var imgs = ['./img/qq/00.gif','./img/qq/01.gif','./img/qq/02.gif','./img/qq/03.gif','./img/qq/04.gif','./img/qq/05.gif','./img/qq/06.gif',
+  './img/qq/07.gif','./img/qq/08.gif','./img/qq/09.gif','./img/qq/10.gif','./img/qq/11.gif','./img/qq/12.gif','./img/qq/13.gif'];
+    var len = imgs.length;
+    $btn.on('click', function(e) {
+      e.stopPropagation();
+      $panel.show();
+      $.preload(imgs, {
+        all: function() {
+          var html = "";
+          html += '<ul class="list">';
+          for(var i=0; i<len; i++) {
+            html += '<li><img src="' + imgs[i] + '" alt="" /></li>';
+          }
+          html += '</ul>';
+          setTimeout(function() {
+            $panel.html(html);
+          }, 500)
+        }
+      })
+    });
+    $(document).on('click', function() {
+      $panel.click(function() {
+        return false;
+      })
+      $panel.hide();
+    })
+  </script>
+</body>
+</html>
