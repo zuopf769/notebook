@@ -8,7 +8,7 @@ var wrapCallback = function(type, callback, errorCallback) {
     callback = $.isFunction(callback) ? callback : noop;
 
     return function(data, textStatus, jqXHR) {
-
+        // globelHandler主要功能是——装饰真正的回调函数，在回调之前或者后可以执行全局通用的方法
         var globelHandler = T.ajax[type];
 
         switch (type) {
