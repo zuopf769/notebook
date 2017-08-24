@@ -1,7 +1,7 @@
 
-var string = require('wkcommon:widget/ui/lib/string/string.js'),
-object = require('wkcommon:widget/ui/lib/object/object.js'),
-lang = require('wkcommon:widget/ui/lib/lang/lang.js');
+var string = require('widget/ui/lib/string/string.js'),
+object = require('widget/ui/lib/object/object.js'),
+lang = require('widget/ui/lib/lang/lang.js');
 
 /**
 * 对字符串进行%#&+=以及和\s匹配的所有字符进行url转义
