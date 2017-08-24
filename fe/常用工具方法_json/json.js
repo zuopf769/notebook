@@ -189,7 +189,7 @@ module.exports.stringify = stringify;
  * 将json对象序列化，为过时接口，今后会被baidu.json.stringify代替
  * @name json.encode
  * @function
- * @grammar baidu.json.encode(value)
+ * @grammar json.encode(value)
  * @param {JSON} value 需要序列化的json对象
  * @meta out
  * @see json.decode,json.stringify
