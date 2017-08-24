@@ -1,0 +1,596 @@
+/* iconfont使用 */
+
+/*使用方法<i class="iconfont">&#x33</i>*/
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('/static/font/iconfont.eot');
+    /* IE9*/
+    src: url('/static/font/iconfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/static/font/iconfont.woff') format('woff'),
+    /* chrome、firefox */
+    url('/static/font/iconfont.ttf') format('truetype'),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('/static/font/iconfont.svg#uxiconfont') format('svg');
+    /* iOS 4.1- */
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font-family: "\5FAE\8F6F\96C5\9ED1", "Hiragino Sans GB";
+}
+/*新规范tab样式*/
+
+.ui-bz-tab:after {
+    clear: both;
+}
+.ui-bz-tab:before,
+.ui-bz-tab:after {
+    display: table;
+    content: " ";
+}
+.ui-bz-tab {
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+    display: inline-block;
+}
+.ui-bz-tab a {
+    color: black;
+    text-decoration: none;
+}
+.ui-bz-tab li {
+    position: relative;
+    display: block;
+}
+.ui-bz-tab li a {
+    position: relative;
+    display: block
+}
+.ui-bz-tab-pills li {
+    float: left;
+    margin-left: 5px;
+    height: 28px;
+    line-height: 28px;
+    *line-height: 27px;
+    _line-height: 28px;
+    background: #f2f2f2;
+}
+.ui-bz-tab-pills li a {
+    padding: 0 12px;
+    font-size: 16px;
+    color: black;
+}
+.ui-bz-tab-pills li.active {
+    background: #20b888;
+}
+.ui-bz-tab-pills li.active a {
+    color: white;
+}
+.ui-bz-tab-pops {
+    border-bottom: 1px solid #e6e3e3;
+    list-style: none;
+}
+.ui-bz-tab-pops li {
+    float: left;
+}
+.ui-bz-tab-pops li a {
+    margin-right: 2px;
+    border: 1px solid transparent;
+    -border: 1px solid white;
+    padding: 12px 8px 8px;
+    position: relative;
+}
+.ui-bz-tab-pops li.active {
+    position: relative;
+    top: 1px;
+}
+.ui-bz-tab-pops li.active a {
+    color: #20b888;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    _border-bottom-color: white;
+    border-top: 3px solid #20b888;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+.ui-bz-tab-wrapper {
+    position: relative
+}
+.ui-bz-tab-bottoms {
+    border-bottom: 1px solid #e6e3e3;
+    list-style: none;
+    position: relative;
+}
+.ui-bz-tab-bottoms li {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.ui-bz-tab-bottoms li.active a {
+    color: #20b888;
+}
+.ui-bz-tab-bottoms li a {
+    padding: 12px 0px;
+}
+.js_border {
+    position: absolute;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    *top: 0px;
+    _top: 21px;
+    width: 0px;
+    border: 0px solid #20b888;
+    border-bottom-width: 3px;
+    bottom: 0px;
+}
+/*新规范button样式*/
+
+.ui-bz-btc {
+    _top: 2px;
+    position: relative;
+    font-weight: normal;
+}
+.ui-bz-btn {
+    color: #fff;
+    border: 0px;
+    border-radius: 2px;
+    background: #fd8a23;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    cursor: pointer;
+    position: relative;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-btn:hover {
+    background: #ff9f49;
+    text-decoration: none;
+}
+.ui-bz-btn-senior {
+    color: #fff;
+    border: 0px;
+    border-radius: 2px;
+    background: #2fad85;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    position: relative;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-btn-senior:hover {
+    background: #3fba93;
+    text-decoration: none;
+}
+.ui-bz-btn-junior {
+    color: #30b188;
+    border: 1px solid #a1d5c4;
+    border-radius: 2px;
+    background: #d3f9eb;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    position: relative;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-btn-junior:hover {
+    background: #e1fdf3;
+    text-decoration: none;
+    border: 1px solid #73c7ac;
+}
+.ui-bz-btn-normal {
+    color: #828282;
+    border-radius: 2px;
+    border: 1px solid #d0d0d0;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    text-decoration: none;
+    position: relative;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#f2f2f2));
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-btn-normal:hover {
+    text-decoration: none;
+    border: 1px solid #c4c4c4;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#f6f6f6));
+}
+.ui-bz-btn-disable {
+    color: #c7c7c7;
+    border: 0px;
+    cursor: not-allowed;
+    border-radius: 2px;
+    background: #F6F6F6;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    position: relative;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-btn-p-40 {
+    display: block;
+    *zoom: 1;
+    *display: inline;
+    font-size: 20px;
+    height: 44px;
+    line-height: 44px;
+    *line-height: 43px;
+    padding: 0px 40px;
+}
+.ui-bz-btn-p-16 {
+    display: block;
+    *zoom: 1;
+    *display: inline;
+    font-size: 18px;
+    height: 36px;
+    line-height: 36px;
+    *line-height: 35px;
+    padding: 0px 16px;
+}
+.ui-bz-btn-p-15 {
+    display: block;
+    *zoom: 1;
+    *display: inline;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    *line-height: 25px;
+    padding: 0px 15px;
+}
+/*新规范doc样式*/
+
+.ui-bz-doc {
+    border: 0px solid #dbdbdb;
+    width: 98px;
+    height: 128px;
+    text-align: center;
+    position: relative;
+}
+.ui-bz-doc a span.ui-bz-bg-hover {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    _left: 3px;
+    width: 98px;
+    height: 130px;
+    cursor: pointer;
+    background-color: #000;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+.ui-bz-doc a b.ic-read {
+    position: absolute;
+    display: none;
+    z-index: 3;
+    cursor: pointer;
+    top: 38px;
+    left: 21px;
+    padding-top: 35px;
+    color: #fff;
+    font-size: 14px;
+    background-position: -9999px -9999px;
+}
+.ui-bz-doc a:hover b.ic-read {
+    display: inline-block;
+    text-decoration: none;
+    background-position: -126px -1315px;
+}
+.ui-bz-doc a:hover span.ui-bz-bg-hover {
+    opacity: .3;
+    filter: alpha(opacity=30);
+    visibility: visible;
+}
+.ui-bz-doc a {
+    .doc-img, .xls-img, .docx-img, .xlsx-img, .pptx-img, .pdf-img, .txt-img, .wps-img, .et-img, .dps-img, .vsd-img, .rtf-img, .pot-img, .pps-img, .epub-img {
+        width: 96px;
+        height: 127px;
+        padding: 1px 1px 2px;
+        background-position: left -682px;
+        border-bottom-width: 2px;
+    }
+    .ppt-img {
+        width: 92px;
+        height: 66px;
+        padding: 3px 3px 61px;
+        background-position: left -1180px;
+    }
+}
+.ui-bz-bg-index,
+ul.ui-bz-squr li,
+ul.ui-bz-notice-wrap li {
+    background: url(https://edu-wenku.bdimg.com/icms_transform/img/iknow/wenku/wkcss/images/bg_index.png) no-repeat scroll;
+    _background: url(https://edu-wenku.bdimg.com/icms_transform/img/iknow/wenku/wkcss/images/bg_index_ie6.png) no-repeat scroll;
+}
+.ui-bz-doc p.author {
+    position: absolute;
+    top: 94px;
+    left: 2px;
+    z-index: 3;
+}
+.ui-bz-doc p.author img {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    padding: 2px;
+}
+.ui-bz-doc b.ic-hotdoc {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 1px;
+    width: 30px;
+    font-size: 12px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    font-family: arial;
+    color: #fff;
+    background-color: #81c9b2;
+}
+.ui-bz-doc b.ic-paydoc {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 1px;
+    font-size: 12px;
+    padding: 0px 4px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    font-family: arial;
+    color: #fff;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    background-color: #9c9c9c;
+}
+.ui-bz-doc b.ic-introdoc {
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    width: 40px;
+    height: 24px;
+    background: transparent url('https://edu-wenku.bdimg.com/icms_transform/img/iknow/wenku/wkcss/images/bg_pgc.png') no-repeat scroll;
+    _background: transparent url('https://edu-wenku.bdimg.com/icms_transform/img/iknow/wenku/wkcss/images/bg_pgc_ie6.png') no-repeat scroll;
+    background-position: left -237px;
+}
+.ui-bz-doc b.ic-topdoc {
+    color: white;
+    position: absolute;
+    font-size: 14px;
+    font-weight: lighter;
+    bottom: 0;
+    left: 0;
+    width: 98px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #000;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.ui-bz-doc b.ic-topdoc span.top-icon {
+    display: inline-block;
+    width: 9px;
+    height: 10px;
+    margin-left: 4px;
+    background: transparent url('https://edu-wenku.bdimg.com/icms_transform/img/iknow/wenku/wkcss/images/bg_pgc.png') no-repeat scroll;
+    _background: transparent url('https://edu-wenku.bdimg.com/icms_transform/img/iknow/wenku/wkcss/images/bg_pgc_ie6.png') no-repeat scroll;
+    background-position: -12px -220px;
+    position: relative;
+    left: -3px;
+}
+.ui-bz-doc.small {
+    border: 0px solid #dbdbdb;
+    width: 70px;
+    height: 90px;
+    text-align: center;
+    position: relative;
+}
+.ui-bz-doc.small a {
+    .doc-img, .xls-img, .docx-img, .xlsx-img, .pptx-img, .pdf-img, .txt-img, .wps-img, .et-img, .dps-img, .vsd-img, .rtf-img, .pot-img, .pps-img, .epub-img {
+        width: 68px;
+        height: 88px;
+        border: 1px solid #e2e2e2;
+        padding: 0px;
+    }
+}
+.ui-bz-doc.small a span.ui-bz-bg-hover {
+    width: 70px;
+    height: 90px;
+}
+.ui-bz-doc.small a:hover b.ic-read {
+    width: 60px;
+    display: inline-block;
+    top: 24px;
+    left: 9px;
+}
+.ui-bz-doc .ic-introdoc,
+.ui-bz-doc .ic-topdoc {
+    display: none;
+    cursor: pointer;
+}
+.ui-bz-doc:hover .ic-introdoc,
+.ui-bz-doc:hover .ic-topdoc {
+    display: inline-block;
+}
+/*新规范avatar样式*/
+
+.ui-bz-avatar {
+    border-radius: 3px;
+}
+.ui-bz-wb-avatar {
+    border-radius: 3px;
+    border: 3px solid #fff;
+}
+.ui-bz-avatar:hover {
+    opacity: 0.7;
+    filter: Alpha(Opacity=70);
+}
+.ui-bz-wb-avatar:hover {
+    opacity: 0.7;
+    filter: Alpha(Opacity=70);
+}
+.ui-bz-avatar-100-100 {
+    width: 100px;
+    height: 100px;
+}
+.ui-bz-avatar-80-80 {
+    width: 80px;
+    height: 80px;
+}
+.ui-bz-avatar-60-60 {
+    width: 60px;
+    height: 60px;
+}
+.ui-bz-avatar-40-40 {
+    width: 40px;
+    height: 40px;
+}
+.ui-bz-avatar-30-30 {
+    width: 30px;
+    height: 30px;
+}
+/*新规范ui样式*/
+
+.ui-bz-ipt {
+    width: 253px;
+    height: 32px;
+    line-height: 32px;
+    color: #555;
+    font-size: 14px;
+    outline: none;
+    padding-left: 8px;
+    border: 1px solid #dbdbdb;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-ipt-bgw {
+    background: #fdfdfd;
+}
+.ui-bz-ipt-bgb {
+    background: #fff;
+}
+.ui-bz-ipt:focus {
+    box-shadow: 1px 1px #E2E4E3 inset;
+    border-color: #4abb97;
+}
+.ui-bz-select {
+    width: 152px;
+    height: 34px;
+    line-height: 34px;
+    color: #555;
+    font-size: 14px;
+    position: relative;
+    border: 1px solid #dbdbdb;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-select:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+.ui-bz-select .ui-bz-select-word {
+    position: relative;
+    _top: 2px;
+    padding-left: 8px;
+}
+.ui-bz-select ul {
+    top: 0px;
+    left: -1px;
+    position: relative;
+    width: 152px;
+    display: none;
+    background: #fff;
+    border: 1px solid #CACACA;
+    _position: absolute;
+    _top: 34px;
+}
+.ui-bz-select .ui-bz-li-gray {
+    color: #999;
+}
+.ui-bz-select ul li {
+    color: #555;
+    font-size: 14px;
+    padding-left: 15px;
+    height: 28px;
+    line-height: 28px;
+    text-align: left;
+}
+.ui-bz-select ul li:hover {
+    background: #F6F6F6;
+}
+.ui-bz-select ul li a {
+    color: #555;
+    text-decoration: none;
+}
+.ui-bz-link {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-link:hover {
+    text-decoration: underline;
+}
+.ui-bz-link-green {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-link-green:hover {
+    color: #19a97b;
+    text-decoration: underline;
+}
+.ui-bz-hot-ic {
+    width: 26px;
+    height: 18px;
+    display: inline-block;
+    background: url('/static/assets/ic-hot.png') no-repeat 2px 2px;
+}
+.ui-bz-new-ic {
+    width: 26px;
+    height: 18px;
+    display: inline-block;
+    background: url('/static/assets/ic-new.png') no-repeat 2px 2px;
+}
+.ui-bz-pager-inner .ui-bz-cur {
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    background: #28b385;
+    border: 1px solid #28b385;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-pager-inner a {
+    color: #555;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    background: #fff;
+    margin-left: 6px;
+    text-decoration: none;
+    border: 1px solid #dbdbdb;
+    font-family: '微软雅黑', '冬青黑体', '宋体', arial;
+}
+.ui-bz-pager-inner a:hover {
+    background: #f6f6f6;
+}

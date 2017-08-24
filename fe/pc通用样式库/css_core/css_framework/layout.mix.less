@@ -1,0 +1,71 @@
+
+#hd:before,
+#bd:before,
+#ft:before,
+.clearfix:before,
+#hd:after,
+#bd:after,
+#ft:after,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+#hd:after,
+#bd:after,
+#ft:after,
+.clearfix:after {
+	clear: both;
+}
+
+#hd,#bd,#ft,.clearfix {
+	*zoom: 1;
+}
+
+#doc {
+	_text-align: left;
+	margin:0 auto;
+}
+
+
+.main {
+	display: table-cell;
+	*display: block;
+	width: auto;
+	_position: relative;
+	_right: -3px;
+	_margin-left: -3px;
+}
+
+.body, .main {
+	*zoom: 1;
+}
+
+.body:after, .main:after {
+	clear: both;
+	display: block;
+	visibility: hidden;
+	overflow: hidden;
+	height: 0 !important;
+	line-height: 0;
+	font-size: xx-large;
+	content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
+
+/* 全站导航更新，为了实现通栏*/
+.page {
+	width: 100%;
+}
+
+#hd .top-search-box,
+.ui-nav .inner,
+#bd {
+	width:980px;
+	margin:0 auto;
+}
+
+#hd {
+	width: auto!important;
+}
+
+.aside{float: right;_display:inline;width: 230px;margin-left: 10px;}
+.footer{text-align:center;}

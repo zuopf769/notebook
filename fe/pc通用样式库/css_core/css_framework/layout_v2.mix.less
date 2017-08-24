@@ -1,0 +1,47 @@
+/*
+ * 由于宽屏布局，替换layout.css为layout_v2.css
+ * Date: 2013-11-13
+ * @author zhangchen08(@baidu.com)
+ */
+
+#hd:before,
+#bd:before,
+#ft:before,
+.clearfix:before,
+#hd:after,
+#bd:after,
+#ft:after,
+.clearfix:after {
+	content: "";
+    display: table;
+}
+
+#hd:after,
+#bd:after,
+#ft:after,
+.clearfix:after {
+	clear: both;
+}
+
+#hd,#bd,#ft,.clearfix {
+    *zoom: 1;
+}
+
+#bd,#ft {
+    margin: 0 auto;
+}
+
+.body {
+    *zoom: 1;
+}
+
+.body:after {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0 !important;
+    line-height: 0;
+    font-size: xx-large;
+    content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}

@@ -1,0 +1,160 @@
+/*
+CSS内置的常用 mixin 如下，
+
+//hacks
+@fis-has-layout //为IE元素添加hasLayout
+@fis-ie6-hack //ie6 hack
+
+//clearfix
+@fis-clearfix //清除浮动(不需要添加额外标签)
+@fis-clear //清除浮动
+
+//float
+@fis-float //浮动(解决IE5/IE6双margin问题) 
+
+//link
+@fis-unstyled-link //简单链接样式(无下划线)
+@fis-hover-link //默认无下划线，悬浮出现下划线
+@fis-link-colors //链接颜色样式设置
+
+//list
+@fis-no-bullets //清除list样式
+@fis-horizontal-list //水平列表样式
+@fis-inline-block-list //inline-block列表样式
+@fis-inline-list //inline列表样式
+
+//table
+@fis-alternating-rows-and-columns //表格条纹样式
+@fis-outer-table-borders //设置表格外边框
+@fis-inner-table-borders //设置表格内边框
+
+//text
+@fis-nowrap //文本不折行
+@fis-wrap //文本折行
+
+//css3
+@fis-opacity //透明度
+@fis-min-height //最小高度
+@fis-min-widt //最小宽度
+@fis-border-radius //圆角
+@fis-box-shadow //阴影
+@fis-transition //过渡变换
+@fis-background-clip //背景的裁剪区域
+@fis-content-columns //设置多列布局的列宽和列数属性
+@fis-gradient-horizontal //水平渐变
+@fis-gradient-vertical //垂直渐变
+@fis-gradient-directional //按角度渐变
+@fis-inline-block //inline-block
+
+//grid
+@fis-container //设置容器
+@fis-column //设置列
+@fis-last //设置列为最后一列
+@fis-prepend //在左侧插入空白
+@fis-append //在右侧插入空白
+*/
+/* ==|== non-semantic helper classes ========================================
+    常用的css classes 
+   ========================================================================== */
+
+
+/* 图片替换文字隐藏 image replace*/
+.ir { 
+    display: inline-block; 
+    border: 0; 
+    line-height:999em; 
+    overflow: hidden; 
+    background-color: transparent;
+    background-repeat: no-repeat;
+    text-align: left; 
+    direction: ltr; 
+    *line-height: 0; 
+    vertical-align: middle;
+    outline:none;/* 去掉线虚框，ie下使用hidefocus="true"  */
+}
+.ir b { 
+    display: none; 
+}
+
+/* 隐藏 */
+.hidden { 
+    display: none !important; 
+    visibility: hidden; 
+}
+
+/* 视觉上隐藏但可以复制,可以用于隐藏flash而不让其中断 */
+.visuallyhidden { 
+    border: 0;
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0;
+    position: absolute; 
+    width: 1px; 
+}
+
+/* 让visuallyhidden隐藏后在active和focus时通过键盘导航 */
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus { 
+    clip: auto; 
+    height: auto; 
+    margin: 0; 
+    overflow: visible; 
+    position: static; 
+    width: auto; 
+}
+
+/* 隐藏元素但占据位置 */
+.invisible { visibility: hidden; }
+
+.word-break-all,
+.break-word {
+    word-wrap: break-word;
+    overflow: hidden
+}
+
+/* 将元素设为inline-block */
+.ib {
+    display: -moz-inline-stack;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    position: relative;
+    *position: static
+}
+
+.act {
+    float: right;
+}
+
+.gbma-d,.gbma-r,.gbma-u{
+    position: relative;
+    border-style: solid;
+    border-color: transparent;
+    _border-color: #fff;
+    display: inline-block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 0;
+    border-width: 3px 3px;
+    left: 4px;
+    top: -1px;
+}
+.gbma-d{
+    border-top-color: #333;
+    border-bottom-width: 0;
+    padding-top: 1px;
+}
+.gbma-r{
+    border-left-color: #333;
+    border-right-width:0;
+    padding-top: 0px;
+}
+.gbma-u{
+    border-bottom-color: #333;
+    border-top-width: 0;
+    padding-top: 0px;
+}

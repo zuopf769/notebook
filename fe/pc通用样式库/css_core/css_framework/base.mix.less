@@ -1,0 +1,120 @@
+/*
+ * base.css
+ * 基础样式及helper
+ * @project: common
+ * @author: Mr.Q
+ * @date: 2012.01.20
+ * @copyright
+ * @colordef
+ */
+
+@import (reference) '/widget/ui/css_core/css_framework/variables.mix.less';
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: auto;
+    _text-align: center;
+}
+
+img {
+    vertical-align: middle;
+}
+
+label,button {
+    cursor: pointer;
+    _cursor: hand;
+}
+
+abbr[title],acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+em,.em {
+    font-style: italic;
+}
+
+strong,.strong {
+    font-weight: bold;
+}
+
+a {
+    color: @linkColor;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    /*color: @activeColor;*/
+    text-decoration: underline;
+}
+ 
+h1,.h1 {
+    font-size:      @h1FontSize;
+    font-weight:    @h1FontWeight;
+    color:          @h1Color;
+}
+
+h2,.h2 {
+    font-size:      @h2FontSize;
+    font-weight:    @h2FontWeight;
+    color:          @h2Color;
+}
+h3,.h3 {
+    font-size:      @h3FontSize;
+    font-weight:    @h3FontWeight;
+    color:          @h3Color;
+}
+h4,.h4 {
+    font-size:      @h4FontSize;
+    font-weight:    @h4FontWeight;
+    color:          @h4Color;
+}
+h5,.h5 {
+    font-size:      @h5FontSize;
+    font-weight:    @h5FontWeight;
+    color:          @h5Color;
+}
+h6,.h6 {
+    font-size:      @h6FontSize;
+    font-weight:    @h6FontWeight;
+    color:          @h6Color;
+}
+
+.c-gray3{
+    color:#333;
+}
+.c-gray6{
+    color:#666;
+}
+.c-gray9{
+    color:#999;
+}
+.c-orange{
+    color:  @orangeColor;
+}
+.c-red{
+    color:  @redColor;
+}
+.c-read-red{
+    color:  @readRedColor;
+}
+.c-green{
+    color:  @greenColor;
+}
+
+body{ 
+    color:          #333;
+}
+
+/* 空链接class fix ie6 空链接bug */
+html{
+    _background: url(about:blank) fixed;
+}
+.elink{
+    _background: url(about:blank);
+}
