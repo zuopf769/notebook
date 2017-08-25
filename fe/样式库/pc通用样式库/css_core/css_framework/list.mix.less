@@ -1,0 +1,45 @@
+/*
+ * list.css
+ * 列表基础样式
+ * @project: common
+ * @author: Mr.Q
+ * @date: 2012.01.20
+ * @copyright
+ */
+
+.list:before,
+.list:after{
+    content: '';
+    display: table;
+}
+.list:after {
+    clear: both;
+}
+.list{
+    *zoom:1;
+}
+
+.list li .act,.title .act {
+    float: right;
+}
+.list-dot li {
+    background-repeat: no-repeat;
+    text-indent: 10px
+}
+.list-num .num {
+    margin-right: 10px;
+
+}
+/* icon*/
+.list-num .num {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 0;
+    vertical-align: middle;
+    font-size: 0;
+    line-height: 9999em;
+    overflow: hidden;
+    position: relative;
+    *position: static;
+}

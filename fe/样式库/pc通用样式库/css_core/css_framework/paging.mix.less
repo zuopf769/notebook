@@ -1,0 +1,54 @@
+/*
+ * paginator.css
+ * 分页
+ * @project: common
+ * @author: Mr.Q
+ * @date: 2012.01.20
+ */
+
+/* paginator */
+.paginator{
+    *zoom: 1;
+    padding: 20px 0;
+}
+.paginator:before,
+.paginator:after {
+    content: '';
+    display: table;
+}
+.paginator:after {
+    clear: both;
+}
+.paginate-counter {
+    float: right;
+}
+.paging {
+    float: left;
+}
+.paging li{
+    margin-right:2px;
+    float:left;
+    _display:inline;
+}
+.paging a {
+    margin-right:2px;
+}
+.paging .previous.disabled,
+.paging .next.disabled {
+    float:left;
+    margin-right:2px;
+    _display:inline;
+}
+.paging .next a,
+.paging .previous a {
+    font-weight:bold;
+}
+.paging .current {
+    font-weight:bold;
+    float:left;
+    vertical-align: middle;
+}
+.paging a {
+    float:left;
+    text-decoration:none;
+}

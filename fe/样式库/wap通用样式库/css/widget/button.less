@@ -1,0 +1,166 @@
+
+/*
+ * button.less
+ * 按钮可以使用a或者button标签。
+ * wap上要触发按钮的active态，必须触发ontouchstart事件，可以在body上加上ontouchstart=""全局触发。
+ * 按钮常见的操作场景：确定、取消、警示，分别对应class：weui_btn_primary、weui_btn_default、weui_btn_warn。
+ * 每种场景都有自己的置灰态weui_btn_disabled，除此外还有一种镂空按钮weui_btn_plain_xxx。
+ * 客户端webview里的按钮尺寸有两类，默认宽度100%，小型按钮宽度自适应，两边边框与文本间距0.75em。
+ * @project: common/widget/button
+ * @author: zuopengfei01@baidu.com
+ * @date: 2015.11.21
+ *
+ */
+@import "../base/variable.less";
+ .ui_btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: @button-fontsize;
+    text-align: center;
+    text-decoration: none;
+    color: @button-fontcolor;
+    line-height: unit(@button-height/@button-fontsize);
+    border-radius: @button-border-radius;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    /*
+    &:after {
+        content: " ";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(0, 0, 0, .2);
+        transform: scale(.5);
+        transform-origin: 0 0;
+        box-sizing: border-box;
+        border-radius: @button-border-radius*2;
+    }
+    */ 
+    &.ui_btn_inline {
+        display: inline-block;
+    }
+}
+
+// diabale状态
+// --------------------------------------------------------------
+.ui_btn_disabled {
+    color: @button-disabled-font-color;
+    &.ui_btn_default {
+        color: @button-default-disabled-font-color;
+    }
+}
+
+// 蓝色按钮
+// <a href="javascript:;" class="ui_btn ui_btn_primary">按钮</a>
+// <a href="javascript:;" class="ui_btn ui_btn_disabled ui_btn_primary">按钮</a>
+// ---------------------------------------------------------------------------------------
+.ui_btn_primary {
+    background-color: @button-primary-bg;
+    &:not(.ui_btn_disabled):visited {
+        color: @button-fontcolor;
+    }
+    &:not(.ui_btn_disabled):active {
+        color: @button-active-font-color;
+        background-color: @button-primary-active-bg;
+    }
+}
+
+// 红色按钮
+// <a href="javascript:;" class="ui_btn ui_btn_warn">确认</a>
+// <a href="javascript:;" class="ui_btn ui_btn_disabled ui_btn_warn">确认</a>
+// ------------------------------------------------------------
+.ui_btn_warn {
+    background-color: @button-warn-bg;
+    &:not(.ui_btn_disabled):visited {
+        color: @button-fontcolor;
+    }
+    &:not(.ui_btn_disabled):active {
+        color: @button-active-font-color;
+        background-color: @button-warn-active-bg;
+    }
+}
+
+// 默认按钮（淡灰色背景）
+// <a href="javascript:;" class="ui_btn ui_btn_default">按钮</a>
+// <a href="javascript:;" class="ui_btn ui_btn_disabled ui_btn_default">按钮</a>
+// -----------------------------------------------------------------------------
+.ui_btn_default {
+    background-color: @button-default-bg;
+    color: @button-default-font-color;
+    &:not(.ui_btn_disabled):visited {
+        color: @button-default-font-color;
+    }
+    &:not(.ui_btn_disabled):active {
+        color: @button-default-active-font-color;
+        background-color: @button-default-active-bg;
+    }
+}
+
+// 镂空按钮（边框有特定颜色）
+//  <a href="javascript:;" class="ui_btn ui_btn_plain_default">按钮</a>
+//  <a href="javascript:;" class="ui_btn ui_btn_plain_primary">按钮</a>
+// --------------------------------------------------------------------------------
+.ui_btn_plain_primary {
+    color: @button-primary-bg;
+    border: 1px solid @button-primary-bg;
+    button&, input& {
+        border-width: 1px;
+        background-color: transparent;
+    }
+    &:active {
+        border-color: @button-primary-active-bg;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+
+.ui_btn_plain_default {
+    color: #5A5A5A;
+    border: 1px solid #5A5A5A;
+    button&, input& {
+        border-width: 1px;
+        background-color: transparent;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+
+
+// 小按钮
+// <a href="javascript:;" class="ui_btn ui_btn_mini ui_btn_primary">按钮</a>
+// <a href="javascript:;" class="ui_btn ui_btn_mini ui_btn_default">按钮</a>
+//--------------------------------------------------------------
+.ui_btn {
+    &.ui_btn_mini {
+        line-height: @button-mini-height;
+        font-size: @button-mini-fontsize;
+        padding: 0 .75em;
+        display: inline-block;
+    }
+}
+
+// button和input类型的按钮
+// ------------------------------------------------------------
+button, input {
+    &.ui_btn {
+        width: 100%;
+        border-width: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &.ui_btn_inline,&.ui_btn_mini {
+        width: auto;
+    }
+}

@@ -1,0 +1,38 @@
+
+/*
+ * gkui.less
+ * 入口css
+ * @project: common/css/gkui
+ * @author: zuopengfei01@baidu.com
+ * @date: 2015.11.22
+ *
+ */
+
+@charset "UTF-8";
+
+// base
+@import "base/variable.less";
+@import "base/reset.less";
+// mixin
+@import "mxins/_mixins.less";
+@import "mxins/border.less";
+// 组件
+@import "widget/grid.less";
+@import "widget/icon.less";
+@import "widget/button.less";
+@import "widget/animate.less";
+@import "widget/card.less";
+
+
+
+/**
+ * clearfix
+ * @type {[type]}
+ */
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden
+}

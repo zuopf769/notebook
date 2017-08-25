@@ -1,0 +1,191 @@
+
+/*
+ * reset.css
+ * 基于yui and normalize.css
+ * @project: common/base/reset
+ * @author: zuopengfei01@baidu.com
+ * @date: 2015.11.21
+ *
+ */
+
+// 清除margin和padding
+//----------------------------------------------
+@import "variable.less";
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+header,
+hgroup,
+nav,
+section,
+article,
+aside,
+footer,
+figure,
+figcaption,
+menu,
+button {
+    margin: 0;
+    padding: 0;  
+}
+
+// h5标签处理
+//-------------------------------------------------------------------------------
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+main, 
+nav, 
+section, 
+summary {
+    display: block;
+}
+
+audio, 
+canvas, 
+progress, 
+video { 
+    display: inline-block; 
+    vertical-align: baseline; 
+}
+
+// Use box sizing on all the things!
+//--------------------------------------------------------------------------------
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout:none;
+}
+
+// html,body撑满全屏
+//--------------------------------------------------------------------------------- 
+html, body {
+    height: 100%;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+// 字体家族, 字体大小, 行高, 字体颜色, 背景色
+//---------------------------------------------------------------------------------
+body {
+    font-family: @font-family-default;
+    font-size: @font-size-default;
+    line-height: 1.2;
+    color: @color-txt;
+    background-color: @color-bg;  
+    overflow-x: hidden;
+    outline: 0;  
+}
+
+// li不使用项目符号
+//--------------------------------------------------------------------------------
+ul,li {
+    list-style: none;
+}
+
+// img去除边框、居中显示
+//---------------------------------------------------------------------------------
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+// Universal link styling
+//---------------------------------------------------------------------------------
+a {
+    color: @color-link;
+    text-decoration: none;
+    -webkit-touch-callout:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); // Removes the dark touch outlines on links in webkit browsers.
+    -webkit-tap-highlight-color: transparent; 
+
+    &:active {
+        color: @color-link-active;
+    }
+}
+
+// 去掉斜体
+// ----------------------------------------------------------------------------------
+em,i {
+    font-style: normal;  
+}
+
+// table
+// ----------------------------------------------------------------------------------
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th {
+    text-align: left;
+}
+
+// button
+// ----------------------------------------------------------------------------------
+button{
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+}
+
+
+// input框去除选中高亮、设置placeholder颜色
+//-----------------------------------------------------------------------------------
+input {
+    outline: none;
+}
+
+input[type="text"],
+input[type="tel"] {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 去除iphone ipad 设备默认按钮样式 */
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] {
+    -webkit-appearance: none;
+    border-radius: 0; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder { 
+    color: #cccccc; 
+}
+

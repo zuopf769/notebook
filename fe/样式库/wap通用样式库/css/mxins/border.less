@@ -1,0 +1,139 @@
+
+/*
+ * border.less
+ * 一像素边框解决方案
+ * "bottom" and "right" hairlines are made using :after pseudo elements
+ * "left" and "top" hairlines are made using :before pseudo elements
+ * @project: common/mxins/border
+ * @author: zuopengfei01@baidu.com
+ * @date: 2015.11.22
+ *
+ */
+
+@import "../base/variable.less";
+@import "_mixins.less";
+
+// 上边框
+// ------------------------------------------------------------------------------------
+.ui-hairline(@position,
+    @color: @border-color) when (@position = top) {
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -1px;
+        bottom: auto;
+        right: auto;
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px solid @color;
+        background-color: @color;
+        display: block;
+        z-index: 15;
+        .transform-origin(50% 0%);
+        .transform(scaleY(0.5));
+
+    }
+}
+
+.ui-border-top {
+    .ui-hairline(top);
+}
+
+// 左边框
+// ---------------------------------------------------------------------------------
+.ui-hairline(@position,
+    @color: @border-color) when (@position = left) {
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: auto;
+        right: auto;
+        width: 1px;
+        height: 100%;
+        border-bottom: 1px solid @color;
+        display: block;
+        z-index: 15;
+        .transform-origin(0% 50%);
+        .transform(scaleX(0.5));
+
+    }
+}
+
+.ui-border-left {
+    .ui-hairline(left);
+}
+
+// 下边框
+// ---------------------------------------------------------------------------------
+.ui-hairline(@position,
+    @color: @border-color) when (@position = bottom) {
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        top: auto;
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px solid @color;
+        display: block;
+        z-index: 15;
+        .transform-origin(50% 100%);
+        .transform(scaleY(0.5));
+    }
+}
+
+.ui-border-bottom {
+    .ui-hairline(bottom);
+}
+
+// 右边框
+// -----------------------------------------------------------------------------------
+.ui-hairline(@position, @color: @border-color) when (@position = right) {
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: auto;
+        bottom: auto;
+        width: 1px;
+        height: 100%;
+        border-bottom: 1px solid @color;
+        display: block;
+        z-index: 15;
+        .transform-origin(100% 50%);
+        .transform(scaleX(0.5));
+    }
+}
+.ui-border-right {
+    .ui-hairline(right);
+}
+
+// 四边框
+// ----------------------------------------------------------------------------------
+.ui-hairline-all(@color: @border-color,
+    @border-radius: 0) {
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid @color;
+        border-radius: @border-radius;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 200%;
+        height: 200%;
+        .transform(scale(0.5));
+        .transform-origin(left top);
+    }
+}
+
+.ui-border-all {
+    .ui-hairline-all;
+}
