@@ -1,7 +1,6 @@
 
 /**
  * @file support.js
- * @author Mr.Q(robbenmu)
  */
 
 
