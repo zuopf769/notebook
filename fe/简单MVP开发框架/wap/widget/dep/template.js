@@ -1,6 +1,5 @@
 /**
  * @file template.js
- * @author Mr.Q(robbenmu)
  * @description undersocre template
  */
 
