@@ -1,6 +1,5 @@
 /**
  * @file event.ortchange.js
- * @author Mr.Q(robbenmu)
  */
 
 
