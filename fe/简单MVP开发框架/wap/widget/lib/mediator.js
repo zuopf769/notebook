@@ -1,6 +1,5 @@
 /**
  * @file mediator.js
- * @author Mr.Q(robbenmu)
  * @desc 中介者
  */
 
