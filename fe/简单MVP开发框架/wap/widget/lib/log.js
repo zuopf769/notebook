@@ -1,6 +1,5 @@
 /**
  * @file log.js
- * @author linuo
  **/
 
 var staticsList = require('./staticsList.js');
