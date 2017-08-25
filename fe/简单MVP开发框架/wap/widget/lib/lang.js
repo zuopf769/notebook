@@ -1,6 +1,5 @@
 /**
  * @file lang.js
- * @author Mr.Q(robbenmu)
  */
 
 /* eslint-disable */
@@ -22,7 +21,7 @@ var $$ = window[_guid] = window[_guid] || {
  * 返回一个当前页面的唯一标识字符串。
  * @name baidu.lang.guid
  * @function
- * @grammar baidu.lang.guid()
+ * @grammar lang.guid()
  * @version 1.1.1
  * @meta standard
  *
@@ -46,15 +45,15 @@ module.exports.guid = guid;
 /**
  * Tangram继承机制提供的一个基类，用户可以通过继承baidu.lang.Class来获取它的属性及方法。
  * @class
- * @name    baidu.lang.Class
- * @grammar baidu.lang.Class(guid)
+ * @name    lang.Class
+ * @grammar lang.Class(guid)
  * @param   {string}    guid    对象的唯一标识
  * @meta standard
- * @remark baidu.lang.Class和它的子类的实例均包含一个全局唯一的标识guid。guid是在构造函数中生成的，
- * 因此，继承自baidu.lang.Class的类应该直接或者间接调用它的构造函数。
- * <br>baidu.lang.Class的构造函数中产生guid的方式可以保证guid的唯一性，及每个实例都有一个全局唯一的guid。
+ * @remark lang.Class和它的子类的实例均包含一个全局唯一的标识guid。guid是在构造函数中生成的，
+ * 因此，继承自lang.Class的类应该直接或者间接调用它的构造函数。
+ * <br>lang.Class的构造函数中产生guid的方式可以保证guid的唯一性，及每个实例都有一个全局唯一的guid。
  * @meta standard
- * @see baidu.lang.inherits,baidu.lang.Event
+ * @see lang.inherits,lang.Event
  */
 
 var _instances = $$._instances = $$._instances = {};
@@ -99,8 +98,8 @@ module.exports.isString = isString;
 /**
  * 自定义的事件对象。
  * @class
- * @name    baidu.lang.Event
- * @grammar baidu.lang.Event(type[, target])
+ * @name    lang.Event
+ * @grammar lang.Event(type[, target])
  * @param   {string} type    事件类型名称。为了方便区分事件和一个普通的方法，事件类型名称必须以"on"(小写)开头。
  * @param   {Object} [target]触发事件的对象
  * @meta standard
