@@ -1,6 +1,5 @@
 /**
  * @file detect.js
- * @author Mr.Q(robbenmu)
  */
 
 
