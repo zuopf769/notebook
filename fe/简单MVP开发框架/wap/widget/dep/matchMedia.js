@@ -1,6 +1,5 @@
 /**
  * @file matchMedia.js
- * @author Mr.Q(robbenmu)
  */
 
 
