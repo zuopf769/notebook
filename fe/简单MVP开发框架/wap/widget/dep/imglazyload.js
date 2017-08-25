@@ -1,6 +1,5 @@
 /**
  * @file imglazyload.js
- * @author Mr.Q(robbenmu)
  */
 
 
