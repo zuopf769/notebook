@@ -1,6 +1,5 @@
 /**
  * @file highlight.js
- * @author Mr.Q(robbenmu)
  */
 
 
