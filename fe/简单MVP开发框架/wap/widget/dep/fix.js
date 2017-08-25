@@ -1,6 +1,5 @@
 /**
  * @file fix.js
- * @author Mr.Q(robbenmu)
  */
 
 
