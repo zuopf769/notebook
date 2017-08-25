@@ -1,6 +1,5 @@
 /**
  * @file position.js
- * @author Mr.Q(robbenmu)
  */
 
 
