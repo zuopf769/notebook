@@ -1,5 +1,7 @@
 ## 使用html5 postMessage解决与嵌套的iframe跨域消息传递
 
+> 左鹏飞 2017.08.25
+
 ### 1. 背景
 
 最近有个需求是通过iframe的形式接入第三方的视频播放落地页：
@@ -155,4 +157,5 @@ window.addEventListener('message', function (event) {
 ```
 
 7. 兼容IE的写法
+
 [代码地址](https://github.com/zuopf769/notebook/blob/master/fe/%E4%BD%BF%E7%94%A8html5%20postMessage%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E3%80%81%E8%B7%A8%E7%AA%97%E5%8F%A3%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92/postMessage.js)
