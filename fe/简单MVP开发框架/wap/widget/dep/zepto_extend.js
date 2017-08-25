@@ -1,6 +1,5 @@
 /**
  * @file zepto_extend.js
- * @author Mr.Q(robbenmu)
  */
 
 var $ = Zepto;
