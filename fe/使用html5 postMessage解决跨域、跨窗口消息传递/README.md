@@ -1,4 +1,4 @@
-## 使用html5 postMessage解决跨域、跨窗口消息传递
+## 使用html5 postMessage解决与嵌套的iframe跨域消息传递
 
 ### 1. 背景
 
