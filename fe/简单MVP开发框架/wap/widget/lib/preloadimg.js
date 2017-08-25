@@ -1,6 +1,5 @@
 /**
  * @file preloadimg.js
- * @author Mr.Q(robbenmu)
  */
 
 
