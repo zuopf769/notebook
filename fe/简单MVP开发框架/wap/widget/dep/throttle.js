@@ -1,6 +1,5 @@
 /**
  * @file throttle.js
- * @author Mr.Q(robbenmu)
  */
 
 
