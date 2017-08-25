@@ -1,6 +1,5 @@
 /**
  * @file event.scrollStop.js
- * @author Mr.Q(robbenmu)
  */
 
 
