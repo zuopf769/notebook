@@ -146,3 +146,10 @@ roadmap: {
 + 打印编译过程的详细文件路径信息
 + 图片的格式不能随便由jepg改完png
 + verbose选项就是尽可能多的输出的意思
+
+## 参考文档
+
+[fis](http://fex-team.github.io/fis-site/docs/api/fis-conf.html#roadmap)
+[yog2](http://fex.baidu.com/yog2/docs/basic/cli.html#命令行)
+[verbose](https://zhidao.baidu.com/question/210543319.html)
+[grep -R](http://blog.csdn.net/yongan1006/article/details/8134401)
