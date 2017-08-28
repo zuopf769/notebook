@@ -62,6 +62,7 @@ npm root -g
 
 ```
 cd /usr/local/lib/node_modules
+// -r表示递归查询
 grep -r 'pngcrush' ./
 
 ```
