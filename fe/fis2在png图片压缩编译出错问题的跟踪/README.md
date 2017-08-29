@@ -140,7 +140,26 @@ roadmap: {
             },
         ],
 ```
-
+ps: 可以通过关掉所有png图片压缩，来验证是不是图片压缩还有问题，导致编译卡住
+```
+roadmap: {
+        path: [
+            {
+                reg: '/client/widget/ui/lib/echarts.common.min.js',
+                useOptimizer: false,
+                release: '/static/widget/ui/lib/echarts.common.min.js'
+            },
+            {
+                reg: '**.png',
+                useOptimizer: false
+            },{
+                reg: /paper\/*.js/,
+                jswrapper: {
+                    type: 'amd'
+                }
+            },
+        ],
+```
 ## 总结
 
 + 打印编译过程的详细文件路径信息
