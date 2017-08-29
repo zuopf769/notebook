@@ -140,6 +140,8 @@ roadmap: {
             },
         ],
 ```
+ps：注意要加`release: '/static/widget/ui/lib/echarts.common.min.js'`否则echarts.common.min.js会丢失，可以通过 find --name 'echarts.common.min.js' ./查找验证
+
 ps: 可以通过关掉所有png图片压缩，来验证是不是图片压缩还有问题，导致编译卡住
 ```
 roadmap: {
