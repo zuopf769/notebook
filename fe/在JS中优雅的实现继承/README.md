@@ -139,6 +139,16 @@ reg[reg.length] = constructorHook;
     }
 ```
 
+### 5. 继承
+
+`inherits = function (subClass, superClass, type) {`
+
+### 6. 创建一个lang.Class的单例实例
+
+`var createSingle = function (json) {`
+
+### 7.
+
 
 
 
