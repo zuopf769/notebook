@@ -1,7 +1,5 @@
 /**
  * Zepto picLazyLoad Plugin
- * 西门 http://ons.me/484.html
- * 20140517 v1.0
  */
 
 ;(function($){
