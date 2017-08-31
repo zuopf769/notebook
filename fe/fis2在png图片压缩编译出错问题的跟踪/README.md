@@ -2,11 +2,11 @@
 
 ### 问题描述
 
-我们有个topic模块，专门用来放专题页面；图片会很多，每次编译都话10多分钟，今天我再次开发上线时，发现根本都编译不过去。
+我们有个topic模块，专门用来放专题页面；图片会很多，每次编译都画10多分钟，今天我再次开发上线时，发现根本都编译不过去。
 控制台一直报：
 
 ```
-While measuring IDATs in /Users/baidu/work/baidu/gaokao/g pngcrush caught libpng error:
+While measuring IDATs in xxx/g pngcrush caught libpng error:
    Not a PNG file..
 ```
 
