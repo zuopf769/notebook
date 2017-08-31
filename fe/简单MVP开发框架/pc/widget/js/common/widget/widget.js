@@ -3,19 +3,17 @@
  * @description ui组件基类
  */
 
-var object = require('../lib/object.js');
-var lang = require('../lib/lang.js');
-var array = require('../lib/array.js');
+var object = require('../lib/object/object.js');
+var lang = require('../lib/lang/lang.js');
+var array = require('../lib/array/array.js');
 var util = require('./util.js');
 
 var emptyFn = function () {};
 var mix = util.mix;
 
-
 /**
  * widget ui组件基类
- * @version 1.1
- * @author Mr.Q(robbenmu)
+ * @version 1.4
  * @class
  * @param  {Object} proto  会将该object挂载在这个widget返回函数的prototype上
  * @param  {Object|Null} method 该widget的的一些类型及继承父类、插件
@@ -23,27 +21,24 @@ var mix = util.mix;
  */
 
 var widget = function (proto, method) {
-    proto = mix(proto || {}, {
-        el: '',
-        elements: {},
-        events: {},
-        // 默认选项
-        Options: {
-        }
-
-    });
-
     method = mix(method || {}, {
         prefix: 'widget',
         // 类型，做禁用的class前缀
         type: '',
         // 继承
         superClass: lang.Class
-
     });
 
-
     var $super = method.superClass;
+    var $superProto = $super.prototype;
+
+    proto = mix(proto || {}, {
+        el: $superProto.el || '',
+        elements: $superProto.elements || {},
+        events: $superProto.events || {},
+        // 默认选项
+        Options: $superProto.Options || {}
+    });
 
     var fn = function (options) {
         var me = this;
@@ -54,8 +49,7 @@ var widget = function (proto, method) {
         me.$el = null;
         me.$elements = {};
 
-        // me.options = mix(proto.Options, options, true);
-        me.options = $.extend({}, proto.Options, options);
+        me.options = mix(proto.Options, options, true);
 
         me.type = method.type;
         me.prefix = method.prefix;
@@ -69,7 +63,10 @@ var widget = function (proto, method) {
             me._created = true;
             me._disabledStatus = true;
 
-            me.$el = $(me.options.el);
+            if (!me.$el || me.$el.length < 1) {
+                me.$el = $(me.options.el);
+            }
+
             me.$el.data(me.prefix, this);
 
             var meta = me.$el.data(me.prefix + '-options');
@@ -80,22 +77,32 @@ var widget = function (proto, method) {
             me._bindEvents(me.events);
         });
 
+
         // 执行构造器
         lang.isFunction(me._init) && me._init.apply(me, args);
 
         fn.$$plugins && array.each(fn.$$plugins, function (item, i) {
             item.apply(me, args);
         });
+
+        me.$el = $(me.options.el);
+
+        if (lang.isFunction(me._render)) {
+            me._render();
+            me._initEvents();
+        }
+
+        setTimeout(function () {
+            me.fire('onload');
+        }, 16);
     };
 
     // 继承$super
     lang.inherits(fn, $super);
 
     // 改写_init函数
-    /* eslint-disable fecs-camelcase */
     var _init = lang.isFunction(proto._init) ? proto._init : emptyFn;
-    var _superClassInit = $super === lang.Class ? lang.Class : $super.prototype._init;
-    /* eslint-enable fecs-camelcase */
+    var _superClassInit = $super === lang.Class ? lang.Class : $superProto._init;
 
     // _init执行父类构造函数
     proto._init = function () {
@@ -145,7 +152,7 @@ widget._method = {
             if (!(val in me)) {
                 throw new Error('缺少' + val + '事件函数');
             }
-
+            
             switch (parseKey.length) {
                 case 3:
                     element = me.$elements[parseKey[0]];
@@ -217,10 +224,12 @@ widget._method = {
         type = type.join(' ');
 
         if (!selector) {
-            $(element).on(type, fun);
+            $(element)
+                .on(type, fun);
         }
         else {
-            $(element).on(type, selector, fun);
+            $(element)
+                .on(type, selector, fun);
         }
 
         return this;
@@ -238,7 +247,6 @@ widget._method = {
         var me = this;
         var args = arguments;
         var namespace = me.type;
-
 
         if (args.length === 3) {
             fun = selector;
@@ -260,14 +268,15 @@ widget._method = {
         type = type.join(' ');
 
         if (!selector) {
-            $(element).off(type, fun);
+            $(element)
+                .off(type, fun);
         }
         else {
-            $(element).off(type, selector, fun);
+            $(element)
+                .off(type, selector, fun);
         }
 
     },
-
 
     /**
      * dispose 析构函数
@@ -276,12 +285,12 @@ widget._method = {
      */
 
     dispose: function () {
-        debugger
         var me = this;
         var namespace = me.type;
 
         me.$el.off('.' + namespace);
-        me.$el.find('*').off('.' + namespace);
+        me.$el.find('*')
+            .off('.' + namespace);
         me.$el.removeData(me.prefix + '-options');
 
         me.fire('ondispose') && lang.Class.prototype.dispose.call(me);
@@ -289,13 +298,11 @@ widget._method = {
 
     /**
      * _setStatus 设置状态
-     *
+     * @private
      * @param {boolen} key 是否禁用
      * @return {Object} this
      */
-    /* eslint-disable fecs-camelcase */
     _setStatus: function (key) {
-    /* eslint-enable fecs-camelcase */
         if (key) {
             this._disabledStatus = true;
             this.$el.addClass(this.type + '-disabled ui-state-disabled');
@@ -353,11 +360,19 @@ widget._method = {
         var results = [];
         var key;
         var value;
+        var attrMatch;
 
         for (key in ref) {
             if (ref.hasOwnProperty(key)) {
                 value = ref[key];
-                results.push(me.$elements[value] = $(key, this.$el));
+                attrMatch = key.match(/^@([-_\w]+)/);
+
+                if (attrMatch && attrMatch.length > 1) {
+                    results.push(me.$elements[value] = me.getHookElement(attrMatch[1]));
+                }
+                else {
+                    results.push(me.$elements[value] = $(key, this.$el));
+                }
             }
         }
         return results;
@@ -397,6 +412,16 @@ widget._method = {
         me.$el.data(prefix + '-options', data);
 
         return me;
+    },
+
+    /**
+     * getHookElement 按自定义元素js-hook获取元素
+     *
+     * @param {string} selector 选择器
+     * @return {Object} jquery element
+     */
+    getHookElement: function (selector) {
+        return $('[js-hook=' + selector + ']', this.$el);
     }
 
 };
@@ -416,7 +441,7 @@ var register = function (Class, constructorHook, methods) {
     reg[reg.length] = constructorHook;
 
     for (method in methods) {
-        if (methods.haoOwnProperty(method)) {
+        if (methods.hasOwnProperty(method)) {
             Class.prototype[method] = methods[method];
         }
     }
