@@ -6,7 +6,7 @@
 控制台一直报：
 
 ```
-While measuring IDATs in /Users/baidu/work/xxx/xxxx/g pngcrush caught libpng error:
+While measuring IDATs in xxx/g pngcrush caught libpng error:
    Not a PNG file..
 ```
 
