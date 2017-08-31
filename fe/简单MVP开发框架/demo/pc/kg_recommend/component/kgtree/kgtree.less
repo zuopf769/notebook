@@ -1,0 +1,53 @@
+@border-gray: #ccc;
+@font-black: #333;
+@font-white: #fff;
+@bg-blue: #20b988;
+
+
+.kgrecommend-wrap {
+    .text-wrap {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        color: @font-black;
+        font-size: 14px;
+        border: 1px solid @border-gray;
+        border-radius: 3px;
+        padding: 5px 12px;
+        background: @font-white;
+        cursor: pointer;
+    }
+
+    .text-wrap .text-node {
+        display: inline-block;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .text-wrap.current {
+        background-color: @bg-blue;
+        border-color: @bg-blue;
+        .text-node {
+            color: @font-white;
+        }
+
+    }
+
+
+
+    .path {
+        position: absolute;
+    }
+
+    .border-left-bottom {
+        border-left: 1px solid @border-gray;
+        border-bottom: 1px solid @border-gray;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid @border-gray;
+    }
+}
