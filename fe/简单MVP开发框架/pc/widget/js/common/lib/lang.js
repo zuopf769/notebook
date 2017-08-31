@@ -7,14 +7,14 @@ window[_guid] = {};
 exports._guid = _guid;
 
 //Tangram可能被放在闭包中
-//一些页面级别唯一的属性，需要挂载在window[baidu.guid]上
+//一些页面级别唯一的属性，需要挂载在window[guid]上
 var $$ = window[_guid] = window[_guid] || {global:{}};
 
 /**
  * 返回一个当前页面的唯一标识字符串。
- * @name baidu.lang.guid
+ * @name lang.guid
  * @function
- * @grammar baidu.lang.guid()
+ * @grammar lang.guid()
  * @version 1.1.1
  * @meta standard
  *
@@ -36,15 +36,15 @@ exports.guid = guid;
 // 20111129	meizz	去除 _counter.toString(36) 这步运算，节约计算量
 
 /**
- * Tangram继承机制提供的一个基类，用户可以通过继承baidu.lang.Class来获取它的属性及方法。
+ * Tangram继承机制提供的一个基类，用户可以通过继承lang.Class来获取它的属性及方法。
  * @class
- * @name 	baidu.lang.Class
- * @grammar baidu.lang.Class(guid)
+ * @name 	lang.Class
+ * @grammar lang.Class(guid)
  * @param 	{string}	guid	对象的唯一标识
  * @meta standard
- * @remark baidu.lang.Class和它的子类的实例均包含一个全局唯一的标识guid。guid是在构造函数中生成的，因此，继承自baidu.lang.Class的类应该直接或者间接调用它的构造函数。<br>baidu.lang.Class的构造函数中产生guid的方式可以保证guid的唯一性，及每个实例都有一个全局唯一的guid。
+ * @remark lang.Class和它的子类的实例均包含一个全局唯一的标识guid。guid是在构造函数中生成的，因此，继承自lang.Class的类应该直接或者间接调用它的构造函数。<br>lang.Class的构造函数中产生guid的方式可以保证guid的唯一性，及每个实例都有一个全局唯一的guid。
  * @meta standard
- * @see baidu.lang.inherits,baidu.lang.Event
+ * @see lang.inherits,lang.Event
  */
 
 var _instances = $$._instances = $$._instances = {};
@@ -95,19 +95,18 @@ Class.prototype.toString = function(){
      return $$._instances[guid];
  };
 
-//  2011.11.23  meizz   添加 baiduInstance 这个全局方法，可以快速地通过guid得到实例对象
-//  2011.11.22  meizz   废除创建类时指定guid的模式，guid只作为只读属性
-//  2011.11.22  meizz   废除 baidu.lang._instances 模块，由统一的global机制完成；
+//  添加 baiduInstance 这个全局方法，可以快速地通过guid得到实例对象
+//  废除创建类时指定guid的模式，guid只作为只读属性
+//  废除 lang._instances 模块，由统一的global机制完成；
 
 /**
  * 判断目标参数是否string类型或String对象
- * @name baidu.lang.isString
+ * @name lang.isString
  * @function
- * @grammar baidu.lang.isString(source)
+ * @grammar lang.isString(source)
  * @param {Any} source 目标参数
  * @shortcut isString
  * @meta standard
- * @see baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
  *
  * @returns {boolean} 类型判断结果
  */
@@ -121,14 +120,14 @@ exports.isString = isString;
 /**
  * 自定义的事件对象。
  * @class
- * @name 	baidu.lang.Event
- * @grammar baidu.lang.Event(type[, target])
+ * @name 	lang.Event
+ * @grammar lang.Event(type[, target])
  * @param 	{string} type	 事件类型名称。为了方便区分事件和一个普通的方法，事件类型名称必须以"on"(小写)开头。
  * @param 	{Object} [target]触发事件的对象
  * @meta standard
  * @remark 引入该模块，会自动为Class引入3个事件扩展方法：addEventListener、removeEventListener和dispatchEvent。
  * @meta standard
- * @see baidu.lang.Class
+ * @see lang.Class
  */
 var Event = function (type, target) {
     this.type = type;
@@ -140,9 +139,9 @@ var Event = function (type, target) {
 exports.Event = Event;
 
 /**
- * 派发自定义事件，使得绑定到自定义事件上面的函数都会被执行。引入baidu.lang.Event后，Class的子类实例才会获得该方法。
+ * 派发自定义事件，使得绑定到自定义事件上面的函数都会被执行。引入lang.Event后，Class的子类实例才会获得该方法。
  * @grammar obj.dispatchEvent(event, options)
- * @param {baidu.lang.Event|String} event 	Event对象，或事件名称(1.1.1起支持)
+ * @param {lang.Event|String} event 	Event对象，或事件名称(1.1.1起支持)
  * @param {Object} 					options 扩展参数,所含属性键值会扩展到Event对象上(1.2起支持)
  * @remark 处理会调用通过addEventListenr绑定的自定义事件回调函数之外，还会调用直接绑定到对象上面的自定义事件。例如：<br>
 myobj.onMyEvent = function(){}<br>
@@ -177,7 +176,7 @@ Class.prototype.dispatchEvent = function (event, options) {
 };
 
 /**
- * 注册对象的事件监听器。引入baidu.lang.Event后，Class的子类实例才会获得该方法。
+ * 注册对象的事件监听器。引入lang.Event后，Class的子类实例才会获得该方法。
  * @grammar obj.addEventListener(type, handler[, key])
  * @param   {string}   type         自定义事件的名称
  * @param   {Function} handler      自定义事件被触发时应该调用的回调函数
@@ -211,10 +210,10 @@ Class.prototype.addEventListener = function (type, handler, key) {
     return handler;
 };
 
-//  2011.12.19  meizz   很悲剧，第三个参数 key 还需要支持一段时间，以兼容老版本脚本
-//  2011.11.24  meizz   事件添加监听方法 addEventListener 移除第三个参数 key，添加返回值 handler
-//  2011.11.23  meizz   事件handler的存储对象由json改成array，以保证注册函数的执行顺序
-//  2011.11.22  meizz   将 removeEventListener 方法分拆到 baidu.lang.Class.removeEventListener 中，以节约主程序代码
+//  很悲剧，第三个参数 key 还需要支持一段时间，以兼容老版本脚本
+//  事件添加监听方法 addEventListener 移除第三个参数 key，添加返回值 handler
+//  事件handler的存储对象由json改成array，以保证注册函数的执行顺序
+//  将 removeEventListener 方法分拆到 lang.Class.removeEventListener 中，以节约主程序代码
 
 var trimer = new RegExp("(^[\\s\\t\\xa0\\u3000]+)|([\\u3000\\xa0\\s\\t]+\x24)", "g");
 
@@ -253,7 +252,7 @@ Class.prototype.addEventListeners = function (events, fn) {
 
 
 /**
- * 移除对象的事件监听器。引入baidu.lang.Event后，Class的子类实例才会获得该方法。
+ * 移除对象的事件监听器。引入lang.Event后，Class的子类实例才会获得该方法。
  * 事件移除操作是一个不常用的方法，如果你有需求再import调入，可以节约代码
  * 可能通过参数走不同的分支：不传handler会移除某类事件监听；如果连type都不传那就移除当前实例的全部事件监听
  *
@@ -293,24 +292,24 @@ Class.prototype.removeEventListener = function (type, handler) {
     }
 };
 
-// 2011.12.19 meizz 为兼容老版本的按 key 删除，添加了一行代码
+// 为兼容老版本的按 key 删除，添加了一行代码
 
 /**
  * 创建一个类，包括创造类的构造器、继承基类Class
- * @name baidu.lang.createClass
+ * @name lang.createClass
  * @function
- * @grammar baidu.lang.createClass(constructor[, options])
+ * @grammar lang.createClass(constructor[, options])
  * @param {Function} constructor 类的构造器函数
  * @param {Object} [options]
 
  * @config {string} [type] 类名
- * @config {Function} [superClass] 父类，默认为baidu.lang.Class
+ * @config {Function} [superClass] 父类，默认为lang.Class
  * @version 1.2
  * @remark
  *
             使用createClass能方便的创建一个带有继承关系的类。同时会为返回的类对象添加extend方法，使用obj.extend({});可以方便的扩展原型链上的方法和属性
 
- * @see baidu.lang.Class,baidu.lang.inherits
+ * @see lang.Class,lang.inherits
  *
  * @returns {Object} 一个类对象
  */
@@ -359,7 +358,7 @@ var createClass = /**@function*/function(constructor, options) {
     // 修正这种继承方式带来的 constructor 混乱的问题
     fp.constructor = cp.constructor;
 
-    // 给类扩展出一个静态方法，以代替 baidu.object.extend()
+    // 给类扩展出一个静态方法，以代替 object.extend()
     fn.extend = function(json){
         for (var i in json) {
             fn.prototype[i] = json[i];
@@ -372,16 +371,16 @@ var createClass = /**@function*/function(constructor, options) {
 
 exports.createClass = createClass;
 
-// 20111221 meizz   修改插件函数的存放地，重新放回类构造器静态属性上
+// 修改插件函数的存放地，重新放回类构造器静态属性上
 
 /**
- * 创建一个baidu.lang.Class的单例实例
- * @name baidu.lang.createSingle
+ * 创建一个lang.Class的单例实例
+ * @name lang.createSingle
  * @function
- * @grammar baidu.lang.createSingle(json)
+ * @grammar lang.createSingle(json)
  * @param {Object} json 直接挂载到这个单例里的预定属性/方法
  * @version 1.2
- * @see baidu.lang.Class
+ * @see lang.Class
  *
  * @returns {Object} 一个实例
  */
@@ -409,12 +408,12 @@ window[_guid]._instances = window[_guid]._instances || {};
 
 /**
  * 解除instance中对指定类实例的引用关系。
- * @name baidu.lang.decontrol
+ * @name lang.decontrol
  * @function
- * @grammar baidu.lang.decontrol(guid)
+ * @grammar lang.decontrol(guid)
  * @param {string} guid 类的唯一标识
  * @version 1.1.1
- * @see baidu.lang.instance
+ * @see lang.instance
  */
 var decontrol = function(guid) {
     var m = window[_guid];
@@ -426,47 +425,19 @@ exports.decontrol = decontrol;
 /**
  * 事件中心
  * @class
- * @name baidu.lang.eventCenter
+ * @name lang.eventCenter
  * @author rocy
  */
 var eventCenter = window.$$_eventCenter = window.$$_eventCenter || createSingle();
 
 exports.eventCenter = eventCenter;
 
-/**
- * 注册全局事件监听器。
- * @name baidu.lang.eventCenter.addEventListener
- * @function
- * @grammar baidu.lang.eventCenter.addEventListener(type, handler[, key])
- * @param 	{string}   type         自定义事件的名称
- * @param 	{Function} handler      自定义事件被触发时应该调用的回调函数
- * @param 	{string}   [key]		为事件监听函数指定的名称，可在移除时使用。如果不提供，方法会默认为它生成一个全局唯一的key。
- * @remark 	事件类型区分大小写。如果自定义事件名称不是以小写"on"开头，该方法会给它加上"on"再进行判断，即"click"和"onclick"会被认为是同一种事件。
- */
-
-/**
- * 移除全局事件监听器。
- * @name baidu.lang.eventCenter.removeEventListener
- * @grammar baidu.lang.eventCenter.removeEventListener(type, handler)
- * @function
- * @param {string}   type     事件类型
- * @param {Function|string} handler  要移除的事件监听函数或者监听函数的key
- * @remark 	如果第二个参数handler没有被绑定到对应的自定义事件中，什么也不做。
- */
-
-/**
- * 派发全局自定义事件，使得绑定到全局自定义事件上面的函数都会被执行。
- * @name baidu.lang.eventCenter.dispatchEvent
- * @grammar baidu.lang.eventCenter.dispatchEvent(event, options)
- * @function
- * @param {baidu.lang.Event|String} event 	Event对象，或事件名称(1.1.1起支持)
- * @param {Object} 					options 扩展参数,所含属性键值会扩展到Event对象上(1.2起支持)
- */
+/
 
 /**
  * 根据变量名或者命名空间来查找对象
  * @function
- * @grammar baidu.lang.getModule(name, opt_obj)
+ * @grammar lang.getModule(name, opt_obj)
  * @param {string} name 变量或者命名空间的名字.
  * @param {Object=} opt_obj 从这个对象开始查找，默认是window;
  * @return {?Object} 返回找到的对象，如果没有找到返回null.
@@ -491,9 +462,9 @@ exports.getModule = getModule;
 
 /**
  * 为类型构造器建立继承关系
- * @name baidu.lang.inherits
+ * @name lang.inherits
  * @function
- * @grammar baidu.lang.inherits(subClass, superClass[, type])
+ * @grammar lang.inherits(subClass, superClass[, type])
  * @param {Function} subClass 子类构造器
  * @param {Function} superClass 父类构造器
  * @param {string} type 类名标识
@@ -505,7 +476,7 @@ exports.getModule = getModule;
 
  * @shortcut inherits
  * @meta standard
- * @see baidu.lang.Class
+ * @see lang.Class
  */
 var inherits = function (subClass, superClass, type) {
     var key, proto,
@@ -534,12 +505,12 @@ var inherits = function (subClass, superClass, type) {
 
 exports.inherits = inherits;
 
-//  2011.11.22  meizz   为类添加了一个静态方法extend()，方便代码书写
+// 为类添加了一个静态方法extend()，方便代码书写
 /**
  * 根据参数(guid)的指定，返回对应的实例对象引用
- * @name baidu.lang.instance
+ * @name lang.instance
  * @function
- * @grammar baidu.lang.instance(guid)
+ * @grammar lang.instance(guid)
  * @param {string} guid 需要获取实例的guid
  * @meta standard
  *
@@ -554,12 +525,11 @@ exports.instance = instance;
 
 /**
  * 判断目标参数是否Array对象
- * @name baidu.lang.isArray
+ * @name lang.isArray
  * @function
- * @grammar baidu.lang.isArray(source)
+ * @grammar lang.isArray(source)
  * @param {Any} source 目标参数
  * @meta standard
- * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
  *
  * @returns {boolean} 类型判断结果
  */
@@ -571,12 +541,11 @@ exports.isArray = isArray;
 
 /**
  * 判断目标参数是否Boolean对象
- * @name baidu.lang.isBoolean
+ * @name lang.isBoolean
  * @function
- * @grammar baidu.lang.isBoolean(source)
+ * @grammar lang.isBoolean(source)
  * @param {Any} source 目标参数
  * @version 1.3
- * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isElement,baidu.lang.isArray,baidu.lang.isDate
  *
  * @returns {boolean} 类型判断结果
  */
@@ -588,12 +557,11 @@ exports.isBoolean = isBoolean;
 
 /**
  * 判断目标参数是否为Date对象
- * @name baidu.lang.isDate
+ * @name lang.isDate
  * @function
- * @grammar baidu.lang.isDate(source)
+ * @grammar lang.isDate(source)
  * @param {Any} source 目标参数
  * @version 1.3
- * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isBoolean,baidu.lang.isElement
  *
  * @returns {boolean} 类型判断结果
  */
@@ -606,12 +574,12 @@ exports.isDate = isDate;
 
 /**
  * 判断目标参数是否为Element对象
- * @name baidu.lang.isElement
+ * @name lang.isElement
  * @function
- * @grammar baidu.lang.isElement(source)
+ * @grammar lang.isElement(source)
  * @param {Any} source 目标参数
  * @meta standard
- * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isBoolean,baidu.lang.isDate
+ * @see lang.isString,lang.isObject,lang.isNumber,lang.isArray,lang.isBoolean,lang.isDate
  *
  * @returns {boolean} 类型判断结果
  */
@@ -624,12 +592,12 @@ exports.isElement = isElement;
 
 /**
  * 判断目标参数是否为function或Function实例
- * @name baidu.lang.isFunction
+ * @name lang.isFunction
  * @function
- * @grammar baidu.lang.isFunction(source)
+ * @grammar lang.isFunction(source)
  * @param {Any} source 目标参数
  * @version 1.2
- * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
+ * @see lang.isString,lang.isObject,lang.isNumber,lang.isArray,lang.isElement,lang.isBoolean,lang.isDate
  * @meta standard
  * @returns {boolean} 类型判断结果
  */
@@ -642,12 +610,12 @@ exports.isFunction = isFunction;
 
 /**
  * 判断目标参数是否number类型或Number对象
- * @name baidu.lang.isNumber
+ * @name lang.isNumber
  * @function
- * @grammar baidu.lang.isNumber(source)
+ * @grammar lang.isNumber(source)
  * @param {Any} source 目标参数
  * @meta standard
- * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
+ * @see lang.isString,lang.isObject,lang.isArray,lang.isElement,lang.isBoolean,lang.isDate
  *
  * @returns {boolean} 类型判断结果
  * @remark 用本函数判断NaN会返回false，尽管在Javascript中是Number类型。
@@ -660,13 +628,13 @@ exports.isNumber = isNumber;
 
 /**
  * 判断目标参数是否为Object对象
- * @name baidu.lang.isObject
+ * @name lang.isObject
  * @function
- * @grammar baidu.lang.isObject(source)
+ * @grammar lang.isObject(source)
  * @param {Any} source 目标参数
  * @shortcut isObject
  * @meta standard
- * @see baidu.lang.isString,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
+ * @see lang.isString,lang.isNumber,lang.isArray,lang.isElement,lang.isBoolean,lang.isDate
  *
  * @returns {boolean} 类型判断结果
  */
@@ -679,9 +647,9 @@ exports.isObject = isObject;
 /**
  * 增加自定义模块扩展,默认创建在当前作用域
  * @author erik, berg
- * @name baidu.lang.module
+ * @name lang.module
  * @function
- * @grammar baidu.lang.module(name, module[, owner])
+ * @grammar lang.module(name, module[, owner])
  * @param {string} name 需要创建的模块名.
  * @param {Any} module 需要创建的模块对象.
  * @param {Object} [owner] 模块创建的目标环境，默认为window.
@@ -727,9 +695,9 @@ exports.module = module;
 
 /**
  * 向某个类注册插件
- * @name baidu.lang.register
+ * @name lang.register
  * @function
- * @grammar baidu.lang.register(Class, constructorHook, methods)
+ * @grammar lang.register(Class, constructorHook, methods)
  * @param   {Class}     Class   		接受注册的载体 类
  * @param   {Function}  constructorHook 运行在载体类构造器里钩子函数
  * @param	{JSON}		methods			挂载到载体类原型链上的方法集，可选
@@ -751,9 +719,9 @@ exports.register = register;
 // 20111129	meizz	添加第三个参数，可以直接挂载方法到目标类原型链上
 /**
  * 将一个变量转换成array
- * @name baidu.lang.toArray
+ * @name lang.toArray
  * @function
- * @grammar baidu.lang.toArray(source)
+ * @grammar lang.toArray(source)
  * @param {mix} source 需要转换成array的变量
  * @version 1.3
  * @meta standard

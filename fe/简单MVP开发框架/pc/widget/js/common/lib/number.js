@@ -1,9 +1,9 @@
 /* eslint-disable */
 /**
  * 为目标数字添加逗号分隔
- * @name baidu.number.comma
+ * @name number.comma
  * @function
- * @grammar baidu.number.comma(source[, length])
+ * @grammar number.comma(source[, length])
  * @param {number} source 需要处理的数字
  * @param {number} [length] 两次逗号之间的数字位数，默认为3位
  *
@@ -24,9 +24,9 @@ exports.comma = comma;
 
 /**
  * 对目标数字进行0补齐处理
- * @name baidu.number.pad
+ * @name number.pad
  * @function
- * @grammar baidu.number.pad(source, length)
+ * @grammar number.pad(source, length)
  * @param {number} source 需要处理的数字
  * @param {number} length 需要输出的长度
  *
@@ -50,9 +50,9 @@ exports.pad = pad;
 
 /**
  * 生成随机整数，范围是[min, max]
- * @name baidu.number.randomInt
+ * @name number.randomInt
  * @function
- * @grammar baidu.number.randomInt(min, max)
+ * @grammar number.randomInt(min, max)
  *
  * @param 	{number} min 	随机整数的最小值
  * @param 	{number} max 	随机整数的最大值

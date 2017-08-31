@@ -1,10 +1,10 @@
 /* eslint-disable */
 /**
  * 获取页面高度
- * @name baidu.page.getHeight
+ * @name page.getHeight
  * @function
- * @grammar baidu.page.getHeight()
- * @see baidu.page.getWidth
+ * @grammar page.getHeight()
+ * @see page.getWidth
  *
  * @returns {number} 页面高度
  */
@@ -20,10 +20,10 @@ var getHeight = function () {
 exports.getHeight = getHeight;
 /**
  * 获取纵向滚动量
- * @name baidu.page.getScrollTop
+ * @name page.getScrollTop
  * @function
- * @grammar baidu.page.getScrollTop()
- * @see baidu.page.getScrollLeft
+ * @grammar page.getScrollTop()
+ * @see page.getScrollLeft
  * @meta standard
  * @returns {number} 纵向滚动量
  */
@@ -36,10 +36,10 @@ exports.getScrollTop = getScrollTop;
 
 /**
  * 获取横向滚动量
- * @name baidu.page.getScrollLeft
+ * @name page.getScrollLeft
  * @function
- * @grammar baidu.page.getScrollLeft()
- * @see baidu.page.getScrollTop
+ * @grammar page.getScrollLeft()
+ * @see page.getScrollTop
  *
  * @returns {number} 横向滚动量
  */
@@ -63,8 +63,8 @@ exports.getScrollLeft = getScrollLeft;
 
 var getMousePosition = function(){
     return {
-        x : baidu.page.getScrollLeft() + xy.x,
-        y : baidu.page.getScrollTop() + xy.y
+        x : page.getScrollLeft() + xy.x,
+        y : page.getScrollTop() + xy.y
     };
 };
 
@@ -81,10 +81,10 @@ exports.getMousePosition = getMousePosition;
 
 /**
  * 获取页面视觉区域高度
- * @name baidu.page.getViewHeight
+ * @name page.getViewHeight
  * @function
- * @grammar baidu.page.getViewHeight()
- * @see baidu.page.getViewWidth
+ * @grammar page.getViewHeight()
+ * @see page.getViewWidth
  * @meta standard
  * @returns {number} 页面视觉区域高度
  */
@@ -99,10 +99,10 @@ exports.getViewHeight = getViewHeight;
 
 /**
  * 获取页面视觉区域宽度
- * @name baidu.page.getViewWidth
+ * @name page.getViewWidth
  * @function
- * @grammar baidu.page.getViewWidth()
- * @see baidu.page.getViewHeight
+ * @grammar page.getViewWidth()
+ * @see page.getViewHeight
  *
  * @returns {number} 页面视觉区域宽度
  */
@@ -117,10 +117,10 @@ exports.getViewWidth = getViewWidth;
 
 /**
  * 获取页面宽度
- * @name baidu.page.getWidth
+ * @name page.getWidth
  * @function
- * @grammar baidu.page.getWidth()
- * @see baidu.page.getHeight
+ * @grammar page.getWidth()
+ * @see page.getHeight
  * @meta standard
  * @returns {number} 页面宽度
  */
@@ -139,11 +139,11 @@ exports.getWidth = getWidth;
 
 /**
  * 动态在页面上加载一个外部css文件
- * @name baidu.page.loadCssFile
+ * @name page.loadCssFile
  * @function
- * @grammar baidu.page.loadCssFile(path)
+ * @grammar page.loadCssFile(path)
  * @param {string} path css文件路径
- * @see baidu.page.loadJsFile
+ * @see page.loadJsFile
  */
 
 var loadCssFile = function (path) {
@@ -160,11 +160,11 @@ exports.loadCssFile = loadCssFile;
 
 /**
  * 动态在页面上加载一个外部js文件
- * @name baidu.page.loadJsFile
+ * @name page.loadJsFile
  * @function
- * @grammar baidu.page.loadJsFile(path)
+ * @grammar page.loadJsFile(path)
  * @param {string} path js文件路径
- * @see baidu.page.loadCssFile
+ * @see page.loadCssFile
  */
 var loadJsFile = function (path) {
     var element = document.createElement('script');

@@ -33,12 +33,12 @@ var _isValidKey = function (key) {
 
 /**
  * 获取cookie的值，不对值进行解码
- * @name baidu.cookie.getRaw
+ * @name cookie.getRaw
  * @function
- * @grammar baidu.cookie.getRaw(key)
+ * @grammar cookie.getRaw(key)
  * @param {string} key 需要获取Cookie的键名
  * @meta standard
- * @see baidu.cookie.get,baidu.cookie.setRaw
+ * @see cookie.get,cookie.setRaw
  *
  * @returns {string|null} 获取的Cookie值，获取不到时返回null
  */
@@ -60,14 +60,14 @@ exports.getRaw = getRaw;
 
 /**
  * 获取cookie的值，用decodeURIComponent进行解码
- * @name baidu.cookie.get
+ * @name cookie.get
  * @function
- * @grammar baidu.cookie.get(key)
+ * @grammar cookie.get(key)
  * @param {string} key 需要获取Cookie的键名
  * @remark
  * <b>注意：</b>该方法会对cookie值进行decodeURIComponent解码。如果想获得cookie源字符串，请使用getRaw方法。
  * @meta standard
- * @see baidu.cookie.getRaw,baidu.cookie.set
+ * @see cookie.getRaw,cookie.set
  *
  * @returns {string|null} cookie的值，获取不到时返回null
  */
@@ -85,9 +85,9 @@ exports.get = get;
 
 /**
  * 设置cookie的值，不对值进行编码
- * @name baidu.cookie.setRaw
+ * @name cookie.setRaw
  * @function
- * @grammar baidu.cookie.setRaw(key, value[, options])
+ * @grammar cookie.setRaw(key, value[, options])
  * @param {string} key 需要设置Cookie的键名
  * @param {string} value 需要设置Cookie的值
  * @param {Object} [options] 设置Cookie的其他可选参数
@@ -104,7 +104,7 @@ domain:cookie域名<br>
 secure:cookie是否安全传输
 
  * @meta standard
- * @see baidu.cookie.set,baidu.cookie.getRaw
+ * @see cookie.set,cookie.getRaw
  */
 var setRaw = function (key, value, options) {
     if (!_isValidKey(key)) {
@@ -135,9 +135,9 @@ exports.setRaw = setRaw;
 
 /**
  * 删除cookie的值
- * @name baidu.cookie.remove
+ * @name cookie.remove
  * @function
- * @grammar baidu.cookie.remove(key, options)
+ * @grammar cookie.remove(key, options)
  * @param {string} key 需要删除Cookie的键名
  * @param {Object} options 需要删除的cookie对应的 path domain 等值
  * @meta standard
@@ -153,9 +153,9 @@ exports.remove = remove;
 
 /**
  * 设置cookie的值，用encodeURIComponent进行编码
- * @name baidu.cookie.set
+ * @name cookie.set
  * @function
- * @grammar baidu.cookie.set(key, value[, options])
+ * @grammar cookie.set(key, value[, options])
  * @param {string} key 需要设置Cookie的键名
  * @param {string} value 需要设置Cookie的值
  * @param {Object} [options] 设置Cookie的其他可选参数
@@ -173,7 +173,7 @@ domain:cookie域名<br>
 secure:cookie是否安全传输
 
  * @meta standard
- * @see baidu.cookie.setRaw,baidu.cookie.get
+ * @see cookie.setRaw,cookie.get
  */
 var set = function (key, value, options) {
     setRaw(key, encodeURIComponent(value), options);

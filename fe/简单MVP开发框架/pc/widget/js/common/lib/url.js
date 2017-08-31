@@ -1,4 +1,3 @@
-/* eslint-disable */
 
 var string = require('./string.js');
 var object = require('./object.js');
@@ -6,9 +5,9 @@ var lang = require('./lang.js');
 
 /**
  * 对字符串进行%#&+=以及和\s匹配的所有字符进行url转义
- * @name baidu.url.escapeSymbol
+ * @name url.escapeSymbol
  * @function
- * @grammar baidu.url.escapeSymbol(source)
+ * @grammar url.escapeSymbol(source)
  * @param {string} source 需要转义的字符串.
  * @return {string} 转义之后的字符串.
  * @remark
@@ -31,13 +30,13 @@ exports.escapeSymbol = escapeSymbol;
 
 /**
  * 根据参数名从目标URL中获取参数值
- * @name baidu.url.getQueryValue
+ * @name url.getQueryValue
  * @function
- * @grammar baidu.url.getQueryValue(url, key)
+ * @grammar url.getQueryValue(url, key)
  * @param {string} url 目标URL
  * @param {string} key 要获取的参数名
  * @meta standard
- * @see baidu.url.jsonToQuery
+ * @see url.jsonToQuery
  *
  * @returns {string|null} - 获取的参数值，其中URI编码后的字符不会被解码，获取不到时返回null
  */
@@ -61,12 +60,12 @@ exports.getQueryValue = getQueryValue;
 
 /**
  * 将json对象解析成query字符串
- * @name baidu.url.jsonToQuery
+ * @name url.jsonToQuery
  * @function
- * @grammar baidu.url.jsonToQuery(json[, replacer])
+ * @grammar url.jsonToQuery(json[, replacer])
  * @param {Object} json 需要解析的json对象
  * @param {Function=} replacer_opt 对值进行特殊处理的函数，function (value, key)
- * @see baidu.url.queryToJson,baidu.url.getQueryValue
+ * @see url.queryToJson,url.getQueryValue
  *
  * @return {string} - 解析结果字符串，其中值将被URI编码，{a:'&1 '} ==> "a=%261%20"。
  */
@@ -98,11 +97,11 @@ exports.jsonToQuery = jsonToQuery;
 
 /**
  * 解析目标URL中的参数成json对象
- * @name baidu.url.queryToJson
+ * @name url.queryToJson
  * @function
- * @grammar baidu.url.queryToJson(url)
+ * @grammar url.queryToJson(url)
  * @param {string} url 目标URL
- * @see baidu.url.jsonToQuery
+ * @see url.jsonToQuery
  *
  * @returns {Object} - 解析为结果对象，其中URI编码后的字符不会被解码，'a=%20' ==> {a:'%20'}。
  */

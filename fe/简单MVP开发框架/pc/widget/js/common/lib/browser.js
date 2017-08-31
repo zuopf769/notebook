@@ -2,7 +2,7 @@
 /**
  * 判断是否为chrome浏览器
  * @grammar baidu.browser.chrome
- * @see baidu.browser.ie,baidu.browser.firefox,baidu.browser.safari,baidu.browser.opera
+ * @see browser.ie,browser.firefox,browser.safari,browser.opera
  * @property chrome chrome版本号
  * @return {Number} chrome版本号
  */
@@ -12,9 +12,8 @@ exports.chrome = chrome;
 /**
  * 判断是否为firefox浏览器
  * @property firefox firefox版本号
- * @grammar baidu.browser.firefox
+ * @grammar browser.firefox
  * @meta standard
- * @see baidu.browser.ie,baidu.browser.safari,baidu.browser.opera,baidu.browser.chrome
  * @return {Number} firefox版本号
  */
 var firefox = /firefox\/(\d+\.\d+)/i.test(navigator.userAgent) ? + RegExp['\x241'] : undefined;
@@ -24,9 +23,9 @@ exports.firefox = firefox;
 //在百度模板中，可能会有$，防止冲突，将$1 写成 \x241
 /**
  * 判断是否为ie浏览器
- * @name baidu.browser.ie
+ * @name browser.ie
  * @field
- * @grammar baidu.browser.ie
+ * @grammar browser.ie
  * @returns {Number} IE版本号
  */
 var ie = /msie (\d+\.\d+)/i.test(navigator.userAgent) ? (document.documentMode || + RegExp['\x241']) : undefined;
@@ -35,9 +34,9 @@ exports.ie = ie;
 /**
  * 判断是否为gecko内核
  * @property isGecko
- * @grammar baidu.browser.isGecko
+ * @grammar browser.isGecko
  * @meta standard
- * @see baidu.browser.isWebkit
+ * @see browser.isWebkit
  * @returns {Boolean} 布尔值
  */
 var isGecko = /gecko/i.test(navigator.userAgent) && !/like gecko/i.test(navigator.userAgent);
@@ -46,7 +45,7 @@ exports.isGecko = isGecko;
 /**
  * 判断是否严格标准的渲染模式
  * @property isStrict
- * @grammar baidu.browser.isStrict
+ * @grammar browser.isStrict
  * @meta standard
  * @returns {Boolean} 布尔值
  */
@@ -56,9 +55,9 @@ exports.isStrict = isStrict;
 /**
  * 判断是否为webkit内核
  * @property isWebkit
- * @grammar baidu.browser.isWebkit
+ * @grammar browser.isWebkit
  * @meta standard
- * @see baidu.browser.isGecko
+ * @see browser.isGecko
  * @returns {Boolean} 布尔值
  */
 var isWebkit = /webkit/i.test(navigator.userAgent);
@@ -69,8 +68,8 @@ try {
 /**
  * 判断是否为maxthon浏览器
  * @property maxthon maxthon版本号
- * @grammar baidu.browser.maxthon
- * @see baidu.browser.ie
+ * @grammar browser.maxthon
+ * @see browser.ie
  * @returns {Number} maxthon版本号
  */
         var maxthon = + RegExp['\x241'];
@@ -81,7 +80,7 @@ try {
 /**
  * 判断是否为opera浏览器
  * @property opera opera版本号
- * @grammar baidu.browser.opera
+ * @grammar browser.opera
  * @meta standard
  * @see baidu.browser.ie,baidu.browser.firefox,baidu.browser.safari,baidu.browser.chrome
  * @returns {Number} opera版本号
@@ -105,9 +104,8 @@ exports.opera;
     /**
      * 判断是否为safari浏览器, 支持ipad
      * @property safari safari版本号
-     * @grammar baidu.browser.safari
+     * @grammar browser.safari
      * @meta standard
-     * @see baidu.browser.ie,baidu.browser.firefox,baidu.browser.opera,baidu.browser.chrome
      */
     var safari = /(\d+\.\d)?(?:\.\d)?\s+safari\/?(\d+\.\d+)?/i.test(ua) && !/chrome/i.test(ua) ? + (RegExp['\x241'] || RegExp['\x242']) : undefined;
     exports.safari = safari;

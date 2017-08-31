@@ -4,9 +4,9 @@ var number = require('./number.js');
 
 /**
  * 对目标日期对象进行格式化
- * @name baidu.date.format
+ * @name date.format
  * @function
- * @grammar baidu.date.format(source, pattern)
+ * @grammar date.format(source, pattern)
  * @param {Date} source 目标日期对象
  * @param {string} pattern 日期格式化规则
  * @remark
@@ -72,9 +72,9 @@ exports.format = format;
 
 /**
  * 将目标字符串转换成日期对象
- * @name baidu.date.parse
+ * @name date.parse
  * @function
- * @grammar baidu.date.parse(source)
+ * @grammar date.parse(source)
  * @param {string} source 目标字符串
  * @remark
  *

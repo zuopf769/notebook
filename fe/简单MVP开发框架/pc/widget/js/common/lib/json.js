@@ -1,14 +1,14 @@
 /* eslint-disable */
 /**
  * 将字符串解析成json对象。注：不会自动祛除空格
- * @name baidu.json.parse
+ * @name json.parse
  * @function
- * @grammar baidu.json.parse(data)
+ * @grammar json.parse(data)
  * @param {string} source 需要解析的字符串
  * @remark
  * 该方法的实现与ecma-262第五版中规定的JSON.parse不同，暂时只支持传入一个参数。后续会进行功能丰富。
  * @meta standard
- * @see baidu.json.stringify,baidu.json.decode
+ * @see json.stringify,json.decode
  *
  * @returns {JSON} 解析结果json对象
  */
@@ -21,13 +21,13 @@ exports.parse = parse;
 
 
 /**
- * 将字符串解析成json对象，为过时接口，今后会被baidu.json.parse代替
- * @name baidu.json.decode
+ * 将字符串解析成json对象，为过时接口，今后会被json.parse代替
+ * @name json.decode
  * @function
- * @grammar baidu.json.decode(source)
+ * @grammar json.decode(source)
  * @param {string} source 需要解析的字符串
  * @meta out
- * @see baidu.json.encode,baidu.json.parse
+ * @see json.encode,json.parse
  *
  * @returns {JSON} 解析结果json对象
  */
@@ -35,14 +35,13 @@ exports.decode = parse;
 
 /**
  * 将json对象序列化
- * @name baidu.json.stringify
+ * @name json.stringify
  * @function
- * @grammar baidu.json.stringify(value)
+ * @grammar json.stringify(value)
  * @param {JSON} value 需要序列化的json对象
  * @remark
  * 该方法的实现与ecma-262第五版中规定的JSON.stringify不同，暂时只支持传入一个参数。后续会进行功能丰富。
  * @meta standard
- * @see baidu.json.parse,baidu.json.encode
  *
  * @returns {string} 序列化后的字符串
  */
@@ -187,13 +186,12 @@ var stringify = (function () {
 exports.stringify = stringify;
 
 /**
- * 将json对象序列化，为过时接口，今后会被baidu.json.stringify代替
- * @name baidu.json.encode
+ * 将json对象序列化，为过时接口，今后会被json.stringify代替
+ * @name json.encode
  * @function
- * @grammar baidu.json.encode(value)
+ * @grammar json.encode(value)
  * @param {JSON} value 需要序列化的json对象
  * @meta out
- * @see baidu.json.decode,baidu.json.stringify
  *
  * @returns {string} 序列化后的字符串
  */

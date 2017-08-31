@@ -8,11 +8,11 @@ var string = require('./string.js');
 
 /**
  * 获得flash对象的实例
- * @name baidu.swf.getMovie
+ * @name swf.getMovie
  * @function
- * @grammar baidu.swf.getMovie(name)
+ * @grammar swf.getMovie(name)
  * @param {string} name flash对象的名称
- * @see baidu.swf.create
+ * @see swf.create
  * @meta standard
  * @returns {HTMLElement} flash对象的实例
  */
@@ -34,13 +34,13 @@ exports.getMovie = getMovie;
 /**
  * Js 调用 Flash方法的代理类.
  * @function
- * @name baidu.swf.Proxy
- * @grammar new baidu.swf.Proxy(id, property, [, loadedHandler])
+ * @name swf.Proxy
+ * @grammar new swf.Proxy(id, property, [, loadedHandler])
  * @param {string} id Flash的元素id.object标签id, embed标签name.
  * @param {string} property Flash的方法或者属性名称，用来检测Flash是否初始化好了.
  * @param {Function} loadedHandler 初始化之后的回调函数.
- * @remark Flash对应的DOM元素必须已经存在, 否则抛错. 可以使用baidu.swf.create预先创建Flash对应的DOM元素.
- * @author liyubei@baidu.com (leeight)
+ * @remark Flash对应的DOM元素必须已经存在, 否则抛错. 可以使用swf.create预先创建Flash对应的DOM元素.
+ * @author liyubei@com (leeight)
  */
 var Proxy = function(id, property, loadedHandler) {
     /**
@@ -104,7 +104,7 @@ Proxy.prototype.call = function(methodName, var_args) {
 /**
  * 浏览器支持的flash插件版本
  * @property version 浏览器支持的flash插件版本
- * @grammar baidu.swf.version
+ * @grammar swf.version
  * @return {String} 版本号
  * @meta standard
  */
@@ -135,9 +135,9 @@ exports.version = version;
 
 /**
  * 创建flash对象的html字符串
- * @name baidu.swf.createHTML
+ * @name swf.createHTML
  * @function
- * @grammar baidu.swf.createHTML(options)
+ * @grammar swf.createHTML(options)
  *
  * @param {Object}  options                     创建flash的选项参数
  * @param {string}  options.id                  要创建的flash的标识
@@ -164,7 +164,7 @@ exports.version = version;
  * @param {boolean} options.swliveconnect       第一次加载flash时浏览器是否应启动Java。允许值：true/false
  * @param {Object}  options.vars                要传递给flash的参数，支持JSON或string类型。
  *
- * @see baidu.swf.create
+ * @see swf.create
  * @meta standard
  * @returns {string} flash对象的html字符串
  */
@@ -297,9 +297,9 @@ exports.createHTML = createHTML;
 
 /**
  * 在页面中创建一个flash对象
- * @name baidu.swf.create
+ * @name swf.create
  * @function
- * @grammar baidu.swf.create(options[, container])
+ * @grammar swf.create(options[, container])
  *
  * @param {Object}  options                     创建flash的选项参数
  * @param {string}  options.id                  要创建的flash的标识
@@ -328,7 +328,7 @@ exports.createHTML = createHTML;
  *
  * @param {HTMLElement|string} [container]      flash对象的父容器元素，不传递该参数时在当前代码位置创建flash对象。
  * @meta standard
- * @see baidu.swf.createHTML,baidu.swf.getMovie
+ * @see swf.createHTML,swf.getMovie
  */
 var create = function (options, target) {
     options = options || {};
@@ -346,7 +346,7 @@ var create = function (options, target) {
 exports.create = create;
 
 var _g = function(id) {
-    if (!id) return null; //修改IE下baidu.dom.g(baidu.dom.g('dose_not_exist_id'))报错的bug，by Meizz, dengping
+    if (!id) return null; //修改IE下dom.g(dom.g('dose_not_exist_id'))报错的bug，by Meizz, dengping
     if ('string' == typeof id || id instanceof String) {
         return document.getElementById(id);
     } else if (id.nodeName && (id.nodeType == 1 || id.nodeType == 9)) {
@@ -356,9 +356,9 @@ var _g = function(id) {
 };
 /**
  * 在目标元素的指定位置插入HTML代码
- * @name baidu.dom.insertHTML
+ * @name dom.insertHTML
  * @function
- * @grammar baidu.dom.insertHTML(element, position, html)
+ * @grammar dom.insertHTML(element, position, html)
  * @param {HTMLElement|string} element 目标元素或目标元素的id
  * @param {string} position 插入html的位置信息，取值为beforeBegin,afterBegin,beforeEnd,afterEnd
  * @param {string} html 要插入的html

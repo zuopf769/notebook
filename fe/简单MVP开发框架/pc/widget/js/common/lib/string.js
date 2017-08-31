@@ -18,13 +18,13 @@ exports.cut = cut;
 
 /**
  * 对目标字符串进行html解码
- * @name baidu.string.decodeHTML
+ * @name string.decodeHTML
  * @function
- * @grammar baidu.string.decodeHTML(source)
+ * @grammar string.decodeHTML(source)
  * @param {string} source 目标字符串
  * @shortcut decodeHTML
  * @meta standard
- * @see baidu.string.encodeHTML
+ * @see string.encodeHTML
  *
  * @returns {string} html解码后的字符串
  */
@@ -44,15 +44,15 @@ exports.decodeHTML = decodeHTML;
 
 /**
  * 对目标字符串进行html编码
- * @name baidu.string.encodeHTML
+ * @name string.encodeHTML
  * @function
- * @grammar baidu.string.encodeHTML(source)
+ * @grammar string.encodeHTML(source)
  * @param {string} source 目标字符串
  * @remark
  * 编码字符有5个：&<>"'
  * @shortcut encodeHTML
  * @meta standard
- * @see baidu.string.decodeHTML
+ * @see string.decodeHTML
  *
  * @returns {string} html编码后的字符串
  */
@@ -68,9 +68,9 @@ var encodeHTML = function (source) {
 exports.encodeHTML = encodeHTML;
 /**
  * 将目标字符串中可能会影响正则表达式构造的字符串进行转义。
- * @name baidu.string.escapeReg
+ * @name string.escapeReg
  * @function
- * @grammar baidu.string.escapeReg(source)
+ * @grammar string.escapeReg(source)
  * @param {string} source 目标字符串
  * @remark
  * 给以下字符前加上“\”进行转义：.*+?^=!:${}()|[]/\
@@ -87,19 +87,19 @@ exports.escapeReg = escapeReg;
 
 /**
  * 对目标字符串进行格式化,支持过滤
- * @name baidu.string.filterFormat
+ * @name string.filterFormat
  * @function
- * @grammar baidu.string.filterFormat(source, opts)
+ * @grammar string.filterFormat(source, opts)
  * @param {string} source 目标字符串
  * @param {Object|string...} opts 提供相应数据的对象
  * @version 1.2
  * @remark
  *
-在 baidu.string.format的基础上,增加了过滤功能. 目标字符串中的#{url|escapeUrl},<br/>
-会替换成baidu.string.filterFormat["escapeUrl"](opts.url);<br/>
-过滤函数需要之前挂载在baidu.string.filterFormat属性中.
+在 string.format的基础上,增加了过滤功能. 目标字符串中的#{url|escapeUrl},<br/>
+会替换成string.filterFormat["escapeUrl"](opts.url);<br/>
+过滤函数需要之前挂载在string.filterFormat属性中.
 
- * @see baidu.string.format,baidu.string.filterFormat.escapeJs,baidu.string.filterFormat.escapeString,baidu.string.filterFormat.toInt
+ * @see string.format,string.filterFormat.escapeJs,string.filterFormat.escapeString,string.filterFormat.toInt
  * @returns {string} 格式化后的字符串
  */
 var filterFormat = function (source, opts) {
@@ -119,7 +119,7 @@ var filterFormat = function (source, opts) {
                 replacer = replacer(filters[0]/*key*/);
             }
             for(i=1,len = filters.length; i< len; ++i){
-                func = baidu.string.filterFormat[filters[i]];
+                func = string.filterFormat[filters[i]];
                 if('[object Function]' == toString.call(func)){
                     replacer = func(replacer);
                 }
@@ -134,12 +134,12 @@ exports.filterFormat = filterFormat;
 
 /**
  * 对js片段的字符做安全转义,编码低于255的都将转换成\x加16进制数
- * @name baidu.string.filterFormat.escapeJs
+ * @name string.filterFormat.escapeJs
  * @function
- * @grammar baidu.string.filterFormat.escapeJs(source)
+ * @grammar string.filterFormat.escapeJs(source)
  * @param {String} source 待转义字符串
  *
- * @see baidu.string.filterFormat,baidu.string.filterFormat.escapeString,baidu.string.filterFormat.toInt
+ * @see string.filterFormat,string.filterFormat.escapeString,string.filterFormat.toInt
  * @version 1.2
  * @return {String} 转义之后的字符串
  */
@@ -161,12 +161,12 @@ filterFormat.js = filterFormat.escapeJs;
 
 /**
  * 对字符串做安全转义,转义字符包括: 单引号,双引号,左右小括号,斜杠,反斜杠,上引号.
- * @name baidu.string.filterFormat.escapeString
+ * @name string.filterFormat.escapeString
  * @function
- * @grammar baidu.string.filterFormat.escapeString(source)
+ * @grammar string.filterFormat.escapeString(source)
  * @param {String} source 待转义字符串
  *
- * @see baidu.string.filterFormat,baidu.string.filterFormat.escapeJs,baidu.string.filterFormat.toInt
+ * @see string.filterFormat,string.filterFormat.escapeJs,string.filterFormat.toInt
  * @version 1.2
  * @return {String} 转义之后的字符串
  */
@@ -180,12 +180,12 @@ filterFormat.escapeString = function(str){
 filterFormat.e = filterFormat.escapeString;
 /**
  * 对数字做安全转义,确保是十进制数字;否则返回0.
- * @name baidu.string.filterFormat.toInt
+ * @name string.filterFormat.toInt
  * @function
- * @grammar baidu.string.filterFormat.toInt(source)
+ * @grammar string.filterFormat.toInt(source)
  * @param {String} source 待转义字符串
  *
- * @see baidu.string.filterFormat,baidu.string.filterFormat.escapeJs,baidu.string.filterFormat.escapeString
+ * @see string.filterFormat,string.filterFormat.escapeJs,string.filterFormat.escapeString
  * @version 1.2
  * @return {Number} 转义之后的数字
  */
@@ -195,9 +195,9 @@ filterFormat.toInt = function(str){
 filterFormat.i = filterFormat.toInt;
 /**
  * 对目标字符串进行格式化
- * @name baidu.string.format
+ * @name string.format
  * @function
- * @grammar baidu.string.format(source, opts)
+ * @grammar string.format(source, opts)
  * @param {string} source 目标字符串
  * @param {Object|string...} opts 提供相应数据的对象或多个字符串
  * @remark
@@ -235,9 +235,9 @@ exports.format = format;
 
 /**
  * 将各种浏览器里的颜色值转换成 #RRGGBB 的格式
- * @name baidu.string.formatColor
+ * @name string.formatColor
  * @function
- * @grammar baidu.string.formatColor(color)
+ * @grammar string.formatColor(color)
  * @param {string} color 颜色值字符串
  * @version 1.3
  *
@@ -296,14 +296,14 @@ exports.format = format;
 
 /**
  * 获取目标字符串在gbk编码下的字节长度
- * @name baidu.string.getByteLength
+ * @name string.getByteLength
  * @function
- * @grammar baidu.string.getByteLength(source)
+ * @grammar string.getByteLength(source)
  * @param {string} source 目标字符串
  * @remark
  * 获取字符在gbk编码下的字节长度, 实现原理是认为大于127的就一定是双字节。如果字符超出gbk编码范围, 则这个计算不准确
  * @meta standard
- * @see baidu.string.subByte
+ * @see string.subByte
  *
  * @returns {number} 字节长度
  */
@@ -316,7 +316,7 @@ exports.getByteLength = getByteLength;
 /**
  * 去掉字符串中的html标签
  * @function
- * @grammar baidu.string.stripTags(source)
+ * @grammar string.stripTags(source)
  * @param {string} source 要处理的字符串.
  * @return {String}
  */
@@ -328,15 +328,15 @@ exports.stripTags = stripTags;
 
 /**
  * 对目标字符串按gbk编码截取字节长度
- * @name baidu.string.subByte
+ * @name string.subByte
  * @function
- * @grammar baidu.string.subByte(source, length)
+ * @grammar string.subByte(source, length)
  * @param {string} source 目标字符串
  * @param {number} length 需要截取的字节长度
  * @param {string} [tail] 追加字符串,可选.
  * @remark
  * 截取过程中，遇到半个汉字时，向下取整。
- * @see baidu.string.getByteLength
+ * @see string.getByteLength
  *
  * @returns {string} 字符串截取结果
  */
@@ -360,9 +360,9 @@ exports.subByte = subByte;
 
 /**
  * 将目标字符串进行驼峰化处理
- * @name baidu.string.toCamelCase
+ * @name string.toCamelCase
  * @function
- * @grammar baidu.string.toCamelCase(source)
+ * @grammar string.toCamelCase(source)
  * @param {string} source 目标字符串
  * @remark
  * 支持单词以“-_”分隔
@@ -386,9 +386,9 @@ exports.toCamelCase = toCamelCase;
 
 /**
  * 将目标字符串中常见全角字符转换成半角字符
- * @name baidu.string.toHalfWidth
+ * @name string.toHalfWidth
  * @function
- * @grammar baidu.string.toHalfWidth(source)
+ * @grammar string.toHalfWidth(source)
  * @param {string} source 目标字符串
  * @remark
  *
@@ -504,9 +504,9 @@ exports.toHalfWidth = toHalfWidth;
 
 /**
  * 删除目标字符串两端的空白字符
- * @name baidu.string.trim
+ * @name string.trim
  * @function
- * @grammar baidu.string.trim(source)
+ * @grammar string.trim(source)
  * @param {string} source 目标字符串
  * @remark
  * 不支持删除单侧空白字符
@@ -527,9 +527,9 @@ exports.trim = trim;
 
 /**
  * 为目标字符串添加wbr软换行
- * @name baidu.string.wbr
+ * @name string.wbr
  * @function
- * @grammar baidu.string.wbr(source)
+ * @grammar string.wbr(source)
  * @param {string} source 目标字符串
  * @remark
  *

@@ -6,9 +6,9 @@ var lang = require('./lang.js');
 /**
  * 判断一个对象是不是字面量对象，即判断这个对象是不是由{}或者new Object类似方式创建
  *
- * @name baidu.object.isPlain
+ * @name object.isPlain
  * @function
- * @grammar baidu.object.isPlain(source)
+ * @grammar object.isPlain(source)
  * @param {Object} source 需要检查的对象
  * @remark
  * 事实上来说，在Javascript语言中，任何判断都一定会有漏洞，因此本方法只针对一些最常用的情况进行了判断
@@ -53,9 +53,9 @@ var isArray = function (source) {
  * 对一个object进行深度拷贝
  *
  * @author berg
- * @name baidu.object.clone
+ * @name object.clone
  * @function
- * @grammar baidu.object.clone(source)
+ * @grammar object.clone(source)
  * @param {Object} source 需要进行拷贝的对象
  * @remark
  * 对于Object来说，只拷贝自身成员，不拷贝prototype成员
@@ -92,9 +92,9 @@ exports.clone = clone;
 
 /**
  * 遍历Object中所有元素，1.1.1增加
- * @name baidu.object.each
+ * @name object.each
  * @function
- * @grammar baidu.object.each(source, iterator)
+ * @grammar object.each(source, iterator)
  * @param {Object} source 需要遍历的Object
  * @param {Function} iterator 对每个Object元素进行调用的函数，function (item, key)
  * @version 1.1.1
@@ -123,13 +123,12 @@ exports.each = each;
 
 /**
  * 将源对象的所有属性拷贝到目标对象中
- * @author erik
- * @name baidu.object.extend
+ * @name object.extend
  * @function
- * @grammar baidu.object.extend(target, source)
+ * @grammar object.extend(target, source)
  * @param {Object} target 目标对象
  * @param {Object} source 源对象
- * @see baidu.array.merge
+ * @see array.merge
  * @remark
  *
 1.目标对象中，与源对象key相同的成员将会被覆盖。<br>
@@ -154,9 +153,9 @@ exports.extend = extend;
 
 
 /**
- * 检测一个对象是否是空的，需要注意的是：如果污染了Object.prototype或者Array.prototype，那么baidu.object.isEmpty({})或者baidu.object.isEmpty([])可能返回的就是false.
+ * 检测一个对象是否是空的，需要注意的是：如果污染了Object.prototype或者Array.prototype，那么.object.isEmpty({})或者.object.isEmpty([])可能返回的就是false.
  * @function
- * @grammar baidu.object.isEmpty(obj)
+ * @grammar .object.isEmpty(obj)
  * @param {Object} obj 需要检测的对象.
  * @return {boolean} 如果是空的对象就返回true.
  */
@@ -172,11 +171,11 @@ exports.isEmpty = isEmpty;
 
 /**
  * 获取目标对象的键名列表
- * @name baidu.object.keys
+ * @name .object.keys
  * @function
- * @grammar baidu.object.keys(source)
+ * @grammar .object.keys(source)
  * @param {Object} source 目标对象
- * @see baidu.object.values
+ * @see .object.values
  *
  * @returns {Array} 键名列表
  */
@@ -195,11 +194,11 @@ exports.keys = keys;
 
 /**
   * 获取目标对象的值列表
-  * @name baidu.object.values
+  * @name object.values
   * @function
-  * @grammar baidu.object.values(source)
+  * @grammar object.values(source)
   * @param {Object} source 目标对象
-  * @see baidu.object.keys
+  * @see object.keys
   *
   * @returns {Array} 值列表
   */
@@ -217,9 +216,9 @@ exports.keys = keys;
 
 /**
  * 遍历object中所有元素，将每一个元素应用方法进行转换，返回转换后的新object。
- * @name baidu.object.map
+ * @name object.map
  * @function
- * @grammar baidu.object.map(source, iterator)
+ * @grammar object.map(source, iterator)
  *
  * @param 	{Array}    source   需要遍历的object
  * @param 	{Function} iterator 对每个object元素进行处理的函数
@@ -245,9 +244,9 @@ exports.map = map;
 /**
  * 合并源对象的属性到目标对象。
  *
- * @name baidu.object.merge
+ * @name object.merge
  * @function
- * @grammar baidu.object.merge(target, source[, opt_options])
+ * @grammar object.merge(target, source[, opt_options])
  *
  * @param {Function} target 目标对象.
  * @param {Function} source 源对象.
@@ -256,7 +255,7 @@ exports.map = map;
  * @config {string[]} whiteList optional 白名单，默认为空，如果存在，只有在这里的属性才会被处理.
  * @config {boolean} recursive optional 是否递归合并对象里面的object，默认为否.
  * @return {object} merge后的object.
- * @see baidu.object.extend
+ * @see object.extend
  * @author berg
  */
 
