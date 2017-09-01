@@ -56,17 +56,21 @@ function defineProperty(name) {
 
 ```
  for (k in window) {
-            // 不是window上的默认属性
-            if (!map[k] && !whiteListMap[k] && !globalMap[k]) {
-                // 不在白名单中
-                if (inWhiteList(k, whiteList)) {
-                    // 记录命中白名单
-                    whiteListMap[k] = true;
-                    continue;
-                }
-                // 记录已经命中了全局变量
-                globalMap[k] = true;
-                console.error('globalDetect: window下有全局变量 ' + k + ' : ' + window[k]);
-            }
+    // 不是window上的默认属性
+    if (!map[k] && !whiteListMap[k] && !globalMap[k]) {
+        // 不在白名单中
+        if (inWhiteList(k, whiteList)) {
+            // 记录命中白名单
+            whiteListMap[k] = true;
+            continue;
         }
+        // 记录已经命中了全局变量
+        globalMap[k] = true;
+        console.error('globalDetect: window下有全局变量 ' + k + ' : ' + window[k]);
+    }
+}
 ```
+
+### 4. 案例
+
+[代码](https://github.com/zuopf769/notebook/blob/master/fe/%E5%89%8D%E7%AB%AF%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7/detectGlobalJs.js)
