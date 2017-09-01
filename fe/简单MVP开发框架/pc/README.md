@@ -186,11 +186,6 @@ var register = function (Class, constructorHook, methods) {
 };
 ```
 
-#### demo
-
-```
-```
-
 
 
 
