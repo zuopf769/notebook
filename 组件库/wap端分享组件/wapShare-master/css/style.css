@@ -1,0 +1,1562 @@
+@charset "utf-8";
+body,ul,ol,form,input,textarea,th,td,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+html,body{height: 100%;width: 100%; overflow-x:hidden;}
+p,dl,dd{margin:0;}
+li{padding:0;list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+a:visited,a:link{text-decoration:none}
+i{font-style:normal}
+/*input,select,textarea{outline:none; border:none; background:none;}*/
+body{ font-family:"微软雅黑";-moz-user-select:none;-webkit-user-select:none;user-select:none; position: relative;}
+
+.indexCont {
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	/*left: 180px;*/
+	left: 0;
+	top: 0;
+}
+
+header{
+	width: 100%;
+	height: 44px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background:#4e6f90;
+}
+header a.list{
+	float: left;
+	width: 22px;
+	height: 18px;
+	margin-left: 8px;
+	margin-top: 13px;
+	display: inline;
+	background: url(../img/list.png) center center no-repeat;
+	background-size: 100%;
+}
+header a.list:active{
+	background: url(../img/listCur.png) center center no-repeat #4e6f90;
+	background-size: 100%;
+
+}
+header a.search{
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin: 13px 8px 0 8px;
+	background: url(../img/search.png) center center no-repeat;
+	background-size: 100%;
+}
+header a.search:active{
+	background: url(../img/searchCur.png) center center no-repeat #4e6f90;
+	background-size: 100%;
+
+}
+header a.login{
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin: 13px 8px 0 12px;
+	display: inline;
+	background: url(../img/user.png) center center no-repeat;
+	background-size: 100%;
+}
+header a.login:active{
+	background: url(../img/userCur.png) center center no-repeat #4e6f90;
+	background-size: 100%;
+
+}
+header a.logo {
+	width: 130px;
+	line-height: 44px;
+	position: absolute;
+	padding-left: 31px;
+	background: url(../img/header.png) left center no-repeat #4e6f90;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	font-size: 0.95rem;
+	color: #fff;
+	text-align: center;
+	background-size: 30px auto;
+}
+.wapTabCont {
+	min-height: 360px;
+}
+.wapTabCont,.wapTabView {
+	width: 100%;
+	overflow: hidden;
+}
+nav {
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+	margin-top: 43px;
+	line-height: 43px;
+}
+nav a{
+	font-size: 1.125rem;
+	float: left;
+	width: 25%;
+	text-align: center;
+	color: #94a4b7;
+}
+nav a.current{
+	color: #64a4e1;
+	border-bottom: 2px solid #64a4e1;
+}
+.banner {
+	width: 100%;
+	overflow: hidden;
+	margin-top:2px;
+}
+.banner img {
+	display: block;
+	width: 100%;
+	margin: 0px auto;
+}
+.recommend {
+	width: 100%;
+	height: 43px;
+	line-height: 43px;
+	font-size: 1.125rem;
+	color: #ff6600;
+	border-bottom: 2px solid #ffbd90;
+	margin-top: 5px;
+}
+.recommend .recomTit {
+	float: left;
+	margin-left: 8px;
+	display: inline;
+}
+.recommend .recomTit img {
+	display: inline;
+	vertical-align:middle;
+	width: 20px;
+}
+.recommend .recomTit span {
+	margin-left: 5px;
+	display: inline;
+	vertical-align:middle;
+}
+.recommend>a{
+	float: right;
+	margin-right: 8px;
+	display: inline;
+	color: #9cabbd;
+}
+.recomCont {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #f5f5f5;
+}
+.recomCont ul {
+	width: 100%;
+	overflow: hidden;
+	padding-top: 20px;
+}
+.recomCont ul li {
+	float: left;
+	width: 25%;
+	overflow: hidden;
+}
+.recomCont ul li img{
+	min-width: 61px;
+	min-height: 61px;
+	width: 68%;
+	border-radius: 5px;
+	display: block;
+	margin: 0px auto;
+}
+.recomCont ul li a{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	line-height: 24px;
+	font-size: 0.95rem;
+	color: #4e6f90;
+}
+.recomCont ul li a span {
+	display: block;
+	width: 66px;
+	overflow: hidden;
+	margin: 0px auto;
+	margin-bottom: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.recomCont ul li a:active{
+	color: #64a4e1;
+}
+.freeDown{
+	width: 100%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	overflow: hidden;
+	position: relative;
+	background: #e7f7ff;
+}
+.freeDown img {
+	width: 56px;
+	height: 56px;
+	float: left;
+	margin-left: 15px;
+	display: inline;
+}
+.freeDown .freeDownMsg {
+	float: left;
+	margin-left: 12px;
+	display: inline;
+}
+.freeDown .freeDownMsg h3 {
+	font-size: 1rem;
+	line-height: 23px;
+	color: #64a4e1;
+}
+.freeDown .freeDownMsg span {
+	display: block;
+	line-height: 15px;
+	font-size: 0.95rem;
+	color: #64a4e1;
+	margin-top: 5px;
+}
+.freeDown a{
+	position: absolute;
+	display: block;
+	width: 86px;
+	height: 31px;
+	border: 1px solid #95b9da;
+	border-radius: 5px;
+	right: 10px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	text-align: center;
+	line-height: 31px;
+	background: #64a4e1;
+	font-size: 1rem;
+	color: #fff;
+}
+.gameFeature {
+	width: 100%;
+	overflow: hidden;
+}
+.gameFeature ul {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 15px;
+	background: #fbfafa;
+}
+.gameFeature ul li{
+	float: left;
+	width: 50%;
+}
+.gameFeature ul li a img{
+	display: block;
+	width: 94.6%;
+	margin: 0px auto;
+	margin-top: 15px;
+}
+.gameFeature ul li span {
+	display: block;
+	width: 100%;
+	line-height: 26px;
+	text-align: center;
+	font-size: 0.875em;
+}
+.gameFeature .moreFeature {
+	width: 100%;
+	overflow: hidden;
+	line-height: 32px;
+	text-align: center;
+	font-size: 1rem;
+	border-top: 1px solid #f6f6f6;
+	border-bottom: 1px solid #f6f6f6;
+	background: #fbfafa;
+	box-shadow: 0px 15px 10px -16px #ccc;
+}
+.gameFeature .moreFeature a {
+	color: #a2afbf;
+}
+.friendlyLink {
+	width: 100%;
+	overflow: hidden;
+}
+.linkTit {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.linkCont {
+	width: 100%;
+	overflow: hidden;
+}
+.linkCont .linkTit h3 {
+	display: block;
+	width: 100%;
+	line-height: 35px;
+	font-size: 1rem;
+	color: #4e6f90;
+	border-bottom: 1px solid #f9f9f9;
+	font-weight: normal;
+}
+.linkCont p {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	-moz-column-count:5; 	/* Firefox */
+	-webkit-column-count:5; /* Safari 和 Chrome */
+	column-count:5;
+	-moz-column-gap:0px;		/* Firefox */
+	-webkit-column-gap:0px;	/* Safari 和 Chrome */
+	column-gap:0px;
+}
+.linkCont p a{
+	margin-left: 7px;
+	line-height: 25px;
+	font-size: 0.95rem;
+	color: #4e6f90;
+	display: inherit;
+	text-align: center;
+}
+footer {
+	width: 100%;
+	overflow: hidden;
+	background: #3d4b59;
+
+}
+footer .footerNav {
+/*	margin-left: 10px;
+	margin-right: 10px;*/
+}
+footer .footerNav p {
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid #97a3af;
+	background: #d0e4f6;
+	padding-right: 5px;
+}
+footer .footerNav p a {
+	float: left;
+	width: 25%;
+	line-height: 50px;
+	text-align: center;
+	color: #3d4b59;
+	font-size: 1.125rem;
+}
+footer .footerNav p a:active {
+	color: #64a4e1;
+}
+
+footer .devVer {
+/*	margin-left: 10px;
+	margin-right: 10px;*/
+}
+footer .devVer .devVerCont {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 18px;
+}
+footer .devVer .devVerBtn {
+	float: left;
+	width: 50%;
+}
+footer .devVer .devVerBtn a img {
+	display: block;
+	width: 70.8%;
+	margin: 0px auto;
+	margin-top: 18px;
+}
+footer .devVer .copr {
+	width: 100%;
+	line-height: 30px;
+	text-align: center;
+	font-size: 0.95rem;
+	overflow: hidden;
+	background: #fff;
+	color: #4e6f90;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#returnTop {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	background: url(../img/returnTop.png) center center no-repeat;
+	background-size: 100%;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+/*****************游戏列表****************/
+.listRecommend {
+	position: fixed;
+	top: 39px;
+	background:#fff;
+	z-index: 9999;
+}
+.gameListView {
+	width: 100%;
+	height: 100%;
+	margin-top: 89px;
+	position: relative;
+}
+.gameListView ul {
+	width: 100%;
+	height: calc( 100% - 90px );
+	overflow: scroll;
+}
+.gameListView ul li {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 8px;
+	padding-top: 8px;
+	border-bottom: 1px solid #f8f8f8;
+	position: relative;
+}
+.gameListView ul li img {
+	width: 62px;
+	height: 62px;
+	float: left;
+	margin-left: 10px;
+	display: inline;
+	border-radius: 5px;
+
+}
+.gameListView ul li h3 {
+	display: block;
+	width: calc(100% - 178px);
+	position: absolute;
+	top: 10px;
+	left: 82px;
+	font-size: 1.125rem;
+	font-weight: normal;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.gameListView ul li h3 a {
+	color: #4e6f90;
+}
+.gameListView ul li span {
+	display: block;
+	position: absolute;
+	left: 82px;
+	bottom: 10px;
+	color: #999;
+	font-size: 0.875rem;
+}
+.gameListView ul li span i {
+	color: #ff7324;
+}
+.gameListView ul li>a.play {
+	display: block;
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	border-radius: 5px;
+	right: 8px;
+	top: 0;
+	bottom: 0px;
+	margin: auto;
+	border: 0;
+	background: #ec8b4b;
+	text-align: center;
+	line-height: 30px;
+	font-size: 0.9	5rem;
+	color: #fff;
+}
+.NoMoreData {
+	display: block;
+	width: 100%;
+	color: #999;
+	font-size: 0.95rem;
+	text-align: center;
+	line-height: 42px;
+}
+.loadingImg {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.loadingImg img {
+	display: block;
+	width: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.loadNodata {
+	line-height: 40px;
+	text-align: center;
+	color: #999;
+}
+/*****************滑屏*******************/
+.sideslip {
+	width: 180px;
+	height: 100%;
+	overflow: hidden;
+	background: #4f79a6;
+	position: fixed;
+	left: -180px;
+	top: 0;
+}
+.sidesHead {
+	width: 100%;
+	padding-top: 42px;
+	padding-bottom: 42px;
+	border-bottom: 1px solid #5e82aa;
+}
+.sidesHeadIco {
+	width: 82px;
+	height: 79px;
+	border-radius: 82px;
+	margin: 0px auto;
+	background: rgba(72,105,142,0.5);
+	padding-top: 3px;
+}
+.sidesHeadIco a {
+	display: block;
+	margin: 0px auto;
+}
+.HeadIcoBg {
+	width: 76px;
+	height: 76px;
+	border-radius: 76px;
+	margin: 0px auto;
+	background: url(../img/headIco.png) center center no-repeat #466486;
+	background-size: 26px;
+}
+.HeadIcoBg a {
+	width: 100%;
+	height: 100%;
+}
+.userLogin {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 18px;
+	text-align: center;
+	font-size: 0.95rem;
+}
+.userLogin a {
+	color: #d9dce0;
+}
+.userLogin span {
+	color: #506883;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.sideslip .sidesList {
+	width: 100%;
+	overflow: hidden;
+}
+.sideslip .sidesList p {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #5e82aa;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 35px;
+	background: url(../img/ico.png) 8px 15px no-repeat;
+	background-size: 20px;
+}
+.sideslip .sidesList p.rouseIco {
+	background: url(../img/ico.png) 6px -35px no-repeat;
+	background-size: 20px;
+}
+.sideslip .sidesList p.activityIco {
+	background: url(../img/ico.png) 8px -82px no-repeat;
+	background-size: 20px;
+}
+
+.sideslip .sidesList p a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #d9dce0;
+}
+.sideslip .sidesList p a.active {
+	color: #fe6601;
+}
+/******************游戏分类**************/
+.gameClassify {
+	width: 100%;
+	padding-bottom: 14px;
+	overflow: hidden;
+}
+.gameClassifyTit {
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	background: url(../img/ico.png) 7px -126px no-repeat #fbfbfb;
+	text-indent: 35px;
+	color: #ff6600;
+	font-size: 1rem;
+	background-size: 20px;
+}
+.gameClassifyCont {
+	width: 96%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+.gameClassifyCont li {
+	width: 50%;
+	float: left;
+	margin-top: 14px;
+}
+.gameClassifyCont li a {
+	display: block;
+	width: 87%;
+	height: auto;
+	margin-left: 11px;
+	position: relative;
+}
+.gameClassifyCont li a img {
+	width: 100%;
+}
+.gameClassifyCont li a p {
+	position: absolute;
+	width: 100%;
+	height: 25px;
+	background: rgba(0,0,0,0.5);
+	left: 0;
+	bottom: 3px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-size: 0.8rem;
+	color: #d9dce0;
+	text-align: center;
+	line-height: 25px;
+}
+.gameClassifyCont li a span {
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 20px;
+	background: #f00;
+	font-size: 0.625rem;
+	color: #fff;
+}
+/*************游戏排行***************/
+.gameRankTab {
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	background: #fbfbfb;
+	overflow: hidden;
+	margin-top: 1px;
+}
+.gameRankTab a {
+	display: block;
+	width: 33%;
+	float: left;
+	text-align: center;
+	font-size: 1rem;
+	color: #4e6f90;
+}
+.gameRankTab a.current {
+	color: #ff6600;
+	background: #fbece1;
+}
+.gameRankView {
+	width: 100%;
+	overflow: hidden;
+}
+.ameRankCont {
+	width: 100%;
+	overflow: hidden;
+	display: none;
+}
+.gameRankView .current {
+	display: block;
+}
+.ameRankCont ul li {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 8px;
+	padding-top: 8px;
+	border-bottom: 1px solid #f8f8f8;
+	position: relative;
+}
+.ameRankCont ul li img {
+	width: 62px;
+	height: 62px;
+	float: left;
+	margin-left: 10px;
+	display: inline;
+	border-radius: 5px;
+
+}
+.ameRankCont ul li h3 {
+	display: block;
+	width: 190px;
+	position: absolute;
+	top: 10px;
+	left: 82px;
+	font-size: 1.125rem;
+	font-weight: normal;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.ameRankCont ul li h3 a {
+	color: #4e6f90;
+}
+.ameRankCont ul li span {
+	display: block;
+	position: absolute;
+	left: 82px;
+	bottom: 10px;
+	color: #999;
+	font-size: 0.875rem;
+}
+.ameRankCont ul li span i {
+	color: #ff7324;
+}
+.ameRankCont ul li>a.play {
+	display: block;
+	position: absolute;
+	width: 86px;
+	height: 30px;
+	border-radius: 5px;
+	right: 8px;
+	top: 0;
+	bottom: 0px;
+	margin: auto;
+	border: 0;
+	background: #ec8b4b;
+	text-align: center;
+	line-height: 30px;
+	font-size: 0.9	5rem;
+	color: #fff;
+}
+/************精彩推荐***********/
+.wonderRecom {
+	margin-top: 1px;
+	background: url(../img/ico.png) 8px -170px no-repeat #fbfbfb;
+	background-size: 20px;
+}
+.wonderRecomCont {
+	display: block;
+}
+/************游戏详情************/
+header a.returnList {
+	float: left;
+	display: inline;
+	color: #d9dce0;
+	font-size: 1rem;
+	line-height: 44px;
+	padding-left: 24px;
+	background: url(../img/gameDetailIco.png) 6px -221px no-repeat;
+	background-size: 20px;
+}
+.gameDetail {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 44px;
+	margin-bottom: 10px;
+}
+.gameDetail .gameSynopsis {
+	width: 100%;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	overflow: hidden;
+	position: relative;
+}
+.gameDetail .gameSynopsis img {
+	float: left;
+	width: 62px;
+	height: 62px;
+	margin-left: 7px;
+	margin-right: 12px;
+	display: inline;
+	border-radius: 5px;
+}
+.gameDetail .gameSynopsis h3 {
+	font-size: 1rem;
+	color: #4e6f90;
+	width: 190px;
+	float: left;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-weight: normal;
+}
+.gameDetail .gameSynopsis ul {
+	float: left;
+	width: 190px;
+	margin-top: 8px;
+	overflow: hidden;
+}
+.gameDetail .gameSynopsis ul li {
+	float: left;
+	width: 13px;
+	height: 13px;
+	margin-right: 1px;
+	display: inline;
+	background: url(../img/scoreIco.png) center center no-repeat;
+	background-size: 100%;
+}
+.gameDetail .gameSynopsis ul li.active {
+	background: url(../img/scoreIcoCur.png) center center no-repeat;
+	background-size: 100%;
+}
+.gameDetail .gameSynopsis p {
+	float: left;
+	width: 190px;
+	display: inline-block;
+	overflow: hidden;
+	margin-top: 3px;
+	color: #9cabbd;
+	font-size: 0.95rem;
+}
+.gameDetail .gameSynopsis p span {
+	color: #ff6600;
+}
+.gameDetail .gameSynopsis a.play {
+	display: block;
+	width: 86px;
+	height: 32px;
+	background: #ec8b4b;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	right: 7px;
+	bottom: 0;
+	margin: auto;
+	text-align: center;
+	line-height: 32px;
+	font-size: 1rem;
+	color: #fff;
+}
+.playGame {
+	overflow: hidden;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	background: #fbfbfb;
+}
+.playGame .gameScreenshot {
+	width: 100%;
+	min-height: 181px;
+	margin: 0px auto;
+	margin-bottom: 14px;
+	background: #000;
+	position: relative;
+	overflow: hidden;
+}
+.playGame .gameScreenshot ul {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.playGame .gameScreenshot ul li {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+#imgProBtn {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 6px;
+	text-align: center;
+}
+#imgProBtn div {
+	width: 6px;
+	height: 6px;
+	border-radius: 6px;
+	background: #d9dce0;
+	margin-left: 2px;
+	margin-right: 2px;
+	display: inline-block;
+}
+#imgProBtn div.active {
+	background: #ff6600;
+}
+.gameDetail .gameMsg {
+	width: 100%;
+	overflow: hidden;
+	border-top: 1px solid #f7f7f7;
+	padding-bottom: 16px;
+	padding-top: 8px;
+	background: #fbfbfb;
+}
+.gameDetail .gameMsg p {
+	float: left;
+	width: 50%;
+	margin-top: 6px;
+	text-indent: 30px;
+	overflow: hidden;
+	color: #9cabbd;
+	font-size: 0.95rem;
+}
+.gameDetail .gameMsg .gameMsgBtn {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20px;
+	text-align: center;
+	float: left;
+}
+.gameDetail .gameMsg .gameMsgBtn a {
+	display: inline-block;
+	width: 56px;
+	height: 30px;
+	background: url(../img/gameMsgBtnBg.png) 13px -44px no-repeat #e7f7ff;
+	background-size: 20px;
+	color: #6faae3;
+	font-size: 0.95rem;
+	text-align: center;
+	line-height: 30px;
+	font-weight: normal;
+	border-radius: 5px;
+	margin: 0 9px 0 9px !important;
+	text-indent: 0 !important;
+	float: initial;
+	padding-left: 34px;
+}
+.gameDetail .gameMsg .gameMsgBtn a.active {
+	background: url(../img/gameMsgBtnBg.png) 13px -142px no-repeat #e7f7ff !important;
+	background-size: 20px auto !important;
+}
+.gameDetail .gameMsg .gameMsgBtn a.comment {
+	background: url(../img/gameMsgBtnBg.png) 13px 7px no-repeat #e7f7ff !important;
+	background-size: 20px auto !important;
+}
+.gameDetail .gameMsg .gameMsgBtn a.share {
+	background: url(../img/gameMsgBtnBg.png) 13px -94px no-repeat #e7f7ff !important;
+	background-size: 20px auto !important;
+}
+.gameDetail .gameDes {
+	width: 100%;
+	overflow: hidden;
+	background: #fbfbfb;
+	padding-bottom: 10px;
+	margin-top: 10px;
+}
+.gameDetail .gameDes h3 {
+	width: 100%;
+	overflow: hidden;
+	height: 44px;
+	line-height: 44px;
+	border-bottom: 1px solid #f4c7a9;
+	background: url(../img/gameDetailIco.png) 8px 12px no-repeat;
+	font-weight: normal;
+	text-indent: 34px;
+	font-size: 1rem;
+	color: #ec8b4b;
+	background-size: 22px;
+}
+.gameDetail .gameDes article {
+	display: block;
+	margin: 0px auto;
+	height: 18px;
+	overflow: hidden;
+	line-height: 18px;
+	color: #4e6f90;
+	font-size: 0.95rem;
+	margin: 12px 10px 0 10px;
+	text-indent: 1rem;
+	word-break: break-all;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.gameDetail .gameDes a {
+	float: right;
+	margin-top: 16px;
+	margin-right: 15px;
+	display: inline;
+	color: #9cabbd;
+	font-size: 0.95rem;
+}
+.gameDetail .gameDes a span {
+	float: right;
+	width: 8px;
+	height: 13px;
+	margin-left: 5px;
+	display: inline;
+	margin-top: 3px;
+	background: url(../img/gameDetailIco.png) -8px -267px no-repeat;
+}
+.gameDetail .gameSimilar {
+	width: 100%;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	background: #fbfbfb;
+}
+.gameDetail .gameSimilar h3 {
+	width: 100%;
+	overflow: hidden;
+	height: 44px;
+	line-height: 44px;
+	border-bottom: 1px solid #f4c7a9;
+	background: url(../img/gameDetailIco.png) 8px -40px no-repeat;
+	font-weight: normal;
+	text-indent: 34px;
+	font-size: 1rem;
+	color: #ec8b4b;
+	background-size: 22px;
+}
+.gameDetail .gameSimilar ul {
+	width: 100%;
+	overflow: hidden;
+}
+.gameDetail .gameSimilar ul li {
+	width: 25%;
+	overflow: hidden;
+	float: left;
+	margin-top: 9px;
+}
+.gameDetail .gameSimilar ul li img {
+	display: block;
+	margin: 0px auto;
+	width: 61px;
+	height: 61px;
+	border-radius: 5px;
+}
+.gameDetail .gameSimilar ul li span {
+	display: block;
+	width: 61px;
+	color: #9cabbd;
+	font-size: 0.95rem;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 6px;
+
+}
+.gameDetail .gameComment {
+	width: 100%;
+	overflow: hidden;
+	border-top: 1px solid #fcfcfc;
+}
+.gameDetail .gameComment>h3 {
+	width: 100%;
+	overflow: hidden;
+	height: 44px;
+	line-height: 44px;
+	border-bottom: 1px solid #f4c7a9;
+	background: url(../img/gameDetailIco.png) 7px -78px no-repeat;
+	font-weight: normal;
+	text-indent: 34px;
+	font-size: 1rem;
+	color: #ec8b4b;
+	background-size: 20px;
+}
+.gameDetail .gameComment .gameComCont {
+	margin-left: 7px;
+	margin-right: 7px;
+	overflow: hidden;
+}
+.gameDetail .gameComment .gameComCont .gameScore {
+	width: 100%;
+	overflow: hidden;
+}
+.gameDetail .gameComment .gameComCont .gameScore ul {
+	margin-top: 10px;
+	margin-bottom: 12px;
+	overflow: hidden;
+	float: left;
+}
+.gameDetail .gameComment .gameComCont .gameScore ul li {
+	float: left;
+	width: 26px;
+	height: 26px;
+	margin-right: 1px;
+	display: inline;
+	background: url(../img/scoreIco.png) center center no-repeat;
+}
+.gameDetail .gameComment .gameComCont .gameScore ul li.active {
+	background: url(../img/scoreIcoCur.png) center center no-repeat;
+}
+.gameDetail .gameComment .gameComCont .gameScore span {
+	float: left;
+	color: #4e6f90;
+	font-size: 0.95rem;
+	margin-top: 14px;
+	margin-left: 16px;
+	display: inline;
+}
+.gameDetail .gameComment .gameComCont .gameScore .commentView{
+	width: 100%;
+	overflow: hidden;
+}
+.gameDetail .gameComment .gameComCont .gameScore .comCont{
+	padding-top: 8px;
+	padding-left: 8px;
+	overflow: hidden;
+	border: 1px solid #d9dce0;
+}
+.gameDetail .gameComment .gameComCont .gameScore .comCont textarea {
+	width: 100%;
+	height: 70px;
+	float: left;
+	border: 0;
+	font-size: 0.95rem;
+}
+.gameDetail .gameComment .gameComImg {
+	width: calc(100% - 4px);
+	margin-left: 2px;
+	overflow: hidden;
+	margin-top: 5px;
+}
+.gameDetail .gameComment .gameComImg .imgPar {
+	width: 60px;
+	height: 80px;
+	float: left;
+	margin-left: 5px;
+	display: inline;
+	position: relative;
+}
+.gameDetail .gameComment .gameComImg .imgPar img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.gameDetail .gameComment .gameComImg .imgPar span {
+	display: block;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	background: url(../img/imgClose.png) center center no-repeat;
+	background-size: 100%;
+}
+.gameDetail .gameComment .pubComment {
+	width: 100%;
+	overflow: hidden;
+	background: #fbfbfb;
+	border-bottom: 1px solid #f5f4f4;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	position: relative;
+}
+.gameDetail .gameComment .pubComment a {
+	float: left;
+	width: 23px;
+	height: 23px;
+	margin-top: 5px;
+	margin-left: 8px;
+	display: inline;
+}
+.gameDetail .gameComment .pubComment input {
+	width: 23px;
+	height: 23px;
+	position: absolute;
+	top: 9px;
+	left: 8px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+.gameDetail .gameComment .pubComment a.commLook {
+	background: url(../img/gameDetailIco.png) center -172px no-repeat;
+}
+.gameDetail .gameComment .pubComment a.commImg {
+	background: url(../img/gameDetailIco.png) center -228px no-repeat;
+}
+.gameDetail .gameComment .pubComment select {
+	width: 158px;
+	height: 28px;
+	border-radius: 5px;
+	border: 1px solid #f4c6a8;
+	float: left;
+	margin-top: 3px;
+	margin-left: 8px;
+	font-size: 0.95rem;
+	display: inline;
+}
+.gameDetail .gameComment .pubComment a.subComm {
+	float: right;
+	width: 85px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 0.95rem;
+	color: #fff;
+	background: #ec8b4b;
+	display: inline;
+	border-radius: 5px;
+	margin: 3px 8px 0 0;
+}
+.commentList {
+	width: 100%;
+	overflow: hidden;
+}
+.commentList .commentListView {
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #f9f9f9;
+}
+.commentListView .commentListTit {
+	margin: 10px 7px 0 7px;
+	overflow: hidden;
+	position: relative;
+}
+.commentListView .commentListTit img {
+	float: left;
+	width: 61px;
+	height: 61px;
+	border-radius: 61px;
+	margin-right: 12px;
+	display: inline;
+}
+.commentListView .commentListTit h3 {
+	float: left;
+	width: 225px;
+	height: 32px;
+	line-height: 32px;
+	color: #6faae3;
+	font-size: 0.875rem;
+	font-weight: normal;
+}
+.commentListView .commentListTit ul {
+	float: left;
+	width: 225px;
+	overflow: hidden;
+}
+.commentListView .commentListTit ul li {
+	float: left;
+	width: 13px;
+	height: 13px;
+	margin-right: 1px;
+	display: inline;
+}
+.commentListView .commentListTit ul li.active {
+	background: url(../img/scoreIcoCur.png) center center no-repeat;
+	background-size: 100%;
+}
+.commentListView .commentListTit a.commentBtn {
+	display: block;
+	width: 22px;
+	height: 22px;
+	background: url(../img/gameDetailIco.png) 0px -90px no-repeat;
+	background-size: 20px;
+	position: absolute;
+	top: 9px;
+	right: 0;
+}
+.commentListView .commentCont {
+	margin: 8px 17px 0 17px;
+	overflow: hidden;
+}
+.commentListView .commentCont .perComment {
+	display: inline-block;
+	overflow: hidden;
+	font-size: 0.95rem;
+	color: #4e6f90;
+	line-height: 28px;
+}
+.commentListView .commentCont .heComment {
+	width: 100%;
+	overflow: hidden;
+}
+.commentListView .commentCont .heComment>span {
+	display: block;
+	width: 0px;
+	border-left:13px solid transparent;
+	border-right:13px solid transparent;
+	border-bottom:20px solid #f7fcff;
+	margin-left: 20px;
+}
+.commentListView .commentCont .heComment .heCommentCont {
+	overflow: hidden;
+	background: #f7fcff;
+	padding: 8px 10px 8px 10px;
+	line-height: 34px;
+	font-size: 0.875rem;
+}
+.commentListView .commentCont .heComment .heCommentCont p {
+	float: left;
+	color: #f9a56c;
+}
+.commentListView .commentCont .heComment .heCommentCont span {
+	color: #9cabbd;
+	float: left;
+}
+.commentListView .commentCont .commScreen {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 18px;
+	margin-bottom: 8px;
+}
+.commentListView .commentCont .commScreen p,.commentListView .commentCont .commScreen span {
+	float: left;
+	color: #e4e8ec;
+	font-size: 0.95rem;
+}
+.commentListView .commentCont .commScreen span {
+	float: right;
+}
+/*****************试玩游戏*******************/
+header p.sGameTit {
+	width: 130px;
+	height: 44px;
+	line-height: 44px;
+	color: #d9dce0;
+	font-size: 1.05rem;
+	text-align: center;
+	display: block;
+	margin: 0px auto;
+}
+.sGameCont {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 54px;
+	margin-bottom: 10px;
+}
+.sGameCont .sGameView {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 10px;
+	text-align: center;
+	background: #fbfbfb;
+}
+.sGameCont .sGameView .sGamePar {
+	display: inline-block;
+	width: 90%;
+}
+.sGameCont .sGameShare {
+	width: 100%;
+	overflow: hidden;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	border-top: 1px solid #f6f6f6;
+	border-bottom: 1px solid #f6f6f6;
+	background: #fbfbfb;
+}
+.sGameCont .sGameShare .sGameVoteBtn {
+	float: left;
+	margin-left: 14px;
+	display: inline;
+}
+.sGameCont .sGameShare .sGameVoteBtn a {
+	display: block;
+	/*width: 85px;*/
+	overflow: hidden;
+	padding-top: 8px;
+	padding-left: 30px;
+	background: url(../img/sGameIco.png) left 3px no-repeat;
+	color: #6faae3;
+	font-size: 0.95rem;
+}
+.sGameCont .sGameShare .sGameShareBtn {
+	float: right;
+	margin-right: 14px;
+	display: inline;
+}
+.sGameCont .sGameShare .sGameShareBtn a {
+	display: block;
+	/*width: 30px;*/
+	overflow: hidden;
+	padding-top: 8px;
+	padding-left: 30px;
+	background: url(../img/sGameIco.png) left -35px no-repeat;
+	color: #6faae3;
+	font-size: 0.95rem;
+}
+.sGameCont .sGameName {
+	padding-left: 7px;
+	padding-right: 7px;
+	margin: 0px auto;
+	overflow: hidden;
+	background: #fbfbfb;
+}
+.sGameCont .sGameName h3 {
+	color: #4e6f90;
+	font-size: 1.05rem;
+	line-height: 36px;
+	font-weight: normal;
+}
+.sGameCont .sGameName p {
+	font-size: 0.875rem;
+	color: #ec8b4b;
+	line-height: 32px;
+}
+.sGameCont .sGameName p span {
+	font-size: 0.95rem;
+}
+.sGameCont .sGameExp {
+	padding-left: 7px;
+	padding-right: 7px;
+	overflow: hidden;
+	background: #fbfbfb;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+.sGameCont .sGameExp .sGameExpTit {
+	border-top: 1px solid #f6f6f6;
+	border-bottom: 1px solid #f6f6f6;
+	line-height: 34px;
+	height: 34px;
+	color: #4e6f90;
+}
+.sGameCont .sGameExp article {
+	color: #9cabbd;
+	line-height: 18px;
+	text-indent: 1rem;
+	font-size: 0.95rem;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.sGameCont .writeComments {
+	padding-right: 7px;
+	padding-left: 7px;
+}
+.sGameCont .writeComments p {
+	font-size: 1rem;
+	color: #ec8b4b;
+	line-height: 35px;
+}
+.sGameCont .writeComments textarea {
+	width: 97%;
+	height: 73px;
+	padding-left: 7px;
+	padding-top: 5px;
+	border: 1px solid #ebecee;
+}
+.sGameCont .writeComments a.publishBtn {
+	display: block;
+	width: 86px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	background: #ec8b4b;
+	font-size: 0.95rem;
+	float: right;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+#sideMask {
+	width: 100%;
+	height: 0px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+#imgSwitchCont {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+/********************游戏搜索*******************/
+.gameSearch {
+	min-height: 390px;
+	margin: 58px 22px 0 22px;
+	overflow: hidden;
+	position: relative;
+}
+.gameSearch .gameSearchInput {
+	border: 1px solid #9cabbd;
+	padding-left: 36px;
+	background: url(../img/gameSearch.png) 7px center no-repeat;
+	background-size: 20px;
+}
+.gameSearch input {
+	width: 	100%;
+	height: 43px;
+	border: 0;
+	border-radius: 10px;
+	font-size: 0.95rem;
+}
+.gameSearch ul {
+	width: calc(100% - 2px);
+	overflow: hidden;
+	border: 1px solid #cbd3dc;
+	border-top: 0;
+	border-bottom: 0;
+	position: absolute;
+	left: 0;
+	top: 45px;
+	z-index: 9999;
+	background: #fff;
+	text-align: center;
+}
+.gameSearch ul li {
+	line-height: 40px;
+	border-bottom: 1px solid #cbd3dc;
+}
+.gameSearch ul li a {
+	display: block;
+	color: #000;
+}
+.gameSearch h3 {
+	width: 100%;
+	display: block;
+	font-size: 1rem;
+	color: #4e6f90;
+	line-height: 44px;
+	text-align: center;
+}
+.gameSearchView {
+	width: 100%;
+	overflow: hidden;
+}
+.gameSearchView .gameSearchList {
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	font-size: 0.8rem;
+	line-height: 24px;
+}
+.gameSearchView .gameSearchList a {
+	color: #9cabbd;
+}
+/***********************评论回复*******************/
+.gameComReply {
+	min-height: 390px;
+	margin: 57px 15px 0 15px;
+	overflow: hidden;
+}
+.gameComReply .gameComReplyView {
+	width: 100%;
+	overflow: hidden;
+}
+.gameComReply .gameComReplyView .gameComReplyCont {
+	padding: 5px;
+	overflow: hidden;
+	border: 1px solid #d8dde2;
+}
+.gameComReply textarea {
+	width: 100%;
+	height: 103px;
+	border: 0;
+	font-size: 0.95rem;
+}
+.gameComReply a {
+	display: block;
+	float: right;
+	width: 85px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #ec8b4b;
+	color: #f4f4f4;
+	font-size: 0.95rem;
+	border-radius: 5px;
+	margin-top: 8px;
+}

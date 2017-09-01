@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>Examples</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/wapShare.css">
+<script type="text/javascript" src="js/Class.js"></script>
+<script type="text/javascript" src="js/wapShare.js"></script>
+<style type="text/css">
+	#shareBtn {
+		width: 100px;
+		height: 50px;
+	}
+</style>
+</head>
+<body>
+    <button id="shareBtn"></button>
+    <script type="text/javascript">
+    	window.onload = function(){
+    		var shareBtn = document.querySelector('#shareBtn');
+            var shareCont = ['1','2','3','4'];
+    		var array = ['renren'];
+    		var array2 = ['人人网'];
+    		var share = new wapShare(shareBtn,shareCont,array,array2);
+    	}
+    </script>
+</body>
+</html>
