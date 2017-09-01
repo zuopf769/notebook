@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flow</title>
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="top">
+		<div class="name">
+			<h3>Web流程设计器</h3>
+		</div>
+		<div class="handle">
+			<h4>状态：选择元素</h4>
+		</div>
+		<div class="user">
+			<div class="function">
+				<div class="save">
+					<input class="btn btn-info" type="button" value="保存">
+				</div>
+				<div class="file">
+					<select name="file" id="file">
+						<option value="新建流程图">新建流程图</option>
+					</select>
+				</div>
+				<div class="rename">
+					<input class="btn" type="button" value="重命名">
+				</div>
+				<div class="new">
+					<input class="btn" type="button" value="新建">
+				</div>
+				<div class="delete">
+					<input class="btn" type="button" value="删除">
+				</div>
+			</div>
+			<div class="info">
+				<div class="dropdown">
+					<img src="img/photo" alt="">
+					<span class="dropdown-toggle">未登录</span>
+					<!-- <b class="dropdown-toggle" data-toggle="dropdown"><span >帅哥</span></b> -->
+					<ul class="dropdown-menu" role="menu">
+		                <li><a id="upload" href="#">上传文件</a></li>
+		                <li><a id="download" href="#">下载文件</a></li>
+		                <li><a id="info" href="#">修改资料</a></li>
+		                <li class="divider"></li>
+		                <li><a id="logout" href="#">退出</a></li>
+	              	</ul>
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="dashboard">
+		<div class="choose btn btn-large">
+			<img src="img/select.gif" alt=""><span>选择</span>
+		</div>
+		<div class="line btn btn-large">
+			<img src="img/line.png" alt=""><span>连线</span>
+		</div>
+		<div class="drag">
+			<div class="start btn btn-large">
+				<img src="img/start.png" alt="">
+				<span>开始</span>
+			</div>
+			<div class="status btn btn-large">
+				<img src="img/task.png" alt="">
+				<span>状态</span>
+			</div>
+			<div class="branch btn btn-large">
+				<img src="img/branch.png" alt="">
+				<span>分支</span>
+			</div>
+			<div class="task btn btn-large">
+				<img src="img/task.png" alt="">
+				<span>任务</span>
+			</div>
+			<div class="end btn btn-large">
+				<img src="img/end.png" alt="">
+				<span>结束</span>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="flow">
+		
+	</div>
+
+	<div class="myalert" style="display:none"></div>
+	<div class="cover" style="display:none"></div>
+
+
+</body>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/raphael-min.js"></script>
+	<script src="js/flow.js"></script>
+	<script src="js/manage.js"></script>
+</html>

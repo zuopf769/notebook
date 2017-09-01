@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css"
+	href="lib/jquery-ui-1.8.4.custom/css/smoothness/jquery-ui-1.8.4.custom.css"
+	rel="stylesheet" />
+
+<script type="text/javascript" src="lib/raphael.js"></script>
+<script type="text/javascript"
+	src="lib/jquery-ui-1.8.4.custom/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript"
+	src="lib/jquery-ui-1.8.4.custom/js/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="myflow.js"></script>
+<script type="text/javascript" src="myflow.jpdl4.js"></script>
+<script type="text/javascript" src="myflow.editors.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#myflow')
+				.myflow(
+						{
+							basePath : "",
+							restore : eval("({states:{rect1:{type:'start',text:{text:'开始'}, attr:{ x:507, y:63, width:50, height:50}, props:{text:{value:'开始'},temp1:{value:''},temp2:{value:''}}},rect2:{type:'state',text:{text:'状态2'}, attr:{ x:489, y:286, width:100, height:50}, props:{text:{value:'状态2'},temp1:{value:''},temp2:{value:''}}},rect3:{type:'task',text:{text:'任务1'}, attr:{ x:311, y:284, width:100, height:50}, props:{text:{value:'任务1'},assignee:{value:''},form:{value:''},desc:{value:''},temp1:{value:''},temp2:{value:''}}},rect4:{type:'task',text:{text:'任务3'}, attr:{ x:675, y:287, width:100, height:50}, props:{text:{value:'任务3'},assignee:{value:''},form:{value:''},desc:{value:''},temp1:{value:''},temp2:{value:''}}},rect5:{type:'fork',text:{text:'分支'}, attr:{ x:509, y:176, width:50, height:50}, props:{text:{value:'分支'},temp1:{value:''},temp2:{value:''}}},rect6:{type:'join',text:{text:'合并'}, attr:{ x:517, y:398, width:50, height:50}, props:{text:{value:'合并'},temp1:{value:''},temp2:{value:''}}},rect7:{type:'end',text:{text:'结束'}, attr:{ x:519, y:517, width:50, height:50}, props:{text:{value:'结束'},temp1:{value:''},temp2:{value:''}}}},paths:{path8:{from:'rect1',to:'rect5', dots:[],text:{text:'TO 分支',textPos:{x:55,y:-8}}, props:{text:{value:'TO 分支'}}},path9:{from:'rect5',to:'rect2', dots:[],text:{text:'TO 状态2',textPos:{x:28,y:-4}}, props:{text:{value:'TO 状态2'}}},path10:{from:'rect2',to:'rect6', dots:[],text:{text:'TO 合并',textPos:{x:25,y:-10}}, props:{text:{value:'TO 合并'}}},path11:{from:'rect6',to:'rect7', dots:[],text:{text:'TO 结束',textPos:{x:31,y:-10}}, props:{text:{value:''}}},path12:{from:'rect5',to:'rect3', dots:[],text:{text:'TO 任务1',textPos:{x:-21,y:-10}}, props:{text:{value:'TO 任务1'}}},path13:{from:'rect3',to:'rect6', dots:[],text:{text:'TO 合并',textPos:{x:-34,y:21}}, props:{text:{value:'TO 合并'}}},path14:{from:'rect5',to:'rect4', dots:[],text:{text:'TO 任务3',textPos:{x:55,y:-17}}, props:{text:{value:'TO 任务3'}}},path15:{from:'rect4',to:'rect6', dots:[],text:{text:'TO 合并',textPos:{x:30,y:18}}, props:{text:{value:'TO 合并'}}}},props:{props:{name:{value:'新建流程'},key:{value:''},desc:{value:''}}}})"),
+							tools : {
+								save : {
+									onclick : function(data) {
+										alert('save:\n' + data);
+									}
+								}
+							}
+						});
+
+	});
+</script>
+<style type="text/css">
+body {
+	margin: 0;
+	pading: 0;
+	text-align: left;
+	font-family: Arial, sans-serif, Helvetica, Tahoma;
+	font-size: 12px;
+	line-height: 1.5;
+	color: black;
+	background-image: url(img/bg.png);
+}
+
+.node {
+	width: 70px;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #fff;
+}
+
+.mover {
+	border: 1px solid #ddd;
+	background-color: #ddd;
+}
+
+.selected {
+	background-color: #ddd;
+}
+
+.state {
+	
+}
+
+#myflow_props table {
+	
+}
+
+#myflow_props th {
+	letter-spacing: 2px;
+	text-align: left;
+	padding: 6px;
+	background: #ddd;
+}
+
+#myflow_props td {
+	background: #fff;
+	padding: 6px;
+}
+
+#pointer {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#path {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#task {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#state {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+</style>
+</head>
+<body>
+<div id="myflow_tools"
+	style="position: absolute; top: 10; left: 10; background-color: #fff; width: 70px; cursor: default; padding: 3px;"
+	class="ui-widget-content">
+<div id="myflow_tools_handle" style="text-align: center;"
+	class="ui-widget-header">工具集</div>
+
+
+<div class="node" id="myflow_save"><img src="img/save.gif" />&nbsp;&nbsp;保存</div>
+<div>
+<hr />
+</div>
+<div class="node selectable" id="pointer"><img
+	src="img/select16.gif" />&nbsp;&nbsp;选择</div>
+<div class="node selectable" id="path"><img
+	src="img/16/flow_sequence.png" />&nbsp;&nbsp;转换</div>
+<div>
+<hr />
+</div>
+<div class="node state" id="start" type="start"><img
+	src="img/16/start_event_empty.png" />&nbsp;&nbsp;开始</div>
+<div class="node state" id="state" type="state"><img
+	src="img/16/task_empty.png" />&nbsp;&nbsp;状态</div>
+<div class="node state" id="task" type="task"><img
+	src="img/16/task_empty.png" />&nbsp;&nbsp;任务</div>
+<div class="node state" id="fork" type="fork"><img
+	src="img/16/gateway_parallel.png" />&nbsp;&nbsp;分支</div>
+<div class="node state" id="join" type="join"><img
+	src="img/16/gateway_parallel.png" />&nbsp;&nbsp;合并</div>
+<div class="node state" id="end" type="end"><img
+	src="img/16/end_event_terminate.png" />&nbsp;&nbsp;结束</div>
+<div class="node state" id="end-cancel" type="end-cancel"><img
+	src="img/16/end_event_cancel.png" />&nbsp;&nbsp;取消</div>
+<div class="node state" id="end-error" type="end-error"><img
+	src="img/16/end_event_error.png" />&nbsp;&nbsp;错误</div>
+</div>
+
+<div id="myflow_props"
+	style="position: absolute; top: 30; right: 50; background-color: #fff; width: 220px; padding: 3px;"
+	class="ui-widget-content">
+<div id="myflow_props_handle" class="ui-widget-header">属性</div>
+<table border="1" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>aaa</td>
+	</tr>
+	<tr>
+		<td>aaa</td>
+	</tr>
+</table>
+<div>&nbsp;</div>
+</div>
+
+<div id="myflow"></div>
+</body>
+</html>

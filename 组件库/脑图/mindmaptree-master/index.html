@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div id="mindmap">
+
+    <div id="mindmap-main">
+        <div id="function-bar">
+            <div id="toolbar">
+                <span id="node-plus" class="toolbar-btn glyphicon glyphicon-plus plus-active"></span>
+                <!--
+                <span id="node-more" class="toolbar-btn glyphicon glyphicon-tasks"></span>
+                <span id="node-info" class="toolbar-btn glyphicon glyphicon-list-alt"></span>
+                -->
+                <span id="node-cancel" class="toolbar-btn glyphicon glyphicon-remove"></span>
+            </div>
+            <div id="tip-box">
+                <div class="tip-wrapper">
+                    <span class="tip-triangle"></span>
+                    <span class="tip-label"></span>
+                </div>
+
+            </div>
+
+            <div id="label-group">
+                <input class="form-control" type="text"/>
+                <button class="btn btn-default btn-sm">确定</button>
+            </div>
+
+
+        </div>
+
+
+        <div id="mindmap-canvas"></div>
+
+    </div>
+
+</div>
+
+
+<script src="js/packages/bower/requirejs/require.js" data-main="js/main"></script>
+
+</body>
+</html>
