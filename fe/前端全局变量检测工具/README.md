@@ -71,6 +71,6 @@ function defineProperty(name) {
 }
 ```
 
-### 4. 案例
+### 案例
 
 [代码](https://github.com/zuopf769/notebook/blob/master/fe/%E5%89%8D%E7%AB%AF%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7/detectGlobalJs.js)
