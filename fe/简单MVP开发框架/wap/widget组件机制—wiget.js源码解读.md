@@ -192,8 +192,9 @@ module.exports.inherits = inherits;
 ```
 
 ```
-// 改写_init函数
+ // 改写_init函数
  var _init = lang.isFunction(proto._init) ? proto._init : emptyFn;
+ // 如果父类是lang.Class则构造函数是lang.Class，否则是$superProto._init
  var _superClassInit = $super === lang.Class ? lang.Class : $superProto._init;
 
   // _init执行父类构造函数
@@ -225,7 +226,7 @@ fn.extend($.extend(true, {}, widget._method, proto));
 ```
 return fn;
 ```
-+ 最终的wiget方法会返回fn，最为最终的组件的构造函数
++ 最终的wiget方法会返回fn，为最终的组件的构造函数
 
 ```
 /**
@@ -249,9 +250,9 @@ return fn;
       if (!lang.isObject(events)) {
           return false;
       }
- 事件委托容器
+      
       $.each(events, function (key, val) {
-	      // 用空格分割key
+	  // 用空格分割key
           var parseKey = key.split(/\s+/);
           // 绑定事件的元素
           var element;
@@ -265,32 +266,31 @@ return fn;
           }
 
           switch (parseKey.length) {
-	          、
+	          
              case 3:
-	               // 取得是挂载到me.$elements上的dom元素，对应上面在elements配置的key
+	        // 取得是挂载到me.$elements上的dom元素，对应上面在elements配置的key
                 element = me.$elements[parseKey[0]];
-                 type = parseKey[1];
-                  selector = parseKey[2];
-                 break;
+                type = parseKey[1];
+                selector = parseKey[2];
+                break;
               case 2:
-                      // 'click .item': 'clickHandle',
+                  // 'click .item': 'clickHandle',
                   if (parseKey[0].match(/^\$/)) {
-                       element = me.$elements[parseKey[0]];
+                      element = me.$elements[parseKey[0]];
                       type = parseKey[1];
                       // 委托容器为parseKey[1]，应用场景为：比如组件是是list组件里面的一个item，就需要把me.$el上的事件委托到外层指定的某个容器上
                 }
                  else {
-                       element = me.$el;
+                      element = me.$el;
                       type = parseKey[0];
-                       selector = parseKey[1];
+                      selector = parseKey[1];
                   }
                   break;
-			// 默认是给me.$el绑定事件
+	     // 默认是给me.$el绑定事件
              case 1:
                   element = me.$el;
-                   type = parseKey[0];
-                   break;
-
+                  type = parseKey[0];
+                  break;
                default:
                    break;
           }
@@ -304,7 +304,8 @@ return fn;
       });
   },
 ```
-+来绑定events 对象map上绑定的事件
+
++来绑定events map上事件列型和dom和事件处理器
 
 ```
 /**
@@ -328,19 +329,20 @@ return fn;
           selector = null;
        }
 
-		// 指定作用域
+ 
+     // 如果fun是字符串，那么必须是挂载在me上的一个原型方法的名字
+     // 比如可以使用 me.bindEvent: function (element, type, selector, fun) {
      if (lang.isString(fun)) {
           fun = me[fun];
       }
 	
-	// 如果fun是字符串，那么必须是挂载在me上的一个原型方法的名字
-	// 比如可以使用 me.bindEvent: function (element, type, selector, fun) {
-    fun = $.proxy(fun, me);
+     // 指定作用域
+     fun = $.proxy(fun, me);
       
-	// 可以注册多个事件如： `click, mouseenter`
-    type = type.split(',');
+     // 可以注册多个事件如： `click, mouseenter`
+     type = type.split(',');
 
-	// 给每个事件加命名空间
+      // 给每个事件加命名空间
       type = $.map(type, function (item, i) {
           return item + '.' + namespace;
       });
@@ -392,7 +394,7 @@ return fn;
 
       type = type.split(',');
 		
-	 // 给每个事件加命名空间和上面的bind对应
+      // 给每个事件加命名空间和上面的bind对应
       type = $.map(type, function (item, i) {
           return item + '.' + namespace;
       });
@@ -410,6 +412,7 @@ return fn;
 
   },
 ```
+
 - 解绑绑定事件时注意命名空间(type)
 - 用了命名空间后off('.xxxx')很方便就off了该命名空间下的所有事件，通常就是某个组件下的所有事件
 
@@ -427,7 +430,7 @@ return fn;
      // 清除hammer实例
      $.each(me._hammerEventStack, function (i, item) {
          try {
-	         // 调用hammer的destroy方法，这里需要注意hammer的版本，有的版本里面没有destroy方法，是另外的名字
+	     // 调用hammer的destroy方法，这里需要注意hammer的版本，有的版本里面没有destroy方法，是另外的名字
              item.destroy();
          }
          catch (e) {}
@@ -454,7 +457,7 @@ Class.prototype.dispose = function () {
 
     // this.__listeners && (for (var i in this.__listeners) delete this.__listeners[i]);
 	
-	// 删除原型对象上的属性
+    // 删除原型对象上的属性
     for (var property in this) {
         typeof this[property] !== 'function' &&
         delete this[property];
