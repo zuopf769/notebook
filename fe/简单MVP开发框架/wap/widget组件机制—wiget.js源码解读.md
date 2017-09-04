@@ -1,7 +1,5 @@
 # widget组件机制—wiget.js源码解读
 
-[代码地地址](https://github.com/zuopf769/notebook/blob/master/fe/%E7%AE%80%E5%8D%95MVP%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/wap/widget/lib/widget.js）
-
 ```
 method = $.extend(true, {
      prefix: 'widget',
