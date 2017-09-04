@@ -2,6 +2,22 @@
 
 > 左鹏飞 2017.09.05
 
+
+## 背景：
+
++  widget组件机制是文库wap和pc端采用的一套view层的组件机制；
++ 其提供了组件的生命周期： _init、_render、_initEvent、onload内置事件、dispose析构；
++ 他也提供了事件中心，可以通过绑定事件，触发事件来实现解耦
++ 他提供了例如 elements属性来自动绑定dom，避免你的业务代码中到处都是$选择器
++ 他提供了例如 events属性来自动绑定事件
++ 他提供了组件的继承机制
++ 他提供了组件的形式来实现组件的扩展
+
+## 代码地址
+[代码地址](http://icode.baidu.com/repo/baidu%2Fwenku%2Fwenku-wapapp-sf-view/files/master/blob/client/widget/new/lib/widget.js)
+
+## 源码解读
+
 ```
 method = $.extend(true, {
      prefix: 'widget',
