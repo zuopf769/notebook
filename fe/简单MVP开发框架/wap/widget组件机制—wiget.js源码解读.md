@@ -765,3 +765,6 @@ exports.register = register;
 + 类似于mixin、include机制
 + 构造函数hook， 会在构造函数执行时执行，通常的打点机制就是写个函数，然后监听打点的自定义事件，此函数的上下文为组件本身
 + methods就是对象了，可以是字面量对象也可以是某个组件的prototype对象
+
+
+[代码地址](https://github.com/zuopf769/notebook/blob/master/fe/%E7%AE%80%E5%8D%95MVP%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/wap/widget/lib/widget.js)
