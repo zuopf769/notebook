@@ -1,5 +1,7 @@
 # widget组件机制—wiget.js源码解读
 
+> 左鹏飞 2017.09.05
+
 ```
 method = $.extend(true, {
      prefix: 'widget',
