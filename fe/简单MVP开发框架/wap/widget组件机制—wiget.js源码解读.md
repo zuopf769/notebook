@@ -19,7 +19,7 @@
 + 他提供了插件机制来实现组件的扩展
 
 ## 代码地址
-[代码地址](http://icode.baidu.com/repo/baidu%2Fwenku%2Fwenku-wapapp-sf-view/files/master/blob/client/widget/new/lib/widget.js)
+[代码地址](https://github.com/zuopf769/notebook/blob/master/fe/%E7%AE%80%E5%8D%95MVP%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/wap/widget/lib/widget.js)
 
 ## 源码解读
 
