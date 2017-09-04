@@ -6,7 +6,7 @@
 ## 背景：
 
 
-+  widget组件机制是文库wap和pc端采用的一套view层的组件机制；
++  widget组件机制是wap和pc端都可以采用的一套view层的组件机制；
 + 其提供了组件的生命周期： _init、_render、_initEvent、onload内置事件、dispose析构；
 + 他也提供了事件中心，可以通过绑定事件，触发事件来实现功能模块解耦
 + 他提供了例如 elements属性来自动绑定dom，避免你的业务代码中到处都是$选择器
@@ -788,4 +788,3 @@ exports.register = register;
 + methods就是对象了，可以是字面量对象也可以是某个组件的prototype对象
 
 
-[代码地址](https://github.com/zuopf769/notebook/blob/master/fe/%E7%AE%80%E5%8D%95MVP%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/wap/widget/lib/widget.js)
