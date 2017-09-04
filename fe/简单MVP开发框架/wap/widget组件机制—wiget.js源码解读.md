@@ -11,7 +11,7 @@
 + 他提供了例如 elements属性来自动绑定dom，避免你的业务代码中到处都是$选择器
 + 他提供了例如 events属性来自动绑定事件
 + 他提供了组件的继承机制
-+ 他提供了组件的形式来实现组件的扩展
++ 他提供了插件件机制来实现组件的扩展
 
 ## 代码地址
 [代码地址](http://icode.baidu.com/repo/baidu%2Fwenku%2Fwenku-wapapp-sf-view/files/master/blob/client/widget/new/lib/widget.js)
