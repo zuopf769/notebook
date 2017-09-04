@@ -39,7 +39,7 @@ proto = $.extend(true, {
 + `elements`是用来配置挂载到`this.$elements上`的dom对象的
 + `Options`使用来配置默认配置项的
 
-![图片](http://bos.nj.bpc.baidu.com/v1/agroup/5e52f7da537137e3efdadecda6b61d0d0da7ef86)
+![图片](https://github.com/zuopf769/notebook/blob/master/fe/%E7%AE%80%E5%8D%95MVP%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/images/5e52f7da537137e3efdadecda6b61d0d0da7ef86.png)
 
 + `Options` 的值最终会merge到`this.options`上
 
