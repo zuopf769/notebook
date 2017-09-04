@@ -69,7 +69,7 @@ var fn = function (options) {
     // 禁用的标志位
     me._disabledStatus = false;
 	
-	// new出来的hammer对象都会push到这个数组中，方便dispose时，统一销毁
+    // new出来的hammer对象都会push到这个数组中，方便dispose时，统一销毁
     me._hammerEventStack = [];
 
     // 在onload后将_created与_disabledStatus重置
@@ -77,19 +77,19 @@ var fn = function (options) {
         me._created = true;
         me._disabledStatus = true;
 		
-		// 挂载$el
+	// 挂载$el
         if (!me.$el || me.$el.length < 1) {
             me.$el = $(me.options.el);
         }
 		
-		// 当前对象绑定到el元素的data属性上
+	// 当前对象绑定到el元素的data属性上
         me.$el.data(me.prefix, this);
         // 取el上的data-widget-options，主要用于通过dom配置初始化值
         var meta = me.$el.data(me.prefix + '-options');
         // me.options和上步的merge
         me.options = $.extend(true, me.options, meta);
 		
-		// 挂载elements上的dom元素
+	// 挂载elements上的dom元素
         me.refreshElements();
         // 绑定evetns上的对象
         me._bindEvents(me.events);
@@ -99,22 +99,22 @@ var fn = function (options) {
     // 执行构造器
     lang.isFunction(me._init) && me._init.apply(me, args);
 	
-	// 注入插件（插件是通过wiget.register方法注入的constructorHook）
+    // 注入插件（插件是通过wiget.register方法注入的constructorHook）
     fn.$$plugins && $.each(fn.$$plugins, function (i, item) {
         item.apply(me, args);
     });
 	
-	// 挂载$el
+    // 挂载$el
     me.$el = $(me.options.el);
 	
     if (lang.isFunction(me._render)) {
-	    // 钩子函数_render
+	// 钩子函数_render
         me._render();
         // 钩子函数_initEvents
         me._initEvents();
     }
 	
-	// 触发内置事件onload
+    // 触发内置事件onload
     me._onloadTimer = util.requestAnimationFrame(function () {
         me.fire('onload');
     }, 16);
@@ -146,8 +146,8 @@ var inherits = function (subClass, superClass, type) {	// empty函数用于继�
     var proto;
     // 子类原型对象
     var selfProps = subClass.prototype;
-
-	// empty函数用于继承
+    
+    // empty函数用于继承
     var Clazz = new Function();
     
     // empty构造函数的prototype对象指向superClass.prototype
