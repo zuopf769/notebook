@@ -41,7 +41,7 @@ proto = $.extend(true, {
 
 ![图片](http://bos.nj.bpc.baidu.com/v1/agroup/5e52f7da537137e3efdadecda6b61d0d0da7ef86)
 
-+ `Options` 的值最终会mrege到`this.options`上
++ `Options` 的值最终会merge到`this.options`上
 
 ---
 
@@ -50,7 +50,7 @@ var fn = function (options) {
     var me = this;
     var args = arguments;
     
-	// new你自己wiget组件时，传入的参数配置项
+    // new你自己wiget组件时，传入的参数配置项
     options = options || {};
 	
     // 挂载自己wiget组件的容器
