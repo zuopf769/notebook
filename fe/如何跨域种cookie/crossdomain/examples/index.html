@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>跨域通信演示</title>
+</head>
+<body>
+<p>1. 引入 esl</p>
+<blockquote><pre>
+&lt;script src="../ecom/esl/2-1-4/esl.js"&gt;&lt;/script&gt;
+</pre></blockquote>
+<p>2. 引入 crossdomain.min.js</p>
+<blockquote><pre>
+&lt;script src="../dist/crossdomain.min.js"&gt;&lt;/script&gt;
+</pre></blockquote>
+<p>3. 在目标域名放置 proxy.html</p>
+<p>4. 开始使用</p>
+<blockquote><pre>
+&lt;script&gt;
+require(['../crossdomain'], function (CrossDomain) {
+    var cross = new CrossDomain('http://xxxx.com', 'http://xxx.com/static/crossdomain/proxy.html');
+    cross.localStorage.set('crossDomain-test', Date.now())
+    .then(function (str) {
+        console.log('storage setted!', str);
+    })
+    .then(function () {
+        return cross.localStorage.get('crossDomain-test');
+    })
+    .then(function (i) {
+        console.log('storage getted!', i);
+    })
+    .catch(function (err) {
+        setTimeout(function () {throw err;});
+    });
+});
+&lt;/script&gt;
+</pre></blockquote>
+
+<script src="../esl/2-1-4/esl.js"></script>
+<script src="../dist/crossdomain.js"></script>
+<script>
+require(['../crossdomain'], function (CrossDomain) {
+    var cross = new CrossDomain('http://xxx.com', 'http://xxx.com/static/sf-crossdomain/proxy.html');
+    cross.localStorage.set('crossdomain-test', Date.now())
+    .then(function (str) {
+        console.log('storage setted!', str);
+    })
+    .then(function () {
+        return cross.localStorage.get('crossdomain-test');
+    })
+    .then(function (i) {
+        console.log('storage getted!', i);
+    })
+    .catch(function (err) {
+        setTimeout(function () {throw err;});
+    });
+});
+</script>
+</body>
+</html>

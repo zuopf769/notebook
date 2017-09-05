@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>superframe 通信代理</title>
+</head>
+<body>
+<script>
+var isLocalStorageSupported = false;
+var isSessionStorageSupported = false;
+try {
+    isLocalStorageSupported = !!window.localStorage;
+    isSessionStorageSupported = !!window.sessionStorage;
+}
+catch (e) {
+    console.log(e);
+}
+
+var originAllowed = /^https?:\/\/.+\.baidu\.(com|mobi)(:\d+)?$/;
+var operations = {
+    getCookie: function () {
+        return document.cookie;
+    },
+    setCookie: function (cookie) {
+        document.cookie = cookie;
+    },
+    getSupported: function () {
+        return {
+            localStorage: isLocalStorageSupported,
+            sessionStorage: isSessionStorageSupported
+        };
+    },
+    getLocalStorage: function (key) {
+        return isLocalStorageSupported && window.localStorage[key];
+    },
+    setLocalStorage: function (key, value) {
+        isLocalStorageSupported && (window.localStorage[key] = value);
+    },
+    localStorageLength: function () {
+        return isLocalStorageSupported && window.localStorage.length;
+    },
+    localStorageKey: function (index) {
+        return isLocalStorageSupported && window.localStorage.key(index);
+    },
+    localStorageHas: function (key) {
+        return isLocalStorageSupported && window.localStorage.hasOwnProperty(key);
+    },
+    getSessionStorage: function (key) {
+        return isSessionStorageSupported && window.sessionStorage[key];
+    },
+    setSessionStorage: function (key, value) {
+        isSessionStorageSupported && (window.sessionStorage[key] = value);
+    },
+    sessionStorageLength: function () {
+        return isSessionStorageSupported && window.sessionStorage.length;
+    },
+    sessionStorageKey: function (index) {
+        return isSessionStorageSupported && window.sessionStorage.key(index);
+    },
+    sessionStorageHas: function (key) {
+        return isSessionStorageSupported && window.sessionStorage.hasOwnProperty(key);
+    }
+};
+window.addEventListener('message', function (event) {
+    var origin = event.origin || event.originalEvent.origin;
+    if (!originAllowed.test(origin)) {
+        throw new Error('Origin ' + origin + ' is not safe!');
+    }
+    var eventData = event.data;
+    if (!operations[eventData.event]) {
+        throw new Error('Event ' + eventData.event + ' is not defined!');
+    }
+    var result;
+    var error;
+    try {
+        result = operations[eventData.event].apply(this, eventData.opArgs);
+    }
+    catch (err) {
+        result = null;
+        error = err;
+        console.warn(err);
+    }
+    parent.postMessage({
+        result: result,
+        error: error,
+        type: 'two-way',
+        sentinel: 'PM_RESPONSE',
+        sessionId: eventData.sessionId,
+        name: window.name || eventData.name
+    }, '*');
+});
+</script>
+</body>
+</html>
