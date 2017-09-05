@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>全局变量检测</title>
+</head>
+<script type="text/javascript">
+    
+    window.onload = function () {
+        setInterval(function() {
+            debugger;
+            var target = document.body;
+            target.appendChild(document.createElement("div"));
+
+        }, 4000);
+    }
+</script>
+<body>
+    <div class="mutation-observer-wrap">
+
+    </div>
+    <script type="text/javascript" src='./mutation.js'></script>
+</body>
+</html>
