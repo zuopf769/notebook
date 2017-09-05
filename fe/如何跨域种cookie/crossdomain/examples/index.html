@@ -40,7 +40,7 @@ require(['../crossdomain'], function (CrossDomain) {
 <script src="../dist/crossdomain.js"></script>
 <script>
 require(['../crossdomain'], function (CrossDomain) {
-    var cross = new CrossDomain('http://xxx.com', 'http://xxx.com/static/sf-crossdomain/proxy.html');
+    var cross = new CrossDomain('http://xxx.com', 'http://xxx.com/static/crossdomain/proxy.html');
     cross.localStorage.set('crossdomain-test', Date.now())
     .then(function (str) {
         console.log('storage setted!', str);
