@@ -8,7 +8,7 @@
 
 ### 代码地址
 
- [代码地址]()
+ [代码地址](https://github.com/zuopf769/notebook/blob/master/fe/%E7%AE%80%E5%8D%95MVP%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/wap/widget/lib/mediator.js)
 
 ### 源码解读
 ```
@@ -22,10 +22,10 @@ var isArguments = function (obj) {
 ```
 // event是事件类型
 fire: function (event, options) {
-	 // 是字符串就new lang.Event
+    // 是字符串就new lang.Event
     lang.isString(event) && (event = new lang.Event(event));
-	
-	 // __listeners是个对象，存放事件和事件处理器的map， 每个key又是个链表
+    
+    // __listeners是个对象，存放事件和事件处理器的map， 每个key又是个链表
     !this.__listeners && (this.__listeners = {});
 
     // 20100603 添加本方法的第二个参数，将 options extend到event中去传递
@@ -53,10 +53,10 @@ fire: function (event, options) {
     // 支持非 on 开头的事件名
     p.indexOf('on') && (p = 'on' + p);
 	
-	 // 如果me[p]是function类型直接执行
+    // 如果me[p]是function类型直接执行
     typeof me[p] === 'function' && me[p].apply(me, arguments);
 	
-	 // 这里判断是object，其实是存放event handler的数组
+    // 这里判断是object，其实是存放event handler的数组
     if (typeof t[p] === 'object') {
         for (i = 0, n = t[p].length; i < n; i++) {
         	  // handler
@@ -65,7 +65,7 @@ fire: function (event, options) {
             cb._dfd = dfd;
             result = cb.apply(me, arguments);
 				
-			  // 如果handler返回的是promise， 通常s:xxx的事件handler都返回promise
+	    // 如果handler返回的是promise， 通常s:xxx的事件handler都返回promise
             if (this.isPromise(result)) {
                 promise = result;
             }
