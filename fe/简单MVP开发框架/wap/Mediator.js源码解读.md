@@ -6,6 +6,27 @@
 + 继承自lang.Class；拥有on、off等事件绑定、解绑的功能
 + Mediator在lang.Class的事件基础上重写了fire，新增了promise的功能
 
+### fire的promise then功能示例
+
+```
+    Mediator.fire('s:getContent', {
+	pn: pn
+    }).then(function (contentData) {
+    
+	Mediator.fire('v:createZoomView', {
+	    element: options.element,
+	    index: options.index,
+	    src: contentData
+	});
+	
+	
+    });
+```
+
+有了promise功能就不用在通过事件来通信了
+
+
+
 ### 代码地址
 
  [代码地址](https://github.com/zuopf769/notebook/blob/master/fe/%E7%AE%80%E5%8D%95MVP%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/wap/widget/lib/mediator.js)
