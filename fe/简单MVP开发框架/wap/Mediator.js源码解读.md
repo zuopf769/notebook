@@ -140,3 +140,8 @@ when: function (name) {
 
 该方法主要是用于多个promise并发执行
 
+
+```
+lang.createSingle(Mediator);
+```
+上面的代码是继承lang.class,让其拥有class的事件处理的功能
