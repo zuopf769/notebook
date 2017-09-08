@@ -78,7 +78,7 @@ div {
 
 根据上述思想，我们再将其扩展下，应用到其他地方
 
-！[]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/css%E4%B8%AD%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E5%AE%B9%E5%99%A8%E6%8C%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE/FpgWGNJUFL3RLGdOTtm3KzKIgpHL)
 
 这是一个移动端页面的一部分，要求全屏里面正好三张图片，左右图片宽度是相等的，第一个图片和第三个图片下面要对齐，图片之间的间距为10px。鉴于移动端的屏幕大小不等，所以使用定宽不合适。
 
