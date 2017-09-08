@@ -150,17 +150,21 @@ img{
 
 + 是不是可以用vw单位
 
+### 8. demo
+
+[demo]()
+
 ### 8. 总结
 
 padding的百分比是按照容器宽度计算
 
 ### 9.参考资料
 
-[1](http://imweb.io/topic/555a92f76da9e441601d6e94)
+[css中如何做到容器按比例缩放](http://imweb.io/topic/555a92f76da9e441601d6e94)
 
-[2](https://alistapart.com/article/creating-intrinsic-ratios-for-video)
+[Creating Intrinsic Ratios for Video](https://alistapart.com/article/creating-intrinsic-ratios-for-video)
 
-[3](http://output.jsbin.com/boyuzo/1/)
+[demo](http://output.jsbin.com/boyuzo/1/)
 
 
 
