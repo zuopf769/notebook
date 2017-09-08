@@ -143,6 +143,7 @@ img{
   position:relative;
 }
 ```
+[例子](http://output.jsbin.com/boyuzo/1/)
 
 ### 7. 其他方法考虑
 
@@ -152,7 +153,7 @@ img{
 
 ### 8. demo
 
-[demo]()
+[demo](https://github.com/zuopf769/notebook/blob/master/fe/css%E4%B8%AD%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E5%AE%B9%E5%99%A8%E6%8C%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE/demo.html)
 
 ### 8. 总结
 
@@ -164,7 +165,6 @@ padding的百分比是按照容器宽度计算
 
 [Creating Intrinsic Ratios for Video](https://alistapart.com/article/creating-intrinsic-ratios-for-video)
 
-[demo](http://output.jsbin.com/boyuzo/1/)
 
 
 
