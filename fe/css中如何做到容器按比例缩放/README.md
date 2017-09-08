@@ -23,12 +23,12 @@
 
 ```
 
-### 4. 核心思想
+### 3. 核心思想
 
 提供一个容器，设置容器的高度为0，再设置padding-bottom或者padding-top为56.25%（因为padding的百分比是按照容器宽度计算的，所以由padding来撑开容器高度，而不是height，保证了容器的宽高比例），最后设置视频绝对定位，其宽高为容器的100%。
 
 
-### 5. 代码示例
+### 4. 代码示例
 
 ```
 * {
@@ -74,7 +74,7 @@ div {
 接下来是.comtent元素。我们设置这个元素绝对定位。top:0,left:0; width:100%;height:100%;因为它的父元素.wrapper的宽度和高度已经成比例了，所以使用width:100%;height:100%;就让content容器达到目的了。通过改变.container的宽度，.content元素的高宽也能成比例的改变。
 
 
-### 6. 扩展
+### 5. 扩展
 
 根据上述思想，我们再将其扩展下，应用到其他地方
 
@@ -145,13 +145,13 @@ img{
 ```
 [例子](http://output.jsbin.com/boyuzo/1/)
 
-### 7. 其他方法考虑
+### 6. 其他方法考虑
 
 + 是不是可以用rem、em；让宽和高正好比例是16：9
 
 + 是不是可以用vw单位
 
-### 8. demo
+### 7. demo
 
 [demo](https://github.com/zuopf769/notebook/blob/master/fe/css%E4%B8%AD%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E5%AE%B9%E5%99%A8%E6%8C%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE/demo.html)
 
