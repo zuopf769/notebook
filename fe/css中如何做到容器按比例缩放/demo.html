@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            border: 1px solid green;
+        }
+        .container { 
+            width:100%; 
+        }
+        .wrapper {
+            position:relative;
+            padding-bottom: 56.25%;   // 16/9 = 0.5625;
+            height:0;
+            border: 1px solid red;
+        }
+        .content {
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:100%;
+            background:gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="content">content</div>
+    </div>
+</div>
+
+    
+</body>
+</html>
