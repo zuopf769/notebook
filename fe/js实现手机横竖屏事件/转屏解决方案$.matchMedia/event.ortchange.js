@@ -29,6 +29,6 @@ $(function () {
     };
     // 通过matchMedia派生转屏事件
     $.matchMedia($.mediaQuery.ortchange).addListener(function () {
-        $(customEventMediator).trigger('ortchange');
+        $(window).trigger('ortchange');
     });
 });
