@@ -199,6 +199,10 @@ var fire = function() {
 }
 ```
 
+#### 代码
+
+[完整代码](https://github.com/zuopf769/notebook/blob/master/fe/js%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E6%A8%AA%E7%AB%96%E5%B1%8F%E4%BA%8B%E4%BB%B6/%E8%BD%AC%E5%B1%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88window.resize/src/orientationchange-fix.js)
+
 ### 方案3 matchMedia
 
 css3为我们提供了很强大的media query，而我们时常需要在js中动态的知道什么时候某个状态满足了。[CSS Object Model（CSSOM）Views](http://www.w3.org/TR/cssom-view/#dom-window-matchmedia)规范增加了对JavaScript操作CSS media query的原生支持，它在window对象下增加了matchMedia()方法。
