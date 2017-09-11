@@ -28,6 +28,10 @@ window.addEventListener("resize", function(event) {
 }, false);
 ```
 
+#### 代码
+
+[完整代码](https://github.com/zuopf769/notebook/blob/master/fe/js%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E6%A8%AA%E7%AB%96%E5%B1%8F%E4%BA%8B%E4%BB%B6/%E8%BD%AC%E5%B1%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88window.resize/other/pl_2.js)
+
 #### 缺点
 只要`window`的`size`变化，就会不断触发触发`resize`事件。可以使用`setTimeout`来优化一下
 如果有多个地方需要监听横竖屏，就需要注册多个`window.addEventListener("resize", function(event) {……})`。</br>
