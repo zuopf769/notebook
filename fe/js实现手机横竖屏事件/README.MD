@@ -331,5 +331,5 @@ $(window).on('ortchange', function () {
 
 ### 参考资料
 
-[转屏解决方案$.matchMedia](https://github.com/fex-team/GMU/wiki/%E8%BD%AC%E5%B1%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88$.matchMedia)
-[Media Query和matchMedia介绍](https://github.com/fex-team/GMU/wiki/Media-Query%E5%92%8CmatchMedia%E4%BB%8B%E7%BB%8D)
+- [转屏解决方案$.matchMedia](https://github.com/fex-team/GMU/wiki/%E8%BD%AC%E5%B1%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88$.matchMedia)
+- [Media Query和matchMedia介绍](https://github.com/fex-team/GMU/wiki/Media-Query%E5%92%8CmatchMedia%E4%BB%8B%E7%BB%8D)
