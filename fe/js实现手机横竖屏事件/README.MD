@@ -169,7 +169,7 @@ win.addEventListener(isOrientation ? eventType : 'resize', callback, false);
 
 #### 完整代码
 
-[完整代码](https://github.com/zuopf769/notebook/blob/master/fe/js%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E6%A8%AA%E7%AB%96%E5%B1%8F%E4%BA%8B%E4%BB%B6/%E8%BD%AC%E5%B1%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88window.resize/other/pl_orientation.js）
+[代码](https://github.com/zuopf769/notebook/blob/master/fe/js%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E6%A8%AA%E7%AB%96%E5%B1%8F%E4%BA%8B%E4%BB%B6/%E8%BD%AC%E5%B1%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88window.resize/other/pl_orientation.js)
 
 #### 改进方案3
 
