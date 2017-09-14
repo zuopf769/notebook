@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>模拟滚动条</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .scroll-container {
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .scroll-content {
+            width: 400px;
+            background-color: gray;
+        }
+
+        ul {
+            font-size: 40px;
+
+        }
+    
+        li {
+            height: 80px;
+            text-align: center;
+            line-height: 40px;
+            list-style-type: none;
+        }
+
+    </style>
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script type="text/javascript">
+
+        function TouchScroll (options) {
+
+            // 最外层容器（高度固定）
+            this.scrollerContainer = $(options.scrollWrap);
+            // 内容区（高度高于最外层容器）
+            this.scrollerContent = $(options.scrollContent);
+
+            // 滑动的最大便移量
+            this.scrollerHeight = this.scrollerContent.height();
+            this.wrapH = this.scrollerContainer.height();
+            this.maxScrollY = this.wrapH - this.scrollerHeight;
+
+
+            // 记录每次touchend后最终的translateY值
+            this.endY = 0;
+
+            // 是否在滑动中
+            this.isMoving = false;
+            // 是否在transition动画中
+            this.isInTransition = false;
+
+            // 初始化
+            this._init();
+
+        };
+
+        TouchScroll.prototype = {
+            constructor: TouchScroll,
+            _init: function () {
+                var me = this;
+                this.scrollerContent.on('touchstart', $.proxy(me._handleTouchstart, me));
+                this.scrollerContent.on('touchmove', $.proxy(me._handleTouchmove, me));
+                this.scrollerContent.on('touchend', $.proxy(me._handleTouchend, me));
+            },
+            _handleTouchstart: function (e) {
+
+                if (this.isMoving || this.isInTransition) {
+                    return;
+                }
+
+                this.startY = e.targetTouches[0].screenY;
+                this.startTime = this.getTime();
+
+            },
+            // touchmove只负责跟随手指滑动
+            _handleTouchmove: function (e) {
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                this.isMoving = true;
+
+                var nowY = e.targetTouches[0].screenY;
+
+                // 便移量
+                var moveDistance = nowY - this.startY;
+
+                // 内容区应该移动到的位置
+                var movePageY = this.endY + moveDistance;
+
+                // 如果超过最大便移量(模拟阻尼)
+                if (movePageY > 0 || movePageY < this.maxScrollY) {
+                    // moveDistance * 2 / 3阻尼模拟
+                    movePageY =  this.endY  + moveDistance * 2 / 3;
+                }
+
+                // 没有动画效果，所以'-webkit-transition': 'none'
+                this.scrollerContent.css({
+                    '-webkit-transform': 'translate3d(0,' + movePageY + 'px, 0)',
+                    '-webkit-transition': 'none'
+                });
+
+            },
+            _handleTouchend: function (e) {
+      
+                var touches = e.changedTouches ? e.changedTouches[0] : e;
+                var endY = touches.screenY;
+
+                var endTime =  this.getTime();
+                var duration = endTime - this.startTime;
+
+                if (duration < 300) {// 快速滑动考虑惯性加速度
+
+                    var resultObj = this.calculateMoment(endY, this.startY, duration, this.maxScrollY);
+                    endY = resultObj.newEnd;
+                    duration = resultObj.duration;
+
+                    var moveDistance = endY - this.startY;
+                    var movePageY = this.endY + moveDistance;
+
+                    this.scrollTo(movePageY, duration);
+                }
+                else {
+
+                    var moveDistance = endY - this.startY;
+                    var movePageY = this.endY + moveDistance;
+
+                    if (movePageY > 0) {
+                        this.scrollTo(0, 300);
+                    } 
+                    else if (movePageY < this.maxScrollY) {
+                        this.scrollTo(this.maxScrollY, 300);
+                    }
+                    else {
+                        this.scrollTo(movePageY, duration);
+                    }
+                }
+                this.isMoving = false;
+            },
+            scrollTo: function (Y, time) {
+                if (Y > 0) {
+                    Y = 0;
+                }
+                else if (Y < this.maxScrollY) {
+                    Y = this.maxScrollY;
+                }
+
+                this.isInTransition = true;
+                var oThis = this;
+                setTimeout(function () {
+                    oThis.isInTransition = false;
+                }, time);
+                this.scrollerContent.css({
+                    '-webkit-transform': 'translate3d(0, ' + Y + 'px,  0)',
+                    '-webkit-transition-property': 'all',
+                    '-webkit-transition-timing-function': 'cubic-bezier(0.1, 0.3, 0.5, 1)',
+                    '-webkit-transition-duration': time + 'ms'
+                });
+                this.endY = Y;
+                $('#test').html(Y);
+
+            },
+
+            // 获取当前时间
+            getTime: function () {
+                return new Date().getTime();
+            },
+            calculateMoment: function (end, start, time) {
+                var distance = end - start;
+
+                // 平均速度
+                var speed = Math.abs(distance) / time;
+                var destination;
+                var duration;
+                var deceleration = 6e-4;
+
+                newEnd = end + speed * speed / (2 * deceleration) * (distance < 0 ? -1 : 1);
+                duration = speed / deceleration;
+
+                return {
+                    newEnd: Math.round(newEnd),
+                    duration: duration
+                };
+            }
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            new TouchScroll({
+                'scrollWrap': '.scroll-container',
+                'scrollContent': '.scroll-content'
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <ur>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+            </ur>
+        </div>
+    </div>
+    
+    <div id="test"></div>
+</body>
+</html>
