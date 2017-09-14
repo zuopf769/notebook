@@ -215,6 +215,34 @@ calculateMoment: function (end, start, time) {
 + 初始速度设置为0，v即平均速度speed，则s =  v方 / 2a 
 
 
+```
+  scrollTo: function (Y, time) {
+	if (Y > 0) {
+	    Y = 0;
+	}
+	else if (Y < this.maxScrollY) {
+	    Y = this.maxScrollY;
+	}
+
+	this.isInTransition = true;
+	var oThis = this;
+	setTimeout(function () {
+	    oThis.isInTransition = false;
+	}, time);
+	this.scrollerContent.css({
+	    '-webkit-transform': 'translate3d(0, ' + Y + 'px,  0)',
+	    '-webkit-transition-property': 'all',
+	    '-webkit-transition-timing-function': 'cubic-bezier(0.1, 0.3, 0.5, 1)',
+	    '-webkit-transition-duration': time + 'ms'
+	});
+	this.endY = Y;
+    },
+```
+
++  translate3d开启硬件加速
++  cubic-bezier(0.1, 0.3, 0.5, 1)曲线
+
+
 [完整代码](https://github.com/zuopf769/notebook/blob/master/fe/%E7%A7%BB%E5%8A%A8%E7%AB%AFtochscroll%E6%BB%9A%E5%8A%A8/touchScroll.html)
 
 ### 总结
