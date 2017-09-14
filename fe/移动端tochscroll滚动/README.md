@@ -6,6 +6,8 @@
 
 最近有个项目是地区选择器以弹层的形式浮动在底部页面的上面；可以上下滚动选择相应的地区；如果用原生的滚动条，地区区域上滑滑动到最底部时，会触发底下页面整体的滚动；这个体验很不好。
 
+![浮层](https://github.com/zuopf769/notebook/blob/master/fe/%E7%A7%BB%E5%8A%A8%E7%AB%AFtochscroll%E6%BB%9A%E5%8A%A8/1649e949ef67ecfbc4ef84421449ffae.png)
+
 
 ### 解决方案
 
