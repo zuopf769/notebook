@@ -1,5 +1,7 @@
 ## 移动端touchScroll滚动组件
 
+> 左鹏飞  2017.09.14
+
 ### 背景
 
 最近有个项目是地区选择器以弹层的形式浮动在底部页面的上面；可以上下滚动选择相应的地区；如果用原生的滚动条，地区区域上滑滑动到最底部时，会触发底下页面整体的滚动；这个体验很不好。
@@ -211,7 +213,7 @@ calculateMoment: function (end, start, time) {
 + 初始速度设置为0，v即平均速度speed，则s =  v方 / 2a 
 
 
-[完整代码]()
+[完整代码](https://github.com/zuopf769/notebook/blob/master/fe/%E7%A7%BB%E5%8A%A8%E7%AB%AFtochscroll%E6%BB%9A%E5%8A%A8/touchScroll.html)
 
 ### 总结
 
