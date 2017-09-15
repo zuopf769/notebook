@@ -45,6 +45,7 @@ this.mask[0].addEventListener('touchmove', function (e) {
 
 + [iscroll](https://github.com/cubiq/iscroll/blob/master/build/iscroll-lite.js)
 + [alloytouch](https://github.com/AlloyTeam/AlloyTouch/blob/master/alloy_touch.js)
++ [BetterScroll](https://github.com/ustbhuangyi/better-scroll)
 
 但是我还是准备自己一步一步实现一个。
 
