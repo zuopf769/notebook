@@ -34,9 +34,9 @@ alert(box.getBoundingClientRect().bottom);
 alert(box.getBoundingClientRect().left);
 ```
 
-![图1]()
+![图1](https://github.com/zuopf769/notebook/blob/master/fe/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8getBoundingClientRect%E5%90%97/2008100603035335.gif)
 
-![图2]()
+![图2](https://github.com/zuopf769/notebook/blob/master/fe/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8getBoundingClientRect%E5%90%97/2008100603040663.gif)
 
 ### 2.兼容性
 
