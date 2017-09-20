@@ -16,6 +16,7 @@
 
 + 但是right，bottom和css中的理解有点不一样。right是指元素右边界距窗口最左边的距离，bottom是指元素下边界距窗口最上面的距离。
 
+![图1](https://github.com/zuopf769/notebook/blob/master/fe/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8getBoundingClientRect%E5%90%97/2008100603035335.gif)
 
 ```
 // 获取元素
@@ -34,11 +35,9 @@ alert(box.getBoundingClientRect().bottom);
 alert(box.getBoundingClientRect().left);
 ```
 
-![图1](https://github.com/zuopf769/notebook/blob/master/fe/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8getBoundingClientRect%E5%90%97/2008100603035335.gif)
-
-
 
 ![图2](https://github.com/zuopf769/notebook/blob/master/fe/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8getBoundingClientRect%E5%90%97/2008100603040663.gif)
+
 
 ### 2.兼容性
 
