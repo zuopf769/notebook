@@ -326,7 +326,7 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 </body>
 ```
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/13.png)
 
 根据BFC布局规则第3条：
 
@@ -354,7 +354,8 @@ BFC的区域不会与float box重叠。
 ```
 当触发main生成BFC后，这个新的BFC不会与浮动的aside重叠。因此会根据包含块的宽度，和aside的宽度，自动变窄。效果如下：
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/14.png)
+
 
 
 ##### 4.3.2 自适应两栏布局
