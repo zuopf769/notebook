@@ -65,11 +65,7 @@
 
 + 底部元素设置为浮动 float:left;
 
-![]()
-
 + 底部元素的position的值为absolute/fixed
-
-![]()
 
 + 在设置margin-top/bottom值时统一设置上或下
 
@@ -109,6 +105,8 @@
     </div>
 </body>
 ```
+
+![](https://github.com/zuopf769/notebook/blob/master/fe/CSS%E5%A4%96%E8%BE%B9%E8%B7%9D(margin)%E9%87%8D%E5%8F%A0%E5%8F%8A%E9%98%B2%E6%AD%A2%E6%96%B9%E6%B3%95/4.jpg)
 
 ### 3.2 解决办法
 
