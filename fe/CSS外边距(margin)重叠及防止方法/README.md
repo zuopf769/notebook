@@ -1,6 +1,9 @@
 ## CSS外边距(margin)重叠及防止方法
 
 
+> [左鹏飞](https://github.com/zuopf769) 2017.09.21
+
+
 ### 1. 什么是外边距(margin)重叠
 
 外边距重叠是指两个或多个盒子(可能相邻也可能嵌套)的相邻边界(其间没有任何非空内容、补白、边框)重合在一起而形成一个单一边界。
@@ -116,3 +119,7 @@
 + 内层元素绝对定位 postion:absolute:
 + 内层元素 加float:left;或display:inline-block;
 
+
+### 参考资料
+
++ [史上最全面、最透彻的BFC原理剖析](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md)
