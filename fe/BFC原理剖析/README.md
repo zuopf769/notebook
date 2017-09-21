@@ -228,9 +228,18 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 
 ![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/5.png)
 
-要阻止嵌套元素的margin重叠，只需让ul生成BFC即可（将上例中的注释去掉），这样div、ul、li之间便不会发生重叠现象。而li位于同一BFC内所以仍然存在重叠现象。
+要阻止嵌套元素的margin重叠，只需让ul生成BFC即可（将上例中的注释去掉），这样div、ul、li之间便不会发生重叠现象。
 
 ![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/6.png)
+
+
+而li位于同一BFC内所以仍然存在重叠现象。
+
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/7.png)
+
+给li设置line-block重新生成一个bfc就不存在重叠现象了。
+
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/8.png)
 
 需要注意的是：
 
