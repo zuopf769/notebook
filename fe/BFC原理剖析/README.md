@@ -453,3 +453,5 @@ BFC就是页面上的一个隔离的独立容器，容器里面的子元素不�
 ### 5. 延申阅读
 
 + [CSS清浮动处理（Clear与BFC）](http://www.cnblogs.com/dolphinX/p/3508869.html)
+
++ [A new micro clearfix hack](http://nicolasgallagher.com/micro-clearfix-hack/)
