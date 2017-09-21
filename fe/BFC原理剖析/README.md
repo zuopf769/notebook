@@ -173,7 +173,7 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 
 我们可以给div加个`display:inline-block`，触每个div容器生成一个BFC。那么三个DIV便不属于同一个BFC，就不会发生margin重叠了。
 
-![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/4.jpg)
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/4.png)
 
 
 ##### 嵌套元素的margin重叠
