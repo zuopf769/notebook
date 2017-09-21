@@ -45,7 +45,7 @@
 + overflow的值不为visible
 + display的值为inline-block、table-cell、table-caption
 
-> display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-ccell生成了BFC
+> display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC
 
 + position的值为absolute或fixed
 
