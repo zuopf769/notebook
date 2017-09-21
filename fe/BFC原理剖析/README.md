@@ -226,10 +226,11 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 
 此时div与ul之间的垂直距离，取div、ul、li三者之间的最大外边距。
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/5.png)
 
 要阻止嵌套元素的margin重叠，只需让ul生成BFC即可（将上例中的注释去掉），这样div、ul、li之间便不会发生重叠现象。而li位于同一BFC内所以仍然存在重叠现象。
 
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/6.png)
 
 需要注意的是：
 
