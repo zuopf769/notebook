@@ -89,7 +89,8 @@
 
 ```
 　　
-![图片]()
+![图片](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/1.png)
+
 
 两个p之间的距离为100px，发送了margin重叠。
 
@@ -97,7 +98,7 @@
 
 ```
 
-Box垂直方向的距离由margin决定。属于同一个BFC(body根元素的BFC)的两个相邻Box的margin会发生重叠
+Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根元素的BFC)的两个相邻Box的margin会发生重叠
 
 ```
 
@@ -127,6 +128,10 @@ Box垂直方向的距离由margin决定。属于同一个BFC(body根元素的BFC
 </body>
 
 ```
+
+
+![图片](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/2.png)
+
 
 ##### 相邻Box水平方向margin重叠
 
