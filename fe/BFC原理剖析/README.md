@@ -3,7 +3,7 @@
 
 ### 1. BFC是什么？
 
-`Block fomatting context` = `Box` + `Formatting Context`
+`Block fomatting context` = `block-level Box` + `Formatting Context`
 
 #### Box: 
 
