@@ -427,6 +427,9 @@ BFC的区域不会与float box重叠。
 ```
 这种布局的特点在于左右两栏宽度固定，中间栏可以根据浏览器宽度自适应。
 
+![图片](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/13.png)
+
+
 
 
 ### 4. 总结
