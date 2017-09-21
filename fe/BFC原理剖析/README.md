@@ -3,7 +3,7 @@
 > [左鹏飞](https://github.com/zuopf769)   2017.09.21
 
 
-本文讲了BFC的概念是什么； BFC的约束规则；咋样才能触发生成新的BFC；BFC在布局中的应用：防止margin重叠； 清除内部浮动；自适应两（多）栏布局。
+本文讲了BFC的概念是什么； BFC的约束规则；咋样才能触发生成新的BFC；BFC在布局中的应用：防止margin重叠(塌陷,以最大的为准)； 清除内部浮动；自适应两（多）栏布局。
 
 ### 1. BFC是什么？
 
@@ -53,7 +53,7 @@
 ### 3. BFC的约束规则
 
 + 内部的Box会在垂直方向上一个接一个的放置
-+ 垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。）
++ 垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠（塌陷），与方向无关。）
 + 每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界）
 + BFC的区域不会与float的元素区域重叠
 + 计算BFC的高度时，浮动子元素也参与计算
@@ -70,7 +70,7 @@
 
 ### 4. BFC在布局中的应用
 
-#### 4.1 　防止margin重叠：
+#### 4.1 　防止margin重叠（塌陷）：
 
 
 ##### 两个相邻Box垂直方向margin重叠
@@ -96,7 +96,7 @@
 ![图片](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/1.png)
 
 
-两个p之间的距离为100px，发送了margin重叠。
+两个p之间的距离为100px，发送了margin重叠（塌陷），以最大的为准，如果第一个P的margin为80的话，两个P之间的距离还是100，以最大的为准。
 
 根据BFC布局规则第二条：
 
@@ -106,7 +106,7 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 
 ```
 
-我们可以在p外面包裹一层容器，并触发该容器生成一个BFC。那么两个P便不属于同一个BFC，就不会发生margin重叠了。
+我们可以在p外面包裹一层容器，并触发该容器生成一个新BFC。那么两个P便不属于同一个BFC，就不会发生margin重叠了。
 
 代码：
 
@@ -175,7 +175,7 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 
 ![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/3.jpg)
 
-我们可以给div加个`display:inline-block`，触每个div容器生成一个BFC。那么三个DIV便不属于同一个BFC，就不会发生margin重叠了。
+我们可以给div加个`display:inline-block`，触每个div容器生成一个BFC。那么三个DIV便不属于同一个BFC（这个只body根元素形成的BFC），就不会发生margin重叠了。
 
 ![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/4.png)
 
