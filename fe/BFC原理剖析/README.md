@@ -277,7 +277,7 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 
 页面：
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/10.png)
 
 根据BFC布局规则第六条：
 
@@ -293,7 +293,7 @@ Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根
 }
 ```
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/11.png)
 
 
 #### 4.3 自适应多栏布局的
