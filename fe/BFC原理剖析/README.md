@@ -3,11 +3,11 @@
 > [左鹏飞](https://github.com/zuopf769)   2017.09.21
 
 
-本文讲了什么是BFC，BFC的概念是什么；咋样才能生成新的BFC; BFC的约束规则；BFC在布局中的应用：防止margin重叠； 清除内部浮动；自适应两（多）栏布局的
+本文讲了BFC的概念是什么； BFC的约束规则；咋样才能触发生成新的BFC；BFC在布局中的应用：防止margin重叠； 清除内部浮动；自适应两（多）栏布局。
 
 ### 1. BFC是什么？
 
-`Block fomatting context` = `block-level Box` + `Formatting Context`
+`Block fomatting context` = `block-level box` + `Formatting Context`
 
 #### Box: 
 
@@ -26,9 +26,9 @@
 
 #### Formatting context
 
-　　Formatting context是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。最常见的 Formatting context 有 Block fomatting context (简称BFC)和 Inline formatting context(简称IFC)。
+　　Formatting context是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系、相互作用。最常见的 Formatting context 有 Block fomatting context (简称BFC)和 Inline formatting context(简称IFC)。
 
-　　CSS2.1 中只有BFC和IFC, CSS3中还增加了GFC和FFC。
+　　CSS2.1 中只有BFC和IFC, CSS3中还增加了G（grid）FC和F(flex)FC。
 　　
 #### BFC 定义
 
