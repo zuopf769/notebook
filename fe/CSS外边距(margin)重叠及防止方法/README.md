@@ -49,15 +49,15 @@
 
 + 全部都为正值，取最大者；
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/CSS%E5%A4%96%E8%BE%B9%E8%B7%9D(margin)%E9%87%8D%E5%8F%A0%E5%8F%8A%E9%98%B2%E6%AD%A2%E6%96%B9%E6%B3%95/1.jpg)
 
 + 不全是正值，则都取绝对值，然后用正值的最大值减去绝对值的最大值；
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/CSS%E5%A4%96%E8%BE%B9%E8%B7%9D(margin)%E9%87%8D%E5%8F%A0%E5%8F%8A%E9%98%B2%E6%AD%A2%E6%96%B9%E6%B3%95/2.jpg)
 
 + 没有正值，则都取绝对值，然后用0减去最大值。
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/CSS%E5%A4%96%E8%BE%B9%E8%B7%9D(margin)%E9%87%8D%E5%8F%A0%E5%8F%8A%E9%98%B2%E6%AD%A2%E6%96%B9%E6%B3%95/3.jpg)
 
 #### 2.3 解决办法
 
