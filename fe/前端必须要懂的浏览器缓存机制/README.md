@@ -1,5 +1,7 @@
 ## 前端必须要懂的浏览器缓存机制
 
+> 左鹏飞 2017.09.25
+
 
 ### 1. 什么是浏览器缓存？
 
@@ -203,3 +205,34 @@ http.createServer(function(req, res) {
 ```
 
 ![](https://github.com/zuopf769/notebook/blob/master/fe/%E5%89%8D%E7%AB%AF%E5%BF%85%E9%A1%BB%E8%A6%81%E6%87%82%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/7.png)
+
+
+### 10.如何计算Etag值
+
++ ETag值通常由服务器端计算，并在响应客户端请求时将它返回给客户端
++ 可以通过时间戳就可以最简单的得到ETag头信息；但不建议这么做，这么做和Last-Modified头信息就没什么两样了
++ ETag值可以是唯一标识资源的任何东西，如持久化存储中的某个资源关联的版本、一个或者多个文件属性，实体头信息和校验值、(CheckSum)，也可以计算实体信息的散列值。
++ 有时候，为了计算一个ETag值可能有比较大的代价，此时可以采用生成唯一值等方式(如常见的GUID)。
++ Apache默认通过FileEtag中FileEtag INode Mtime Size的配置自动生成ETag(当然也可以通过用户自定义的方式)。
++ 由于Etag由服务器构造，所以在集群环境中一定要保证Etag的唯一性
+
+
+### 11. If-Modified-Since与Last-Modified
+
+这两个是HTTP1.0中用来验证资源是否过期的请求/响应头，这两个头部都是日期，验证过程与Etag类似，这里不详细介绍。使用这两个头部来验证资源是否更新时，存在以下问题：
+
++ 有些文档资源周期性的被重写，但实际内容没有改变。此时文件元数据中会显示文件最近的修改日期与If-Modified-Since不相同，导致不必要的响应。
++ 有些文档资源被修改了，但修改内容并不重要，不需要所有的缓存都更新（比如代码注释）
+
+
+### 12. 总结
+
++ 浏览器端缓存分为200 from cache和304 not modified
++ HTTP协议中Cache-Control 和 Expires可以用来设置新鲜度的限值，前者是HTTP1.1中新增的响应头，后者是HTTP1.0中的响应头。
++ max-age（单位为s）而Expires指定的是具体的过期日期而不是秒数
++ Cache-Control和Expires同时使用的话，Cache-Control会覆盖Expires
++ 客户端不用关心ETag值如何产生，只要服务在资源状态发生变更的情况下将ETag值发送给它就行
++ Apache默认通过FileEtag中FileEtag INode Mtime Size的配置自动生成ETag(当然也可以通过用户自定义的方式)。
++ ETag常与If-None-Match或者If-Match一起，由客户端通过HTTP头信息(包括ETag值)发送给服务端处理。
++ Last-Modified常与If-Modified-Since一起由客户端将Last-Modified值包括在HTTP头信息中发给服务端进行处理。
++ 有些文档资源周期性的被重写，但实际内容没有改变。此时文件元数据中会显示文件最近的修改日期与If-Modified-Since不相同，导致不必要的响应。
