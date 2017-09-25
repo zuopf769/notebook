@@ -3,6 +3,9 @@
 > [左鹏飞](https://github.com/zuopf769) 2017.09.25
 
 
+本文详细讲解了浏览器端缓存的分类：200 from cache和304 not modified；介绍了http1.1 header Cache-Control的max-age和http1.0 header Expires的区别；介绍了http1.1 header Etag、If-None-Match和http1.0 header Last-Modified、If-Modified-Since的区别。
+
+
 ### 1. 什么是浏览器缓存？
 
 浏览器通常会将常用资源缓存在你的个人电脑的磁盘和内存中。如Chrome浏览器的缓存存放位置就在：`\Users\Your_Account\AppData\Local\Google\Chrome\User Data\Default`中的`Cache`文件夹和`Media Cache`文件夹中。
