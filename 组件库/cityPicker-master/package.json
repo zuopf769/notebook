@@ -1,0 +1,22 @@
+{
+  "name": "city-picker",
+  "version": "0.0.4",
+  "description": "city picker",
+  "main": "city picker",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwzhang/cityPicker.git"
+  },
+  "author": "lwzhang",
+  "license": "MIT",
+  "keywords": [
+    "citypicker"
+  ],
+  "bugs": {
+    "url": "https://github.com/lwzhang/cityPicker/issues"
+  },
+  "homepage": "https://github.com/lwzhang/cityPicker#readme"
+}

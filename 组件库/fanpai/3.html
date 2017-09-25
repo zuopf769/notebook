@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="3.css">
+<script type="text/javascript" src="jquery-1.7.2.js"></script>
+<script type="text/javascript" src="3.js"></script>
+ <script type="text/javascript">
+/* $(function(){
+	var position = $('#cards').position();
+	for(var i=0;i<11;i++){
+		$('.card:first-child').clone().appendTo('#cards');
+	}
+ 	$("#cards").children().each(function(index){
+		$(this).css({
+			"left" : ($(this).width()+20)*(index%4),
+			"top" : ($(this).height()+20)*Math.floor(index/4)
+		});
+	});
+ 	
+});
+ */
+</script> 
+</head>
+<body>
+	<section id="game">
+	<div id="start"> <img  src="images/start.jpg"> </div>
+		<div id="cards">
+			<div class="card">
+				<div class="face front"></div>
+				<div class="face back "></div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+#game{
+	
+	border-radius:10px; /* 圆角效果  new*/
+	border:1px solid #666;
+	background: #9c9;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	height: 460px;
+	width: 540px;
+	
+	/* margin: 0 auto;  */
+}
+.cards {
+	width: 380px;
+	height:420px;
+	 position:relative; 
+	 display: none;
+}
+.card {
+	-webkit-perspective:600;
+	width:80px;
+	height:120px;
+	position:absolute;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	transition:all 1s;
+}
+.face{
+	width: 100%;
+	height:100%;
+	border-radius:10px;
+	position: absolute;
+	/* -webkit-transition: all 10s;
+	-webkit-backface-visibility:hidden; */
+	-webkit-transition-property:opacity , transform ,box-shadow;
+	-webkit-transition-duration: 1s;
+	-webkit-backface-visibility:hidden;
+}
+.front{
+	background:#999 url(images/deck.png) 0 -480px;
+	z-index: 10;
+}
+.back{
+	background:#efefef url(images/deck.png);
+	-webkit-transform:rotate3d(0,1,0,-180deg);
+	z-index: 8;
+}
+.card:hover .face,.card-flipped .face{
+	-webkit-box-shadow:0 0 10px #aaa;
+}
+
+.cardAQ{
+	background-position: -880px 0;
+}
+.cardAK{
+	background-position: -960px 0;
+}
+.cardBQ{
+	background-position: -880px -120px;
+}
+.cardBK{
+	background-position: -960px -120px;
+}
+.cardCQ{
+	background-position: -880px -240px;
+}
+.cardCK{
+	background-position: -960px -240px;
+}
+.cardDQ{
+	background-position: -880px -360px;
+}
+.cardDK{
+	background-position:  -960px -360px;
+}
+.card-flipped .front{
+	-webkit-transform:rotate3d(0,1,0,180deg);
+	z-index:10;
+}
+.card-flipped .back{
+	-webkit-transform:rotate3d(0,1,0,0deg);
+	z-index:8;
+}
+.card-removed{
+	opacity:0;
+}

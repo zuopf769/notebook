@@ -1,0 +1,24 @@
+{
+  "name": "cityPicker",
+  "main": "cityPicker.js",
+  "version": "0.0.4",
+  "homepage": "https://github.com/lwzhang/cityPicker",
+  "authors": [
+    "lwzhang <656615764@qq.com>"
+  ],
+  "description": "city picker",
+  "keywords": [
+    "citypicker"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.x"
+  }
+}

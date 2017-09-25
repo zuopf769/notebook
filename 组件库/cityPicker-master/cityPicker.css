@@ -1,0 +1,93 @@
+dl, dt, dd, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.picker-box {
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*background-color: #fff;*/
+    /*width: 100%;*/
+    /*overflow: auto;*/
+    -webkit-user-select: none;
+}
+
+/*::-webkit-scrollbar {*/
+    /*width: 0;*/
+/*}*/
+
+.picker-box dt {
+    background-color: #dbdbdb;
+    padding: 5px 20px;
+}
+
+.picker-box dd {
+    padding: 8px 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.pro-picker, .city-picker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    overflow: auto;
+    width: 100%;
+}
+
+.city-picker li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.navbar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    border-radius: 5px;
+}
+
+.navbar a {
+    display: block;
+    text-align: center;
+    color: gray;
+}
+
+.navbar.active {
+    background-color: grey;
+}
+
+.navbar.active a {
+    color: #fff;
+}
+
+.picker-box .prompt {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
