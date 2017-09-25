@@ -1,7 +1,6 @@
 /**
  * @file 左右滑动组件
  *       一开始写的，跟屎一样。。。
- * @author yanglei07@baidu.com
  */
 
 'use strict';
