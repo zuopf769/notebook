@@ -70,3 +70,60 @@
 ![](https://github.com/zuopf769/notebook/blob/master/fe/%E5%89%8D%E7%AB%AF%E5%BF%85%E9%A1%BB%E8%A6%81%E6%87%82%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/3.png)
 
 
+
+### 7.新鲜度限值
+
+HTTP通过缓存将服务器资源的副本保留一段时间，这段时间称为新鲜度限值。这在一段时间内请求相同资源不会再通过服务器。HTTP协议中Cache-Control 和 Expires可以用来设置新鲜度的限值，前者是HTTP1.1中新增的响应头，后者是HTTP1.0中的响应头。二者所做的事时都是相同的，但由于Cache-Control使用的是相对时间，而Expires可能存在客户端与服务器端时间不一样的问题，所以我们更倾向于选择Cache-Control。
+
+html代码
+
+```
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Web Cache</title>
+    <link rel="shortcut icon" href="./shortcut.png">
+    <script>
+    </script>
+  </head>
+  <body class="claro">
+  <img src="./cache.png">
+  </body>
+</html>
+```
+node服务端代码
+
+```
+var http = require('http');
+var fs = require('fs');
+http.createServer(function(req, res) {
+    if (req.url === '/' || req.url === '' || req.url === '/index.html') {
+        fs.readFile('./index.html', function(err, file) {
+            console.log(req.url)
+            //对主文档设置缓存，无效果
+            res.setHeader('Cache-Control', "no-cache, max-age=" + 5);
+            res.setHeader('Content-Type', 'text/html');
+            res.writeHead('200', "OK");
+            res.end(file);
+        });
+    }
+    if (req.url === '/cache.png') {
+        fs.readFile('./cache.png', function(err, file) {
+            res.setHeader('Cache-Control', "max-age=" + 5);//缓存五秒
+            res.setHeader('Content-Type', 'images/png');
+            res.writeHead('200', "Not Modified");
+            res.end(file);
+        });
+    }
+    
+}).listen(8888);
+```
+
+当在5秒内第二次访问页面时，浏览器会直接从缓存中取得资源
+
+
+
+
+
