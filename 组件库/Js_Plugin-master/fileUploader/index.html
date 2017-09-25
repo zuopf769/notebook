@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fileUploader</title>
+    <style>
+        .upbox{
+            width: 100%;
+            height: 500px;
+            border: 3px dashed #000;
+            position: relative;
+        }
+        #uploader{
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+        h1{
+            position: absolute;
+            left: 45%;
+            top: 40%;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            float: right;
+        }
+        .img-content{
+            width: 120px;
+            height: 120px;
+            border: 1px solid #000;
+            margin: 20px;
+            float: left;
+            position: relative;
+            z-index: 5;
+        }
+        .img-box{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .img-box img{
+            display: block;
+            width: auto;
+            height: 100%;
+        }
+        .progress-font{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -15px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="upbox">
+        <h1>测试</h1>
+        <input id="uploader" type="file" multiple="multiple" name="file" accept="image/*">
+    </div>    
+    <button type="button" id="button">确定</button>
+    <script src="./index.js"></script>
+</body>
+</html>

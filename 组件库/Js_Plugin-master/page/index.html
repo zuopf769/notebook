@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .xm-pagenavi{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            margin-top: 200px;
+        }
+        .xm-pagenavi a,span,b{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            color: #555;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 0 5px;
+        }
+        .xm-pagenavi a{
+            border: 1px solid #000;
+            text-decoration: none;
+        }
+        a:not(.current):hover{
+            background-color: #27ae60;
+            color: #fff;
+        }
+        a.current{
+            border: none;
+        }
+        a.current{
+            color: #27ae60;
+        }
+        .xm-pagenavi a:first-of-type,
+        .xm-pagenavi a:last-of-type{
+            width: 50px;
+        }
+        .xm-pagenavi .disabled{
+            cursor: default;
+            color: #ccc;
+            border: 1px solid #ccc;
+        }
+        .xm-pagenavi a.disabled:hover{
+            background-color: transparent;
+            color: #ccc;
+        }
+        .current{
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        
+    </div>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!--<div class="xm-pagenavi">
+    <a href="#" class="prev"><</a>
+    <a href="#" class="current">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#" class="prev">7</a>
+    <span class="dot">...</span>
+    <a href="#">30</a>
+    <a href="#">></a>
+</div>-->
+

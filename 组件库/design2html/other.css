@@ -1,0 +1,32 @@
+.custom-mod, .mod {
+    margin-bottom: 15px;
+}
+
+.custom-mod .block-title .page-h1-deco, .bdjson-mod .block-title .page-h1-deco {
+    vertical-align: -10px!important;
+}
+.custom-mod .block-title, .bdjson-mod .block-title {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "微软雅黑", Microsoft YaHei;
+    line-height: 41px;
+    height: 41px;
+}
+
+.custom-mod .sub-block-title {
+    font-weight: bold;
+}
+
+
+.custom-mod .sub-block-title .emph {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "微软雅黑", Microsoft YaHei;
+    color: #00B050;
+}
+
+.custom-mod .p {
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 1.5;
+}

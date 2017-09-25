@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>html2word</title>
+    <style>{{=it.bdJsonCss}}</style>
+    <style>{{=it.otherCss}}</style>
+</head>
+<body>
+    <div class="period-item">
+        <div class="custom-mod">
+            <div class="block-title">
+                <img class="page-h1-deco" src="http://hiphotos.baidu.com/doc/pic/item/e7cd7b899e510fb3de464c8ede33c895d1430c4f.jpg">
+                <span>&nbsp;&nbsp;</span>
+                <span>教学准备</span>
+            </div>
+        </div>
+        <div class="custom-mod">
+            <div class="sub-block-title">
+                <span class="emph">1.&nbsp;&nbsp;</span>
+                <span>教学目标</span>
+            </div>
+            <div class="sub-block-cnt">
+                {{~it.objective :sv:sk}}
+                    <p class="p">{{=sv}}</p>
+                {{~}}
+            </div>
+        </div>
+        <div class="custom-mod">
+            <div class="sub-block-title">
+                <span class="emph">2.&nbsp;&nbsp;</span>
+                <span>教学重点/难点</span>
+            </div>
+            <div class="sub-block-cnt">
+                {{~it.key_point :sv:sk}}
+                    <p class="p">{{=sv}}</p>
+                {{~}}
+            </div>
+        </div>
+        <div class="custom-mod">
+            <div class="sub-block-title">
+                <span class="emph">3.&nbsp;&nbsp;</span>
+                <span>教学用具</span>
+            </div>
+            <div class="sub-block-cnt">
+                <p class="p">{{=it.tool}}</p>
+            </div>
+        </div>
+        <div class="custom-mod">
+            <div class="sub-block-title">
+                <span class="emph">4.&nbsp;&nbsp;</span>
+                <span>标签</span>
+            </div>
+            <div class="sub-block-cnt">
+                <p class="p">{{=it.tags}}</p>
+            </div>
+        </div>
+        {{? it.progress}}
+            <div class="mod bdjson-mod">
+                <div class="block-title">
+                    <img class="page-h1-deco" src="http://hiphotos.baidu.com/doc/pic/item/e7cd7b899e510fb3de464c8ede33c895d1430c4f.jpg">
+                    <span>&nbsp;&nbsp;</span>
+                    <span>教学过程</span>
+                </div>
+                <div class="block-cnt">{{=it.progress}}</div>
+            </div>
+        {{?}}
+        {{? it.summary}}
+            <div class="mod bdjson-mod">
+                <div class="block-title">
+                    <img class="page-h1-deco" src="http://hiphotos.baidu.com/doc/pic/item/e7cd7b899e510fb3de464c8ede33c895d1430c4f.jpg">
+                    <span>&nbsp;&nbsp;</span>
+                    <span>课堂小结</span>
+                </div>
+                <div class="block-cnt">{{=it.summary}}</div>
+            </div>
+        {{?}}
+        {{? it.homework}}
+            <div class="mod bdjson-mod">
+                <div class="block-title">
+                    <img class="page-h1-deco" src="http://hiphotos.baidu.com/doc/pic/item/e7cd7b899e510fb3de464c8ede33c895d1430c4f.jpg">
+                    <span>&nbsp;&nbsp;</span>
+                    <span>课后习题</span>
+                </div>
+                <div class="block-cnt">{{=it.homework}}</div>
+            </div>
+        {{?}}
+        {{? it.handwriting}}
+            <div class="mod bdjson-mod">
+                <div class="block-title">
+                    <img class="page-h1-deco" src="http://hiphotos.baidu.com/doc/pic/item/e7cd7b899e510fb3de464c8ede33c895d1430c4f.jpg">
+                    <span>&nbsp;&nbsp;</span>
+                    <span>板书</span>
+                </div>
+                <div class="block-cnt">{{=it.handwriting}}</div>
+            </div>
+        {{?}}
+    </div>
+</body>
+</html>

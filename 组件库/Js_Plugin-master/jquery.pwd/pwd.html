@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .alieditContainer{
+            display: inline-block;
+            zoom: 1;
+            width: 184px;
+            height: 24px;
+            vertical-align: bottom;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .alieditContainer *{
+            vertical-align: bottom;
+        }
+        .ui-input{
+            font-size: 12px;
+            color: #595959;
+            vertical-align: middle;
+            outline: none;
+            margin-left: -999px;
+            width: 170px;
+            padding: 2px 5px;
+            height: 24px;
+            line-height: 24px;
+            border: 1px solid #ccc;
+            border-top-color: #a6a6a6;
+        }
+        div.sixDigitPassword{
+            cursor: text;
+            background-color: #fff;
+            outline: none;
+            position: absolute;
+            left:0;
+            top:0;
+            padding: 8px 0;
+            height: 14px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+        div.sixDigitPassword i{
+            float: left;
+            display: block;
+            padding: 4px 0;
+            height: 7px;
+            
+
+        }
+        div.sixDigitPassword i:not(:nth-of-type(1)){
+            border-left: 1px solid #ccc;
+        }
+        div.sixDigitPassword i.active{
+            background-image: url("light.gif");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        div.sixDigitPassword b{
+            display: block;
+            margin:0 auto;
+            width: 7px;
+            height: 7px;
+            overflow: hidden;
+            background-image: url("dot.png");
+        }
+        div.sixDigitPassword span {
+            position: absolute;
+            display: block;
+            left: -1px;
+            top: -1px;
+            height: 30px;
+            border: 1px solid rgba(82, 168, 236, .8);
+            border: 1px solid #00ffff \9;
+            border-radius: 2px;
+            visibility: hidden;
+            -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.75), 0 0 8px rgba(82, 168, 236, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <span class="alieditContainer" id="payPassword_container" data-id="0">
+        <input type="password" id="payPassword_rsainput" name="payPassword_rsainput" class="ui-input i-text sixDigitPasswordInput" autocomplete="off" value="" maxlength="6" style="outline: none; margin-left: -999px;">
+    </span>
+    <script src="jquery-2.2.0.min.js"></script>
+    <script src="jquery.pwd.js"></script>
+    <script>
+        $(function(){
+            $("#payPassword_container").Alipay();
+        })
+    </script>
+</body>
+</html>

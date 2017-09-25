@@ -1,0 +1,72 @@
+{
+  "status": {
+    "code": 0,
+    "msg": null
+  },
+  "data": {
+    "item_info": {
+      "id": "5889ec3a87c24028915fc309",
+      "title": "%E5%BF%86%E8%AF%BB%E4%B9%A6%20%E6%95%99%E5%AD%A6%E8%AE%BE%E8%AE%A1%20%E6%95%99%E6%A1%88",
+      "descr": "aaaaafasfasdfasdfsafasdfsafsa",
+      "create_time": "1455690576",
+      "uid": "687233374",
+      "period_count": 1,
+      "node_id": "30919",
+      "period_info": [
+        {
+          "objective": "test1",
+          "key_point": "test2",
+          "tool": "%5B%22a%22%5D",
+          "tags": "%5B%22b%22%5D",
+          "progress": "%7B%22blockNum%22%3A%221%22%2C%22style%22%3A%5B%5D%2C%22t%22%3A%22div%22%2C%22c%22%3A%5B%7B%22t%22%3A%22table%22%2C%22r%22%3A%5B%22ext_text-align_center%22%2C%22table_has_title_all%22%5D%2C%22c%22%3A%5B%7B%22t%22%3A%22tr%22%2C%22c%22%3A%5B%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22span%22%2C%22r%22%3A%5B%22ext_bold%22%5D%2C%22c%22%3A%22asadfasfasdfsadfsadf%22%7D%5D%7D%2C%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22b%22%7D%2C%7B%22t%22%3A%22th%22%2C%22r%22%3A%5B%22ext_bg-color_ff0000%22%5D%2C%22w%22%3A%2279%22%2C%22c%22%3A%22c%22%7D%2C%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22test%22%7D%5D%7D%2C%7B%22t%22%3A%22tr%22%2C%22c%22%3A%5B%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22a%22%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22b%22%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22c%22%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22test1%22%7D%5D%7D%2C%7B%22t%22%3A%22tr%22%2C%22c%22%3A%5B%7B%22t%22%3A%22th%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22a%22%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22b%22%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22c%22%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%5B%7B%22t%22%3A%22br%22%7D%5D%7D%2C%7B%22t%22%3A%22td%22%2C%22w%22%3A%2279%22%2C%22c%22%3A%22test2%22%7D%5D%7D%5D%2C%22bg-img%22%3A%7B%22t%22%3A%22img%22%2C%22src%22%3A%22%2Fbookeditor%2Finterface%2Fimageview%3Fbook_id%3D121fdb4ebb4cf7ec4afed0b2%26file%3D9f3562037c8281934ffa2b16a707127a.png%22%2C%22w%22%3A720%2C%22h%22%3A137%7D%7D%5D%7D",
+          "summary": "%7B%22blockNum%22%3A%221%22%2C%22style%22%3A%5B%5D%2C%22t%22%3A%22div%22%2C%22c%22%3A%5B%7B%22t%22%3A%22p%22%2C%22c%22%3A%22safasdfsadfsadfasdfasdfasdf%22%7D%5D%7D",
+          "homework": "%7B%22blockNum%22%3A%221%22%2C%22style%22%3A%5B%5D%2C%22t%22%3A%22div%22%2C%22c%22%3A%5B%7B%22t%22%3A%22p%22%2C%22c%22%3A%22sadfasdfasdfasdfsadfasdf%22%7D%5D%7D",
+          "handwriting": "%7B%22blockNum%22%3A%221%22%2C%22style%22%3A%5B%5D%2C%22t%22%3A%22div%22%2C%22c%22%3A%5B%7B%22t%22%3A%22p%22%2C%22c%22%3A%5B%7B%22t%22%3A%22span%22%2C%22c%22%3A%22safsadfasdfsadfasdfas%22%7D%2C%7B%22t%22%3A%22br%22%7D%5D%7D%5D%7D"
+        }
+      ],
+      "brief": "\u8bed\u6587(\u8bed\u6587\u7248) \u00b7 \u4e03\u5e74\u7ea7\u4e0a  |  \u7b2c\u4e00\u5355\u5143 \u00b7 \u7b2c  \u8bfe"
+    },
+    "resource_info": [],
+    "auth_status": 1,
+    "userInfo": {
+      "status": 0,
+      "need_set_cookie": 0,
+      "uid": 687233374,
+      "uname": "atopos_lee",
+      "displayname": "atopos_lee",
+      "ltime": 1455692370,
+      "utime": 1455692370,
+      "atime": 1455692370,
+      "acount": 0,
+      "gdata": "V\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "pdata": "1\u0000\u0000100\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "encoding": "gbk",
+      "isIncomplete": 0,
+      "isLogin": true,
+      "uip": "61.135.169.80",
+      "uipNum": 1353287485,
+      "tableId": 14,
+      "registerType": 0,
+      "verifiedEmail": true,
+      "snsBinded": 0,
+      "isHalfUname": 0,
+      "isFrom": 0,
+      "isNoUname": false,
+      "utype": 0,
+      "wenkuLogin": 1,
+      "wenkuReg": 0,
+      "power": 1,
+      "isAdmin": false,
+      "exp": "2124",
+      "wealth": "4223",
+      "gradeTitle": "\u624b\u4e0d\u91ca\u5377",
+      "gradeLevel": "\u56db",
+      "gradeNum": 4,
+      "isPayUpload": 0,
+      "isPGCPopup": 0,
+      "isPGC": 0,
+      "isBGC": 0,
+      "headicon": "http:\/\/himg.bdimg.com\/sys\/portraitn\/item\/5e5961746f706f735f6c6565f628"
+    }
+  }
+}

@@ -1,0 +1,705 @@
+.bdjson-mod {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 20px 0;
+        line-height: 1.3;
+    }
+
+    p {
+        text-indent: 2em;
+        line-height: 2;
+        white-space:pre;
+        word-wrap:break-word;
+    }
+
+    h1 {
+        font-size: 16px;font-weight:800;
+    }
+
+    h2 {
+        font-size: 16px;font-weight:800;
+    }
+
+    h3 {
+        font-size: 16px;font-weight:800;
+    }
+
+    h4 {
+        font-size: 16px;font-weight:800;
+    }
+
+    h5 {
+        font-size: 14px;font-weight:800
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    img {
+        /*display:block;*/
+        /*margin:0 auto;*/
+        max-width: 652px;
+        vertical-align: middle;
+        /*height: auto;*/
+        // background: url(./img_loading.gif) center center no-repeat;
+        background-color: #eee;
+    }
+
+    img[data-table-bdjson] {
+        border: 5px solid #f2f2f2;
+    }
+
+    img[datatype="math"] {
+        cursor: pointer;
+    }
+
+    a {
+        color: #069;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .paste-web-img {
+        border: 1px solid #ccc;
+        width: 442px;
+        height: 274px;
+        // background: url(./img_loading.gif) center center no-repeat !important;
+        content: '';
+        pointer-events: none;
+    }
+
+    .paste-img-error {
+        width: 442px;
+        height: 274px;
+        /*background: url(./default/images/poste-error-img.png) center center no-repeat !important;*/
+        /*pointer-events:none;*/
+    }
+
+    .code-iframe {
+        width: 100%;
+        margin: 10px 0;
+        display: block;
+    }
+
+    .ext_text-indent {
+        text-indent: 2em;
+    }
+
+    .ext_no_text-indent {
+        text-indent: 0;
+    }
+
+    .ext_text-align_left img:only-child:not([datatype="note"]),
+    .ext_text-align_right img:only-child:not([datatype="note"]) {
+        /*display: inline;
+        margin: 0;
+        margin-bottom: -0.61em;
+        margin-left: -2em;*/
+    }
+
+    .ext_inscribed {
+        text-align: right!important;
+        font-style: italic;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 10px;
+        background: #0ff;
+    }
+
+    .ext_legends,
+    .ext_picnote_bottom,
+    .ext_picnote_top {
+        /*display: block;
+        text-align:center!important;
+        font-size: 16px;
+        margin: 5px 10px 30px;
+        background: #ff0;*/
+    }
+
+    .ext_picnote {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        text-indent: 0;
+    }
+
+    .picnote-iframe {
+        max-width: 652px;
+    }
+
+    .ext_picnote img {
+        /*background-color:green;*/
+    }
+
+    .ext_picnote span {
+        background: #F9F8F4;
+        text-align: center;
+        text-indent: 0;
+        font-size: 13px;
+        font-family: 'Kaiti SC', "楷体", "楷体_GB2312", SimKai;
+        overflow: hidden;
+        cursor: pointer;
+        font-style: normal;
+    }
+
+    .ext_picnote_bottom,
+    .ext_picnote_top {
+        /*height: 32px;*/
+    }
+
+    .ext_picnote_left,
+    .ext_picnote_right {
+        width: 20px;
+        padding-left: 6px;
+        padding-right: 6px;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .ext_picnote_left span,
+    .ext_picnote_right span {
+        display: block;
+    }
+
+
+    /*文库 引用 样式*/
+
+    .ext_quote {
+        margin: 1em 40px;
+        font-size: 14px;
+        color:#999;
+        font-family: 'Kaiti SC', "楷体", "KaiTi", "楷体_GB2312", "KaiTi_GB2312", SimKai!important;
+    }
+
+    .ext_text-align_center {
+        text-align: center;
+    }
+
+    .ext_text-align_left {
+        text-align: left
+    }
+
+    .ext_text-align_right {
+        text-align: right;
+    }
+
+
+    /* imagefloat */
+
+
+    /*.ext_float_left {
+        float: left;
+    }
+    .ext_float_right {
+        float: right;
+    }*/
+
+    img.ext_float_left {
+        float: left;
+        margin-right: 10px;
+    }
+
+    img.ext_float_right {
+        float: right;
+        margin-left: 10px;
+    }
+
+    .p-has-float-img:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .p-has-float-img[disable-drag-bug] {
+        overflow: hidden;
+    }
+
+
+    /* bold */
+
+    .ext_bold {
+        font-weight: bold;
+    }
+
+
+    /* italic */
+
+    .ext_italic {
+        font-style: italic;
+    }
+
+
+    /* underline */
+
+    .ext_underline {
+        text-decoration: underline;
+    }
+
+
+    /* font-color */
+
+    .ext_color_ff0000 {
+        color: #ff0000;
+    }
+
+    .ext_color_ff3333 {
+        color: #ff3333;
+    }
+
+    .ext_color_ff6666 {
+        color: #ff6666;
+    }
+
+    .ext_color_ff9999 {
+        color: #ff9999;
+    }
+
+    .ext_color_0000ff {
+        color: #0000ff;
+    }
+
+    .ext_color_3333ff {
+        color: #3333ff;
+    }
+
+    .ext_color_6666ff {
+        color: #6666ff;
+    }
+
+    .ext_color_9999ff {
+        color: #9999ff;
+    }
+
+    .ext_color_006600 {
+        color: #006600;
+    }
+
+    .ext_color_009900 {
+        color: #009900;
+    }
+
+    .ext_color_00cc33 {
+        color: #00cc33;
+    }
+
+    .ext_color_99ffcc {
+        color: #99ffcc;
+    }
+
+    .ext_color_ff6600 {
+        color: #ff6600;
+    }
+
+    .ext_color_ff9900 {
+        color: #ff9900;
+    }
+
+    .ext_color_ffcc00 {
+        color: #ffcc00;
+    }
+
+    .ext_color_ffff99 {
+        color: #ffff99;
+    }
+
+
+    /* background */
+
+    .ext_background_ff0000 {
+        background-color: #ff0000;
+    }
+
+    .ext_background_ff3333 {
+        background-color: #ff3333;
+    }
+
+    .ext_background_ff6666 {
+        background-color: #ff6666;
+    }
+
+    .ext_background_ff9999 {
+        background-color: #ff9999;
+    }
+
+    .ext_background_0000ff {
+        background-color: #0000ff;
+    }
+
+    .ext_background_3333ff {
+        background-color: #3333ff;
+    }
+
+    .ext_background_6666ff {
+        background-color: #6666ff;
+    }
+
+    .ext_background_9999ff {
+        background-color: #9999ff;
+    }
+
+    .ext_background_006600 {
+        background-color: #006600;
+    }
+
+    .ext_background_009900 {
+        background-color: #009900;
+    }
+
+    .ext_background_00cc33 {
+        background-color: #00cc33;
+    }
+
+    .ext_background_99ffcc {
+        background-color: #99ffcc;
+    }
+
+    .ext_background_ff6600 {
+        background-color: #ff6600;
+    }
+
+    .ext_background_ff9900 {
+        background-color: #ff9900;
+    }
+
+    .ext_background_ffcc00 {
+        background-color: #ffcc00;
+    }
+
+    .ext_background_ffff99 {
+        background-color: #ffff99;
+    }
+
+
+    /* font-family */
+
+    .ext_font-family_yahei {
+        font-family: "微软雅黑", Microsoft YaHei;
+    }
+
+    .ext_font-family_songti {
+        font-family: "宋体", SimSun;
+    }
+
+    .ext_font-family_kaiti {
+        font-family: "楷体", "楷体_GB2312", SimKai;
+    }
+
+    .ext_font-family_heiti {
+        font-family: "黑体", SimHei;
+    }
+
+
+    /* font-size */
+
+    .ext_font-size_1 {
+        font-size: 16px;font-weight:800;
+    }
+
+    .ext_font-size_2 {
+        font-size: 16px;font-weight:800;
+    }
+
+    .ext_font-size_3 {
+        font-size: 16px;font-weight:800;
+    }
+
+    .ext_font-size_4 {
+        font-size: 14px;font-weight:800
+    }
+
+    .ext_font-size_5 {
+        font-size: 14px;
+    }
+
+    .ext_font-size_6 {
+        font-size: 10px;
+    }
+
+    .ext_valign_sub {
+        font-size: 10px;
+        vertical-align: sub;
+    }
+
+    .ext_valign_sup {
+        font-size: 10px;
+        vertical-align: super;
+    }
+
+    .editor-font-win {
+        color: #333;
+        font-family: "微软雅黑", "Microsoft YaHei";
+    }
+
+    .editor-font-win h1,
+    .editor-font-win h2,
+    .editor-font-win h4,
+    .editor-font-win h5,
+    .editor-font-win p {
+        /*color: #333;*/
+    }
+
+    .editor-font-win h1 {
+        font-family: 'SimHei';
+    }
+
+    .editor-font-win h2,
+    .editor-font-win h3,
+    .editor-font-win h4,
+    .editor-font-win p {
+        font-family: "微软雅黑", "Microsoft YaHei";
+    }
+
+    .editor-font-win h5,
+    .editor-font-win .ext_quote {
+        font-family: "楷体", "KaiTi", "楷体_GB2312", "KaiTi_GB2312", SimKai;
+    }
+
+    .editor-font-mac {
+        color: #4d4d4d;
+        font-family: "Xin Gothic", "PT Sans", "Hiragino Sans GB", "Helvetica Neue", "Helvetica", "Arial", "Sans-serif";
+    }
+
+    .editor-font-mac h1,
+    .editor-font-mac h2,
+    .editor-font-mac h4,
+    .editor-font-mac h5,
+    .editor-font-mac p {
+        /*color: #4d4d4d;*/
+    }
+
+    .editor-font-mac h1,
+    .editor-font-mac h3 {
+        font-family: 'SimHei';
+    }
+
+    .editor-font-mac h2,
+    .editor-font-mac h4,
+    .editor-font-mac p {
+        font-family: "Xin Gothic", "PT Sans", "Hiragino Sans GB", "Helvetica Neue", "Helvetica", "Arial", "Sans-serif";
+    }
+
+    .editor-font-mac h5,
+    .editor-font-mac .ext_quote,
+    .editor-font-mac .ext_quote p {
+        font-family: 'Kaiti SC', "楷体", "KaiTi", "楷体_GB2312", "KaiTi_GB2312", SimKai;
+    }
+
+
+    /*
+    supscribe和subscribe删除后直接输入内容会带有font标签，重置该标签的字号
+    */
+
+    font {
+        font-size: inherit;
+    }
+
+
+    /*
+    修chrome选择range时候不能滚动的bug
+    */
+
+    html {
+        height: 100%;
+        overflow: hidden;
+        padding: 0 !important;
+    }
+
+    .table-editor {
+        background-color: #fff;
+        height: 100%;
+        width: 100%;
+    }
+
+    .table-editor body {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        margin: 0;
+        padding: 0px !important;
+        border: none;
+    }
+
+    table {
+        /*min-width: 650px;*/
+        table-layout: fixed;
+        /*width: 80%;*/
+        margin: 20px;
+        border-collapse: collapse;
+        box-shadow: 0 0 0 5px #f2f2f2;
+    }
+
+    td,
+    th {
+        /*min-width: 100px;*/
+        /*min-height: 28px;*/
+        word-break: break-all;
+        padding: 5px 10px;
+        text-align: left;
+        border: 1px solid #808080;
+        background-clip: padding-box;
+    }
+
+    table.html-2-canvas {
+        border: 1px solid #808080;
+    }
+
+    table.table_has_title_all.html-2-canvas,
+    table.table_has_title_col.html-2-canvas,
+    table.table_has_title_row.html-2-canvas {
+        border: 1px solid transparent;
+    }
+
+    table.html-2-canvas td,
+    table.html-2-canvas th {
+        border-left: none;
+        border-top: none;
+    }
+
+    table.html-2-canvas td:last-child,
+    table.html-2-canvas th:last-child {
+        border-right: none;
+    }
+
+    table.html-2-canvas tr:last-child td,
+    table.html-2-canvas tr:last-child th {
+        border-bottom: none;
+    }
+
+    table.table_has_title_all td,
+    table.table_has_title_col td,
+    table.table_has_title_row td {
+        border-color: transparent;
+    }
+
+
+    /* 列标题 */
+
+    table.table_has_title_all tr th:first-of-type,
+    table.table_has_title_col tr th:first-of-type {
+        border-color: transparent;
+        background-color: #898989;
+        border-right-width: 4px;
+    }
+
+
+    /* 行标题 */
+
+    table.table_has_title_all tr:first-child th,
+    table.table_has_title_row tr:first-child th {
+        border-color: transparent;
+        background-color: #898989;
+        border-bottom-width: 4px;
+        border-right-width: 1px;
+    }
+
+    .ue-table-interlace-color-single td {
+        background-color: #dcdcdc;
+    }
+
+    .ue-table-interlace-color-double td {
+        background-color: #f0f0f0;
+    }
+
+    td.selectTdClass,
+    th.selectTdClass,
+    .selectTdClass {
+        background-color: #fdfcc2 !important
+    }
+
+    th *,
+    td * {
+        margin: 0;
+        padding: 0;
+        text-indent: 0;
+    }
+
+    ol,
+    ul {
+        list-style-position: inside !important;
+        margin: 10px 0 10px 10px !important;
+    }
+
+    ol li:before,
+    ul li:before {
+        display: inline-block;
+        content: '';
+        width: 0;
+        margin-left: 10px;
+    }
+
+    ol.custom-decimal {
+        list-style-type: decimal !important;
+    }
+
+    ol.custom-upper-roman {
+        list-style-type: upper-roman !important;
+    }
+
+    ol.custom-lower-alpha {
+        list-style-type: lower-alpha !important;
+    }
+
+    ol.custom-cjk-ideographic {
+        list-style-type: cjk-ideographic !important;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul .ext_quote,
+    ol .ext_quote {
+        margin: 0;
+    }
+
+    ul li::before {
+        position: relative;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+
+    li.list-dot::before {
+        background-image: url(/static/ykmis/lib/ueditor/themes/default/images/icon-list-disc.png);
+        width: 6px;
+        height: 6px;
+        top: -4px;
+    }
+    li.list-disc::before {
+        background-image: url(/static/ykmis/lib/ueditor/themes/default/images/icon-list-disc.png);
+        width: 9px;
+        height: 9px;
+        top: -3px;
+    }
+
+    li.list-diamond::before {
+        background-image: url(/static/ykmis/lib/ueditor/themes/default/images/icon-list-diamond.png);
+        width: 9px;
+        height: 9px;
+        top: -3px;
+    }
+    li.list-square::before {
+        background-image: url(/static/ykmis/lib/ueditor/themes/default/images/icon-list-square.png);
+        width: 9px;
+        height: 9px;
+        top: -3px;
+    }
+
+    li p {
+        display: inline;
+        text-indent: 0;
+        overflow: hidden;
+    }
+    img.list-dot-icon{display:none;}
+
+    .ext_bg-color_ffffff{background-color:#ffffff!important;}.ext_bg-color_000000{background-color:#000000!important;}.ext_bg-color_eeece1{background-color:#eeece1!important;}.ext_bg-color_1f497d{background-color:#1f497d!important;}.ext_bg-color_4f81bd{background-color:#4f81bd!important;}.ext_bg-color_c0504d{background-color:#c0504d!important;}.ext_bg-color_9bbb59{background-color:#9bbb59!important;}.ext_bg-color_8064a2{background-color:#8064a2!important;}.ext_bg-color_4bacc6{background-color:#4bacc6!important;}.ext_bg-color_f79646{background-color:#f79646!important;}.ext_bg-color_f2f2f2{background-color:#f2f2f2!important;}.ext_bg-color_7f7f7f{background-color:#7f7f7f!important;}.ext_bg-color_ddd9c3{background-color:#ddd9c3!important;}.ext_bg-color_c6d9f0{background-color:#c6d9f0!important;}.ext_bg-color_dbe5f1{background-color:#dbe5f1!important;}.ext_bg-color_f2dcdb{background-color:#f2dcdb!important;}.ext_bg-color_ebf1dd{background-color:#ebf1dd!important;}.ext_bg-color_e5e0ec{background-color:#e5e0ec!important;}.ext_bg-color_dbeef3{background-color:#dbeef3!important;}.ext_bg-color_fdeada{background-color:#fdeada!important;}.ext_bg-color_d8d8d8{background-color:#d8d8d8!important;}.ext_bg-color_595959{background-color:#595959!important;}.ext_bg-color_c4bd97{background-color:#c4bd97!important;}.ext_bg-color_8db3e2{background-color:#8db3e2!important;}.ext_bg-color_b8cce4{background-color:#b8cce4!important;}.ext_bg-color_e5b9b7{background-color:#e5b9b7!important;}.ext_bg-color_d7e3bc{background-color:#d7e3bc!important;}.ext_bg-color_ccc1d9{background-color:#ccc1d9!important;}.ext_bg-color_b7dde8{background-color:#b7dde8!important;}.ext_bg-color_fbd5b5{background-color:#fbd5b5!important;}.ext_bg-color_bfbfbf{background-color:#bfbfbf!important;}.ext_bg-color_3f3f3f{background-color:#3f3f3f!important;}.ext_bg-color_938953{background-color:#938953!important;}.ext_bg-color_548dd4{background-color:#548dd4!important;}.ext_bg-color_95b3d7{background-color:#95b3d7!important;}.ext_bg-color_d99694{background-color:#d99694!important;}.ext_bg-color_c3d69b{background-color:#c3d69b!important;}.ext_bg-color_b2a2c7{background-color:#b2a2c7!important;}.ext_bg-color_92cddc{background-color:#92cddc!important;}.ext_bg-color_fac08f{background-color:#fac08f!important;}.ext_bg-color_a5a5a5{background-color:#a5a5a5!important;}.ext_bg-color_262626{background-color:#262626!important;}.ext_bg-color_494429{background-color:#494429!important;}.ext_bg-color_17365d{background-color:#17365d!important;}.ext_bg-color_366092{background-color:#366092!important;}.ext_bg-color_953734{background-color:#953734!important;}.ext_bg-color_76923c{background-color:#76923c!important;}.ext_bg-color_5f497a{background-color:#5f497a!important;}.ext_bg-color_31859b{background-color:#31859b!important;}.ext_bg-color_e36c09{background-color:#e36c09!important;}.ext_bg-color_7f7f7f{background-color:#7f7f7f!important;}.ext_bg-color_0c0c0c{background-color:#0c0c0c!important;}.ext_bg-color_1d1b10{background-color:#1d1b10!important;}.ext_bg-color_0f243e{background-color:#0f243e!important;}.ext_bg-color_244061{background-color:#244061!important;}.ext_bg-color_632423{background-color:#632423!important;}.ext_bg-color_4f6128{background-color:#4f6128!important;}.ext_bg-color_3f3151{background-color:#3f3151!important;}.ext_bg-color_205867{background-color:#205867!important;}.ext_bg-color_974806{background-color:#974806!important;}.ext_bg-color_c00000{background-color:#c00000!important;}.ext_bg-color_ff0000{background-color:#ff0000!important;}.ext_bg-color_ffc000{background-color:#ffc000!important;}.ext_bg-color_ffff00{background-color:#ffff00!important;}.ext_bg-color_92d050{background-color:#92d050!important;}.ext_bg-color_00b050{background-color:#00b050!important;}.ext_bg-color_00b0f0{background-color:#00b0f0!important;}.ext_bg-color_0070c0{background-color:#0070c0!important;}.ext_bg-color_002060{background-color:#002060!important;}.ext_bg-color_7030a0{background-color:#7030a0!important;}.ext_bg-color_fbe9b7{background-color:#fbe9b7!important;}.ext_bg-color_f6b7ca{background-color:#f6b7ca!important;}.ext_bg-color_e6f2d9{background-color:#e6f2d9!important;}.ext_bg-color_fdb9a6{background-color:#fdb9a6!important;}.ext_bg-color_baebe5{background-color:#baebe5!important;}.ext_bg-color_f9d5fc{background-color:#f9d5fc!important;}.ext_bg-color_acc0c7{background-color:#acc0c7!important;}.ext_bg-color_fdb1c0{background-color:#fdb1c0!important;}.ext_bg-color_b8cec4{background-color:#b8cec4!important;}.ext_bg-color_ddc688{background-color:#ddc688!important;}.ext_bg-color_ec7699{background-color:#ec7699!important;}.ext_bg-color_afd88b{background-color:#afd88b!important;}.ext_bg-color_d76e51{background-color:#d76e51!important;}.ext_bg-color_59c3b5{background-color:#59c3b5!important;}.ext_bg-color_d697dc{background-color:#d697dc!important;}.ext_bg-color_a5aeb6{background-color:#a5aeb6!important;}.ext_bg-color_ff647f{background-color:#ff647f!important;}.ext_bg-color_96b8ac{background-color:#96b8ac!important;}.ext_bg-color_bca35e{background-color:#bca35e!important;}.ext_bg-color_a22d51{background-color:#a22d51!important;}.ext_bg-color_75a44b{background-color:#75a44b!important;}.ext_bg-color_a14b33{background-color:#a14b33!important;}.ext_bg-color_0fa491{background-color:#0fa491!important;}.ext_bg-color_b264b9{background-color:#b264b9!important;}.ext_bg-color_8996a0{background-color:#8996a0!important;}.ext_bg-color_fa405a{background-color:#fa405a!important;}.ext_bg-color_7ba296{background-color:#7ba296!important;}.ext_bg-color_8d7535{background-color:#8d7535!important;}.ext_bg-color_811737{background-color:#811737!important;}.ext_bg-color_346228{background-color:#346228!important;}.ext_bg-color_6e2b18{background-color:#6e2b18!important;}.ext_bg-color_0e8677{background-color:#0e8677!important;}.ext_bg-color_872c8f{background-color:#872c8f!important;}.ext_bg-color_51626f{background-color:#51626f!important;}.ext_bg-color_c9282d{background-color:#c9282d!important;}.ext_bg-color_558476{background-color:#558476!important;}.ext_bg-color_6e5b29{background-color:#6e5b29!important;}.ext_bg-color_561226{background-color:#561226!important;}.ext_bg-color_25401e{background-color:#25401e!important;}.ext_bg-color_471a0d{background-color:#471a0d!important;}.ext_bg-color_055a4f{background-color:#055a4f!important;}.ext_bg-color_690c71{background-color:#690c71!important;}.ext_bg-color_394a59{background-color:#394a59!important;}.ext_bg-color_a33038{background-color:#a33038!important;}.ext_bg-color_295d50{background-color:#295d50!important;}
+}
