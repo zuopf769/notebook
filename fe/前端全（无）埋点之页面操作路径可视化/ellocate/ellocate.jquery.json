@@ -1,0 +1,28 @@
+{
+    "name": "ellocate",
+    "version": "0.1.0",
+    "title": "Ellocate - A plugin for generating element locators.",
+    "description": "Ellocate generates both CSS selectors and XPath expressions.",
+    "keywords": [
+        "selector",
+        "css",
+        "xpath",
+        "locator"
+    ],
+    "author": {
+        "name": "Frank O'Hara",
+        "url": "http://bimech.net"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "homepage": "http://ellocatejs.com",
+    "docs": "https://github.com/bimech/ellocate.js#ellocatejs",
+    "demo": "http://ellocatejs.com",
+    "dependencies": {
+        "jquery": ">=1.8"
+    }
+}
