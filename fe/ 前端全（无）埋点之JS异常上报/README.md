@@ -1,6 +1,6 @@
 ## 前端全（无）埋点之JS异常上报
 
-> 左鹏飞 2017.11.29
+> [左鹏飞](https://github.com/zuopf769) 2017.11.29
 
 ### 相关阅读
 + [前端全（无）埋点之页面操作路径可视化](https://github.com/zuopf769/notebook/blob/master/fe/%E5%89%8D%E7%AB%AF%E5%85%A8%EF%BC%88%E6%97%A0%EF%BC%89%E5%9F%8B%E7%82%B9%E4%B9%8B%E9%A1%B5%E9%9D%A2%E6%93%8D%E4%BD%9C%E8%B7%AF%E5%BE%84%E5%8F%AF%E8%A7%86%E5%8C%96/README.md)
