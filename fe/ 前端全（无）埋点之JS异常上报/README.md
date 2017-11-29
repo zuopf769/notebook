@@ -24,7 +24,7 @@ JS报错是比较常见的一个情景，但是有一些错误：例如后端接
 
 + message {String} 错误信息。直观的错误描述信息。
 
-+ url {String} 发生错误对应的脚本路径，比如是你的http://a.js报错了还是http://b.js报错了。
++ url {String} 发生错误对应的脚本路径，比如是你的http://a.js 报错了还是 http://b.js 报错了。
 
 + lineNo {Number} 错误发生的行号。
 
