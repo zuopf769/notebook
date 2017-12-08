@@ -3,7 +3,7 @@
 > [左鹏飞](https://github.com/zuopf769)   2017.12.08
 
 
-最近有个需求是实现长按按钮，动画一直播放的需求。但是原生js没有长按事件，zepto中的长按事件是两次touchstart之间的时间间隔是750毫秒认为是长按事件。
+最近有个需求是实现长按按钮，动画一直播放的需求。但是原生js没有长按事件，zepto中的长按事件的原理是touchstart后750ms后还没触发touchend就认为是longtap事件，如果不够750ms就clear掉那个settimeout(具体细节可以去看源码)。
 
 ### 1. 如何实现长按
 
