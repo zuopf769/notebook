@@ -1,6 +1,6 @@
 ## 移动端如何强制页面横屏
 
-> [左鹏飞]()  2017.12.13
+> [左鹏飞](https://github.com/zuopf769)  2017.12.13
 
 
 ### 1. 背景
@@ -124,41 +124,41 @@ function changeOrientation($print) {
  
   var evt = "onorientationchange" in window ? "orientationchange" : "resize";
       
-	window.addEventListener(evt, function() {
+      window.addEventListener(evt, function() {
 
-		setTimeout(function() {
-		   var width = document.documentElement.clientWidth;
+	  setTimeout(function() {
+	      var width = document.documentElement.clientWidth;
 	      var height =  document.documentElement.clientHeight;
 	      // 刷新城市的宽度
 	      initCityWidth();
 	      // 初始化每个气泡和自行车碰撞的距离
 	      cityCrashDistanceArr = initCityCrashDistance();
 	
-				if( width > height ){
-					$print.width(width);
-					$print.height(height);
-					$print.css('top',  0 );
-					$print.css('left',  0 );
-					$print.css('transform' , 'none');
-					$print.css('transform-origin' , '50% 50%');
-				 }
-				 else {
-				  $print.width(height);
-					$print.height(width);
-					$print.css('top',  (height-width)/2 );
-					$print.css('left',  0-(height-width)/2 );
-					$print.css('transform' , 'rotate(90deg)');
-					$print.css('transform-origin' , '50% 50%');
-				 }
-			}, 300);	
-	}, false);
+		if( width > height ){
+			$print.width(width);
+			$print.height(height);
+			$print.css('top',  0 );
+			$print.css('left',  0 );
+			$print.css('transform' , 'none');
+			$print.css('transform-origin' , '50% 50%');
+		 }
+		 else {
+		  $print.width(height);
+			$print.height(width);
+			$print.css('top',  (height-width)/2 );
+			$print.css('left',  0-(height-width)/2 );
+			$print.css('transform' , 'rotate(90deg)');
+			$print.css('transform-origin' , '50% 50%');
+		 }
+	}, 300);	
+   }, false);
 }
 ```
 
 ### 6. 总结
 
 + 该方案只适合页面宽高占一屏，不适合可以滚动的方案
-+ 用orientationchange和resize监听横竖屏切换会有延迟的问题，具体解决延迟的方案见[]()
++ 用orientationchange和resize监听横竖屏切换会有延迟的问题，具体解决延迟的方案见我的另外一篇文章[js实现手机横竖屏事件](https://github.com/zuopf769/notebook/tree/master/fe/js%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E6%A8%AA%E7%AB%96%E5%B1%8F%E4%BA%8B%E4%BB%B6)
 
 ### 7. 参考资料
 
@@ -172,6 +172,6 @@ function changeOrientation($print) {
 
 ### 9. 代码
 
-[代码]()
+[代码](https://github.com/zuopf769/notebook/tree/master/fe/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%A6%82%E4%BD%95%E5%BC%BA%E5%88%B6%E9%A1%B5%E9%9D%A2%E6%A8%AA%E5%B1%8F/code)
 
 
