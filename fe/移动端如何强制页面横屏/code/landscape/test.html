@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>segmentfault</title>
+  <!-- <link rel="stylesheet" href="test2.less"> -->
+  <style>
+    html {
+      font-size: 100px;
+      margin: 0;
+      padding: 0;
+      font-family: '微软雅黑',Arial,Helvetica,'microsoft yahei',sans-serif;
+      background: #f2f2f2
+    }
+    * {
+        margin: 0;
+        padding: 0
+    }
+    body {
+        margin: 0 auto;
+        font-size: 12px;
+        color: #333
+    }
+    .main {
+        /*background-color: #999;*/
+    }
+    .main_second{
+         background-color: #999;
+         height: 100%;
+         overflow: auto;
+    }
+    p {
+        line-height: 30px;
+        font-size: 16px
+    }
+    .title {
+        font-size: 24px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #fff
+    }
+    @media screen and (orientation: portrait) {
+        .main {
+            -webkit-transform:rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            width: 100vh;
+            height: 100vh;
+            /*去掉overflow 微信显示正常，但是浏览器有问题，竖屏时强制横屏缩小*/
+            overflow: hidden;
+        }
+        
+    }
+    @media screen and (orientation: landscape) {
+        .main {
+            -webkit-transform:rotate(0);
+            -moz-transform: rotate(0);
+            -ms-transform: rotate(0);
+            transform: rotate(0)
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+      <div class="main_second">
+      <p class="title">我要强制横屏，100%平铺</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+       <p>2 2 2 2 2  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque fuga iusto fugiat architecto dicta, repudiandae facere corporis, blanditiis ducimus ratione adipisci praesentium doloremque nulla sit numquam non reprehenderit voluptate.
+      </p>
+      <p id="test"></p>
+    </div>
+  </div>
+</body>
+</html>
