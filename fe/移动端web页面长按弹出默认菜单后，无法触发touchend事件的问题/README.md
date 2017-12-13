@@ -68,15 +68,33 @@ window.addEventListener('contextmenu', function(e){
 ```
 // 禁止系统菜单
     $('body').on('touchend', function () {
-      return false;
+       // 判断默认行为是否可以被禁用
+      if (event.cancelable) {
+        // 判断默认行为是否已经被禁用
+        if (!event.defaultPrevented) {
+            event.preventDefault();
+        }
+      }  
     });
 
     $('body').on('touchstart', function () {
-      return false;
+       // 判断默认行为是否可以被禁用
+      if (event.cancelable) {
+        // 判断默认行为是否已经被禁用
+        if (!event.defaultPrevented) {
+            event.preventDefault();
+        }
+      }  
     });
 
     $('body').on('touchcancel', function () {
-      return false;
+       // 判断默认行为是否可以被禁用
+      if (event.cancelable) {
+        // 判断默认行为是否已经被禁用
+        if (!event.defaultPrevented) {
+            event.preventDefault();
+        }
+      }  
     });
 
 ```
