@@ -68,6 +68,39 @@ g.next(2) // { value: 2, done: true }
 第二个next方法带有参数2，这个参数可以传入Generator函数，作为上个阶段异步任务的返回结果，被函数体内的变量 y 接收。因此，这一步的 value 属性，返回的就是2（变量 y 的值）。
 
 
+对于传值下面这个demo最经典：
+
+```
+
+var fs = require('fs');
+
+var readFile = function (fileName){
+  return new Promise(function (resolve, reject){
+    fs.readFile(fileName, function(error, data){
+      if (error) reject(error);
+      resolve(data);
+    });
+  });
+};
+
+var gen = function* (){
+  var f1 = yield readFile('/etc/fstab');
+  var f2 = yield readFile('/etc/shells');
+  console.log(f1.toString());
+  console.log(f2.toString());
+};
+```
+
+```
+var g = gen();
+
+g.next().value.then(function(data){
+  g.next(data).value.then(function(data){
+    g.next(data);
+  });
+})
+```
+
 ### 3. 总结
 + 调用 Generator 函数，会返回一个内部指针（即遍历器 ）g
 + Generator 函数不同于普通函数的另一个地方，即执行它不会返回结果，返回的是指针对象
