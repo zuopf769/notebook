@@ -16,6 +16,7 @@
 
 ### package.json中的配置
 
+
 ```
  "scripts": {
         "start": "PRO_ENV=DEV node scripts/start.js",
@@ -28,7 +29,8 @@
     
  ```
  
- + 配置信息在dev.json中配置
+ + [rsync.js](https://github.com/zuopf769/notebook/blob/master/fe/%E5%88%A9%E7%94%A8rsync%E5%BE%80%E7%BA%BF%E4%B8%8A%E6%B5%8B%E8%AF%95%E6%9C%BA%E6%8E%A8%E9%80%81build%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81/rsync.js)
+ + 配置信息在[dev.json](https://github.com/zuopf769/notebook/blob/master/fe/%E5%88%A9%E7%94%A8rsync%E5%BE%80%E7%BA%BF%E4%B8%8A%E6%B5%8B%E8%AF%95%E6%9C%BA%E6%8E%A8%E9%80%81build%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81/dev.json)中配置
  + 每次需要登录密码
 
 ### 自动登录系统并执行任务
