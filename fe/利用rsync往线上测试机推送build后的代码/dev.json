@@ -1,0 +1,15 @@
+{
+    "source": "./build/",
+    "server": "www@10.1.x.x",
+    "port": 22,
+    "pwd": "xxxx",
+    "path": "/usr/local/webserver/dice/fe",
+    "sudo": false,
+    "exclude": [
+        ".idea",
+        ".git",
+        ".DS_Store",
+        "node_modules",
+        "src"
+    ]
+}
