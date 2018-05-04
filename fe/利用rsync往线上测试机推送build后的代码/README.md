@@ -27,3 +27,24 @@
     },
     
  ```
+ 
+ + 配置信息在dev.json中配置
+ + 每次需要登录密码
+
+### 自动登录系统并执行任务
+```
+npm run build:dev;
+expect -c "set timeout -1;
+    spawn npm run sync:dev
+    expect {
+        *(yes/no)* {send -- yes\r;exp_continue;}
+        *assword:* {send -- rgkcpekrisl1uouSQe1l\r;exp_continue;}
+        eof        {exit 0;}
+    }";
+
+```
+
+### 参考文献
+
+[自动交互脚本之expect使用介绍](http://blog.51cto.com/balich/1720804)
+
