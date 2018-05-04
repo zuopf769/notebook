@@ -16,6 +16,7 @@
 
 ### package.json中的配置
 
+```
  "scripts": {
         "start": "PRO_ENV=DEV node scripts/start.js",
         "build": "PRO_ENV=PRD node scripts/build.js",
@@ -24,3 +25,5 @@
         "deploy:dev": "sh scripts/deploy.dev.sh",
         "test": "node scripts/test.js --env=jsdom"
     },
+    
+ ```
