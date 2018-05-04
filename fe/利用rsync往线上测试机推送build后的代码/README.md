@@ -14,4 +14,13 @@
 [rsync](https://www.npmjs.com/package/rsync)可以指定`source`和`destination`允许我们从本地往远程机器同步代码，正好能满足我们的需求
 
 
-### 
+### package.json中的配置
+
+ "scripts": {
+        "start": "PRO_ENV=DEV node scripts/start.js",
+        "build": "PRO_ENV=PRD node scripts/build.js",
+        "build:dev": "PRO_ENV=DEV node scripts/build.js",
+        "sync:dev": "node scripts/rsync.js ./scripts/dev.json",
+        "deploy:dev": "sh scripts/deploy.dev.sh",
+        "test": "node scripts/test.js --env=jsdom"
+    },
