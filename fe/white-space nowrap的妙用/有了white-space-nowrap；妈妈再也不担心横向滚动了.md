@@ -7,7 +7,11 @@
 
 还有就是二级分类菜单：
 
++ 例子一
+
 ![例子一](https://github.com/zuopf769/notebook/blob/master/fe/white-space%20nowrap%E7%9A%84%E5%A6%99%E7%94%A8/img/20180602120520.png)
+
++ 例子二
 
 ![例子二](https://github.com/zuopf769/notebook/blob/master/fe/white-space%20nowrap%E7%9A%84%E5%A6%99%E7%94%A8/img/20180602120616.png)
 
@@ -79,7 +83,7 @@ div.wrap
 
 黑色背景是div.row，红色背景是 div.col。
 
-![例子二](https://github.com/zuopf769/notebook/blob/master/fe/white-space%20nowrap%E7%9A%84%E5%A6%99%E7%94%A8/img/nowrap-GIF-IE56.gif)
+![例子二](https://github.com/zuopf769/notebook/blob/master/fe/white-space%20nowrap%E7%9A%84%E5%A6%99%E7%94%A8/img/nowrap-GIF.gif)
 
 可看出这与与应用了white-space:nowrap的文本容器效果一样。
 
