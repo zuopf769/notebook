@@ -1,5 +1,6 @@
 # 有了white-space:nowrap；妈妈再也不担心我不会横向滚动布局了
 
+[左鹏飞](https://github.com/zuopf769) 2018.06.02
 
 ## 1. 背景
 
@@ -90,5 +91,9 @@ div.wrap
 做法二的好处：兼容性好（IE5都正常），无须计算宽度，可任意放多个 div.col，而 div.row 的宽度等于其父元素的宽度。
 
 
+## 4. 总结
 
++ 如果col个数固定，则直接写死row的宽度
++ 如果col个数不固定，则需要动态计算row的宽度
++ 用了white-space:nowrap就不用计算宽度了
 
