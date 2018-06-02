@@ -26,7 +26,7 @@ div.wrap
 ## 2. 计算宽度
 
 
-设定`div.row`的宽度为`div.col`宽度`*``div.col`的个数，然后设置`div.col`为`float:left`或`display:inline-block`
+设定`div.row`的宽度为`div.col`宽度 * `div.col`的个数，然后设置`div.col`为`float:left`或`display:inline-block`
 
 
 ### 2.1 `float`大法
