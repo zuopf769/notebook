@@ -97,3 +97,7 @@ div.wrap
 + 如果col个数不固定，则需要动态计算row的宽度
 + 用了white-space:nowrap就不用计算宽度了
 
+## 5. 案例地址
+
+[ofo三周年DIY小游戏](https://ofo-campaign.ofo.com/anniversary/index.html#/)
+
