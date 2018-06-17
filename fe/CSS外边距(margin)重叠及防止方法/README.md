@@ -125,3 +125,5 @@
 + [史上最全面、最透彻的BFC原理剖析](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md)
 
 + [CSS清浮动处理（Clear与BFC）](http://www.cnblogs.com/dolphinX/p/3508869.html)
+
++ [什么是外边距重叠？重叠的结果是什么？](https://github.com/zuopf769/notebook/tree/master/fe/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E8%BE%B9%E8%B7%9D%E9%87%8D%E5%8F%A0%EF%BC%9F%E9%87%8D%E5%8F%A0%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)
