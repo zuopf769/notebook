@@ -104,6 +104,18 @@ console.log(getWordCnt());
 ```
 
 
+## 其他方法
+
+1. reduceRight()
+该方法用法与reduce()其实是相同的，只是遍历的顺序相反，它是从数组的最后一项开始，向前遍历到第一项。
+
+2. forEach()、map()、every()、some()和filter()
+详情请戳→[简述forEach()、map()、every()、some()和filter()的用法](https://www.jianshu.com/p/b728253c90b5)
+
+
+## 总结
+
+reduce() 是数组的归并方法，与forEach()、map()、filter()等迭代方法一样都会对数组每一项进行遍历，但是reduce() 可同时将前面数组项遍历产生的结果与当前遍历项进行运算，这一点是其他迭代方法无法企及的
 
 
 
