@@ -1,3 +1,9 @@
+
+# 浅谈JS中 reduce() 的用法
+
+[左鹏飞](https://github.com/zuopf769) 2018.11.11
+
+
 ## 语法
 
 ```
