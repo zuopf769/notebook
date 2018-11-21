@@ -48,6 +48,8 @@ log4js是Node日志管理的模块，具有以下功能
 ## 基本概念
 
 作为记录日志的工具，它至少应该包含如下几个组成部分(组件)： 
+
+![](https://github.com/zuopf769/notebook/blob/master/fe/log4js-node%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/image2017-2-15%209_49_25.png)
 	
 ### 1.Logger 
 
@@ -57,7 +59,7 @@ Logger记录器组件负责产生日志，并能够对日志信息进行分类�
 
 不管何种日志记录工具，大概包含了如下几种日志级别：DEBUG, INFO, WARN, ERROR 和 FATAL。 
 
-![]()
+![](https://github.com/zuopf769/notebook/blob/master/fe/log4js-node%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/log4js_level.png)
 
 ### 3.Appender 
 日志记录工具基本上通过Appender组件来输出到目的地的，一个Appender实例就表示了一个输出的目的地。 
