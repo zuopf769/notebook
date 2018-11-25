@@ -1,6 +1,8 @@
 
 ## 如何从数组中移除`fasly`的item
 
+[左鹏飞](https://github.com/zuopf769) 2018.11.25
+
 ### 背景
 
 我们经常会使用ECMAScirpt5中Array类中的`filter`方法来过滤符合条件的item；那么如何从数组中移除`fasly`(false, null, undefined, 0, NaN or an empty string)的item呢？
